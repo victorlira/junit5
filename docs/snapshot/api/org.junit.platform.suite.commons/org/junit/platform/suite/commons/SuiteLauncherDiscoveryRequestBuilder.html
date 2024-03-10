@@ -100,9 +100,53 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#consumers()" title="class or interface in org.apiguardian.api" class="external-link">consumers</a>={"org.junit.platform.suite.engine","org.junit.platform.runner"})
 </span><span class="modifiers">public final class </span><span class="element-name type-name-label">SuiteLauncherDiscoveryRequestBuilder</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">The <code>SuiteLauncherDiscoveryRequestBuilder</code> provides a light-weight DSL
+ for generating a <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> specifically tailored for
+ suite execution.
+
+ <h2 id="example-heading">Example</h2>
+
+ <pre><code>
+ SuiteLauncherDiscoveryRequestBuilder.request()
+   .selectors(
+        selectPackage("org.example.user"),
+        selectClass("org.example.payment.PaymentTests"),
+        selectClass(ShippingTests.class),
+        selectMethod("org.example.order.OrderTests#test1"),
+        selectMethod("org.example.order.OrderTests#test2()"),
+        selectMethod("org.example.order.OrderTests#test3(java.lang.String)"),
+        selectMethod("org.example.order.OrderTests", "test4"),
+        selectMethod(OrderTests.class, "test5"),
+        selectMethod(OrderTests.class, testMethod),
+        selectClasspathRoots(Collections.singleton(Paths.get("/my/local/path1"))),
+        selectUniqueId("unique-id-1"),
+        selectUniqueId("unique-id-2")
+   )
+   .filters(
+        includeEngines("junit-jupiter", "spek"),
+        // excludeEngines("junit-vintage"),
+        includeTags("fast"),
+        // excludeTags("slow"),
+        includeClassNamePatterns(".*Test[s]?")
+        // includeClassNamePatterns("org\.example\.tests.*")
+   )
+   .configurationParameter("key", "value")
+   .enableImplicitConfigurationParameters(true)
+   .suite(File.class)
+   .build();
+ </code></pre></div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.8</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery"><code>DiscoverySelectors</code></a></li>
+<li><a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/discovery/ClassNameFilter.html" title="interface in org.junit.platform.engine.discovery"><code>ClassNameFilter</code></a></li>
+<li><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/EngineFilter.html" title="class in org.junit.platform.launcher"><code>EngineFilter</code></a></li>
+<li><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/TagFilter.html" title="class in org.junit.platform.launcher"><code>TagFilter</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 <section class="summary">
@@ -120,38 +164,61 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Build the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> that has been configured via
+ this builder.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configurationParameter(java.lang.String,java.lang.String)" class="member-name-link">configurationParameter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add the supplied <em>configuration parameter</em> to the request.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configurationParameters(java.util.Map)" class="member-name-link">configurationParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;configurationParameters)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add all supplied configuration parameters to the request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableImplicitConfigurationParameters(boolean)" class="member-name-link">enableImplicitConfigurationParameters</a><wbr>(boolean&nbsp;enabled)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Configure whether implicit configuration parameters should be considered.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filters(org.junit.platform.engine.Filter...)" class="member-name-link">filters</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;?&gt;...&nbsp;filters)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add all supplied <code>filters</code> to the request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filterStandardClassNamePatterns(boolean)" class="member-name-link">filterStandardClassNamePatterns</a><wbr>(boolean&nbsp;filterStandardClassNamePatterns)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Specify whether to filter standard class name patterns.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentConfigurationParameters(org.junit.platform.engine.ConfigurationParameters)" class="member-name-link">parentConfigurationParameters</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;parentConfigurationParameters)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the parent configuration parameters to use for the request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#request()" class="member-name-link">request</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Create a new <code>SuiteLauncherDiscoveryRequestBuilder</code>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectors(java.util.List)" class="member-name-link">selectors</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&gt;&nbsp;selectors)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectors(org.junit.platform.engine.DiscoverySelector...)" class="member-name-link">selectors</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>...&nbsp;selectors)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#suite(java.lang.Class)" class="member-name-link">suite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Configure the suite class for the suite launcher discovery request.</div>
+</div>
 </div>
 </div>
 </div>
@@ -173,30 +240,74 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="request()">
 <h3>request</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">request</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="filterStandardClassNamePatterns(boolean)">
-<h3>filterStandardClassNamePatterns</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">filterStandardClassNamePatterns</span><wbr><span class="parameters">(boolean&nbsp;filterStandardClassNamePatterns)</span></div>
+<div class="block">Create a new <code>SuiteLauncherDiscoveryRequestBuilder</code>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a new builder</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="selectors(org.junit.platform.engine.DiscoverySelector...)">
 <h3>selectors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">selectors</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>...&nbsp;selectors)</span></div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>selectors</code> - the <code>DiscoverySelectors</code> to add; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="selectors(java.util.List)">
 <h3>selectors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">selectors</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&gt;&nbsp;selectors)</span></div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>selectors</code> - the <code>DiscoverySelectors</code> to add; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="filters(org.junit.platform.engine.Filter...)">
 <h3>filters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">filters</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;?&gt;...&nbsp;filters)</span></div>
+<div class="block">Add all supplied <code>filters</code> to the request.
+
+ <p>The <code>filters</code> are combined using AND semantics, i.e. all of them
+ have to include a resource for it to end up in the test plan.
+
+ <p><strong>Warning</strong>: be cautious when registering multiple competing
+ <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/EngineFilter.html#includeEngines(java.lang.String...)"><code>include</code></a> <code>EngineFilters</code> or multiple
+ competing <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/EngineFilter.html#excludeEngines(java.lang.String...)"><code>exclude</code></a> <code>EngineFilters</code>
+ for the same discovery request since doing so will likely lead to
+ undesirable results (i.e., zero engines being active).</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filters</code> - the <code>Filter</code>s to add; never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="filterStandardClassNamePatterns(boolean)">
+<h3>filterStandardClassNamePatterns</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">filterStandardClassNamePatterns</span><wbr><span class="parameters">(boolean&nbsp;filterStandardClassNamePatterns)</span></div>
+<div class="block">Specify whether to filter standard class name patterns.
+ <p>If set to <code>true</code>, standard class name patterns are filtered.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>filterStandardClassNamePatterns</code> - <code>true</code> to filter standard class
+ name patterns, <code>false</code> otherwise</dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -204,36 +315,113 @@ loadScripts(document, 'script');</script>
 <h3>configurationParameter</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">configurationParameter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;value)</span></div>
+<div class="block">Add the supplied <em>configuration parameter</em> to the request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>key</code> - the configuration parameter key under which to store the
+ value; never <code>null</code> or blank</dd>
+<dd><code>value</code> - the value to store</dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="configurationParameters(java.util.Map)">
 <h3>configurationParameters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">configurationParameters</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;configurationParameters)</span></div>
+<div class="block">Add all supplied configuration parameters to the request.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>configurationParameters</code> - the map of configuration parameters to add;
+ never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="parentConfigurationParameters(org.junit.platform.engine.ConfigurationParameters)">
 <h3>parentConfigurationParameters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">parentConfigurationParameters</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;parentConfigurationParameters)</span></div>
+<div class="block">Set the parent configuration parameters to use for the request.
+
+ <p>Any explicit configuration parameters configured via
+ <a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a> or
+ <a href="#configurationParameters(java.util.Map)"><code>configurationParameters(Map)</code></a> takes precedence over the supplied
+ configuration parameters.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>parentConfigurationParameters</code> - the parent instance to use for looking
+ up configuration parameters that have not been explicitly configured;
+ never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a></li>
+<li><a href="#configurationParameters(java.util.Map)"><code>configurationParameters(Map)</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="enableImplicitConfigurationParameters(boolean)">
 <h3>enableImplicitConfigurationParameters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">enableImplicitConfigurationParameters</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="block">Configure whether implicit configuration parameters should be considered.
+
+ <p>By default, in addition to those parameters that are passed explicitly
+ to this builder, configuration parameters are read from system properties
+ and from the <code>junit-platform.properties</code> classpath resource.
+ Passing <code>false</code> to this method, disables the latter two sources so
+ that only explicit configuration parameters are taken into account.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>enabled</code> - <code>true</code> if implicit configuration parameters should be
+ considered</dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a></li>
+<li><a href="#configurationParameters(java.util.Map)"><code>configurationParameters(Map)</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="suite(java.lang.Class)">
 <h3>suite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">suite</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</span></div>
+<div class="block">Configure the suite class for the suite launcher discovery request.
+
+ <p>This method processes annotations on the suite class to customize
+ the suite discovery and execution.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>suiteClass</code> - the suite class to configure</dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="build()">
 <h3>build</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a></span>&nbsp;<span class="element-name">build</span>()</div>
+<div class="block">Build the <a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> that has been configured via
+ this builder.</div>
 </section>
 </li>
 </ul>

@@ -123,7 +123,7 @@ loadScripts(document, 'script');</script>
         selectMethod("org.example.order.OrderTests", "test4"),
         selectMethod(OrderTests.class, "test5"),
         selectMethod(OrderTests.class, testMethod),
-        selectClasspathRoots(Collections.singleton(new File("/my/local/path1"))),
+        selectClasspathRoots(Collections.singleton(Paths.get("/my/local/path1"))),
         selectUniqueId("unique-id-1"),
         selectUniqueId("unique-id-2")
      )
@@ -215,7 +215,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configurationParameters(java.util.Map)" class="member-name-link">configurationParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;configurationParameters)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Add all of the supplied configuration parameters to the request.</div>
+<div class="block">Add all supplied configuration parameters to the request.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableImplicitConfigurationParameters(boolean)" class="member-name-link">enableImplicitConfigurationParameters</a><wbr>(boolean&nbsp;enabled)</code></div>
@@ -225,15 +225,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#filters(org.junit.platform.engine.Filter...)" class="member-name-link">filters</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;?&gt;...&nbsp;filters)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Add all of the supplied <code>filters</code> to the request.</div>
+<div class="block">Add all supplied <code>filters</code> to the request.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#listeners(org.junit.platform.launcher.LauncherDiscoveryListener...)" class="member-name-link">listeners</a><wbr>(<a href="../LauncherDiscoveryListener.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryListener</a>...&nbsp;listeners)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Add all of the supplied discovery listeners to the request.</div>
+<div class="block">Add all supplied discovery listeners to the request.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentConfigurationParameters(org.junit.platform.engine.ConfigurationParameters)" class="member-name-link">parentConfigurationParameters</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentConfigurationParameters(org.junit.platform.engine.ConfigurationParameters)" class="member-name-link">parentConfigurationParameters</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;parentConfigurationParameters)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the parent configuration parameters to use for the request.</div>
 </div>
@@ -245,12 +245,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectors(java.util.List)" class="member-name-link">selectors</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&gt;&nbsp;selectors)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Add all of the supplied <code>selectors</code> to the request.</div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectors(org.junit.platform.engine.DiscoverySelector...)" class="member-name-link">selectors</a><wbr>(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>...&nbsp;selectors)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Add all of the supplied <code>selectors</code> to the request.</div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
 </div>
 </div>
 </div>
@@ -333,7 +333,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="selectors(org.junit.platform.engine.DiscoverySelector...)">
 <h3>selectors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">selectors</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>...&nbsp;selectors)</span></div>
-<div class="block">Add all of the supplied <code>selectors</code> to the request.</div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>selectors</code> - the <code>DiscoverySelectors</code> to add; never <code>null</code></dd>
@@ -346,7 +346,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="selectors(java.util.List)">
 <h3>selectors</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">selectors</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelector.html" title="interface in org.junit.platform.engine">DiscoverySelector</a>&gt;&nbsp;selectors)</span></div>
-<div class="block">Add all of the supplied <code>selectors</code> to the request.</div>
+<div class="block">Add all supplied <code>selectors</code> to the request.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>selectors</code> - the <code>DiscoverySelectors</code> to add; never <code>null</code></dd>
@@ -359,7 +359,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="filters(org.junit.platform.engine.Filter...)">
 <h3>filters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">filters</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/Filter.html" title="interface in org.junit.platform.engine">Filter</a>&lt;?&gt;...&nbsp;filters)</span></div>
-<div class="block">Add all of the supplied <code>filters</code> to the request.
+<div class="block">Add all supplied <code>filters</code> to the request.
 
  <p>The <code>filters</code> are combined using AND semantics, i.e. all of them
  have to include a resource for it to end up in the test plan.
@@ -397,7 +397,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="configurationParameters(java.util.Map)">
 <h3>configurationParameters</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">configurationParameters</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;configurationParameters)</span></div>
-<div class="block">Add all of the supplied configuration parameters to the request.</div>
+<div class="block">Add all supplied configuration parameters to the request.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>configurationParameters</code> - the map of configuration parameters to add;
@@ -418,7 +418,7 @@ loadScripts(document, 'script');</script>
 <h3>parentConfigurationParameters</h3>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">parentConfigurationParameters</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;configurationParameters)</span></div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">parentConfigurationParameters</span><wbr><span class="parameters">(<a href="../../../../../../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine">ConfigurationParameters</a>&nbsp;parentConfigurationParameters)</span></div>
 <div class="block">Set the parent configuration parameters to use for the request.
 
  <p>Any explicit configuration parameters configured via
@@ -427,11 +427,44 @@ loadScripts(document, 'script');</script>
  configuration parameters.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>configurationParameters</code> - the parent instance to be used for looking
+<dd><code>parentConfigurationParameters</code> - the parent instance to use for looking
  up configuration parameters that have not been explicitly configured;
  never <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
 <dt>Since:</dt>
 <dd>1.8</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a></li>
+<li><a href="#configurationParameters(java.util.Map)"><code>configurationParameters(Map)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="enableImplicitConfigurationParameters(boolean)">
+<h3>enableImplicitConfigurationParameters</h3>
+<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
+     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10")
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">enableImplicitConfigurationParameters</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="block">Configure whether implicit configuration parameters should be considered.
+
+ <p>By default, in addition to those parameters that are passed explicitly
+ to this builder, configuration parameters are read from system properties
+ and from the <code>junit-platform.properties</code> classpath resource.
+ Passing <code>false</code> to this method, disables the latter two sources so
+ that only explicit configuration parameters are taken into account.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>enabled</code> - <code>true</code> if implicit configuration parameters should be
+ considered</dd>
+<dt>Returns:</dt>
+<dd>this builder for method chaining</dd>
+<dt>Since:</dt>
+<dd>1.7</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -448,7 +481,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">listeners</span><wbr><span class="parameters">(<a href="../LauncherDiscoveryListener.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryListener</a>...&nbsp;listeners)</span></div>
-<div class="block">Add all of the supplied discovery listeners to the request.
+<div class="block">Add all supplied discovery listeners to the request.
 
  <p>In addition to the <a href="../LauncherDiscoveryListener.html" title="interface in org.junit.platform.launcher">listeners</a>
  registered using this method, this builder will add a default listener
@@ -469,32 +502,6 @@ loadScripts(document, 'script');</script>
 <li><a href="../LauncherDiscoveryListener.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryListener</code></a></li>
 <li><a href="../listeners/discovery/LauncherDiscoveryListeners.html" title="class in org.junit.platform.launcher.listeners.discovery"><code>LauncherDiscoveryListeners</code></a></li>
 <li><a href="#DEFAULT_DISCOVERY_LISTENER_CONFIGURATION_PROPERTY_NAME"><code>DEFAULT_DISCOVERY_LISTENER_CONFIGURATION_PROPERTY_NAME</code></a></li>
-</ul>
-</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="enableImplicitConfigurationParameters(boolean)">
-<h3>enableImplicitConfigurationParameters</h3>
-<div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
-     <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.launcher.core">LauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">enableImplicitConfigurationParameters</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
-<div class="block">Configure whether implicit configuration parameters should be considered.
-
- <p>By default, in addition to those parameters that are passed explicitly
- to this builder, configuration parameters are read from system properties
- and from the <code>junit-platform.properties</code> classpath resource.
- Passing <code>false</code> to this method, disables the latter two sources so
- that only explicit configuration parameters are taken into account.</div>
-<dl class="notes">
-<dt>Since:</dt>
-<dd>1.7</dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="#configurationParameter(java.lang.String,java.lang.String)"><code>configurationParameter(String, String)</code></a></li>
-<li><a href="#configurationParameters(java.util.Map)"><code>configurationParameters(Map)</code></a></li>
 </ul>
 </dd>
 </dl>
