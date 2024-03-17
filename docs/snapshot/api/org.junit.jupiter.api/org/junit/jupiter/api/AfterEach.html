@@ -102,10 +102,12 @@ loadScripts(document, 'script');</script>
  <h2 id="method-signatures-heading">Method Signatures</h2>
 
  <p><code>@AfterEach</code> methods must have a <code>void</code> return type and must
- not be <code>static</code>. Using <code>private</code> visibility is strongly
- discouraged and will be disallowed in a future release.
- They may optionally declare parameters to be resolved by
+ not be <code>static</code>. In addition, <code>@AfterEach</code> methods may optionally
+ declare parameters to be resolved by
  <a href="extension/ParameterResolver.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterResolvers</code></a>.
+
+ <p>Using <code>private</code> visibility for <code>@AfterEach</code> methods is strongly
+ discouraged and will be disallowed in a future release.
 
  <h2 id="inheritance-and-execution-order-heading">Inheritance and Execution Order</h2>
 

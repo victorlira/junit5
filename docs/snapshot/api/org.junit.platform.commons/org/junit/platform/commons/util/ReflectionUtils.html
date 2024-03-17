@@ -1619,8 +1619,10 @@ loadScripts(document, 'script');</script>
  Module System which can be reflectively invoked without an illegal access warning.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>method</code> - the method to be invoked, potentially from an implementation class</dd>
-<dd><code>targetClass</code> - the target class to check for declared interfaces</dd>
+<dd><code>method</code> - the method to be invoked, potentially from an implementation class;
+ never <code>null</code></dd>
+<dd><code>targetClass</code> - the target class to check for declared interfaces;
+ potentially <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>the corresponding interface method, or the original method if none found</dd>
 <dt>Since:</dt>
