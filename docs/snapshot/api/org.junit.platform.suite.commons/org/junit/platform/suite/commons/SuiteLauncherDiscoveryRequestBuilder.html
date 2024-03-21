@@ -132,7 +132,8 @@ loadScripts(document, 'script');</script>
    )
    .configurationParameter("key", "value")
    .enableImplicitConfigurationParameters(true)
-   .suite(File.class)
+   .applyConfigurationParametersFromSuite(MySuite.class)
+   .applySelectorsAndFiltersFromSuite(MySuite.class)
    .build();
  </code></pre></div>
 <dl class="notes">
@@ -165,12 +166,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applyConfigurationParametersFromSuite(java.lang.Class)" class="member-name-link">applyConfigurationParametersFromSuite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Apply a suites annotation based configuration to this builder.</div>
+<div class="block">Apply a suite's annotation-based configuration to this builder.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#applySelectorsAndFiltersFromSuite(java.lang.Class)" class="member-name-link">applySelectorsAndFiltersFromSuite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Apply a suites annotation based discovery selectors and filters to this builder.</div>
+<div class="block">Apply a suite's annotation-based discovery selectors and filters to this
+ builder.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../../org.junit.platform.launcher/org/junit/platform/launcher/LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher">LauncherDiscoveryRequest</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#build()" class="member-name-link">build</a>()</code></div>
@@ -228,7 +230,9 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#suite(java.lang.Class)" class="member-name-link">suite</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#applyConfigurationParametersFromSuite(java.lang.Class)"><code>applyConfigurationParametersFromSuite(java.lang.Class&lt;?&gt;)</code></a> and/or <a href="#applySelectorsAndFiltersFromSuite(java.lang.Class)"><code>applySelectorsAndFiltersFromSuite(java.lang.Class&lt;?&gt;)</code></a> instead.</div>
+<div class="deprecation-comment">as of JUnit Platform 1.11 in favor of
+ <a href="#applyConfigurationParametersFromSuite(java.lang.Class)"><code>applyConfigurationParametersFromSuite(java.lang.Class&lt;?&gt;)</code></a> and
+ <a href="#applySelectorsAndFiltersFromSuite(java.lang.Class)"><code>applySelectorsAndFiltersFromSuite(java.lang.Class&lt;?&gt;)</code></a></div>
 </div>
 </div>
 </div>
@@ -418,17 +422,17 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">suite</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#applyConfigurationParametersFromSuite(java.lang.Class)"><code>applyConfigurationParametersFromSuite(java.lang.Class&lt;?&gt;)</code></a> and/or <a href="#applySelectorsAndFiltersFromSuite(java.lang.Class)"><code>applySelectorsAndFiltersFromSuite(java.lang.Class&lt;?&gt;)</code></a> instead.</div>
+<div class="deprecation-comment">as of JUnit Platform 1.11 in favor of
+ <a href="#applyConfigurationParametersFromSuite(java.lang.Class)"><code>applyConfigurationParametersFromSuite(java.lang.Class&lt;?&gt;)</code></a> and
+ <a href="#applySelectorsAndFiltersFromSuite(java.lang.Class)"><code>applySelectorsAndFiltersFromSuite(java.lang.Class&lt;?&gt;)</code></a></div>
 </div>
-<div class="block">Apply a suites annotation based configuration, selectors and filters to this builder.</div>
+<div class="block">Apply a suite's annotation-based configuration, selectors, and filters to
+ this builder.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>suiteClass</code> - the class to apply the annotations from;
- never <code>null</code></dd>
+<dd><code>suiteClass</code> - the class to apply the annotations from; never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this builder for method chaining</dd>
-<dt>Since:</dt>
-<dd>1.11</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
@@ -442,16 +446,17 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="applyConfigurationParametersFromSuite(java.lang.Class)">
 <h3>applyConfigurationParametersFromSuite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">applyConfigurationParametersFromSuite</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</span></div>
-<div class="block">Apply a suites annotation based configuration to this builder.
- <p>
- This will apply the configuration from:
+<div class="block">Apply a suite's annotation-based configuration to this builder.
+
+ <p>This will apply the configuration from the following annotations.
  <ul>
    <li><a href="../../../../../../org.junit.platform.suite.api/org/junit/platform/suite/api/ConfigurationParameter.html" title="annotation interface in org.junit.platform.suite.api"><code>ConfigurationParameter</code></a></li>
    <li><a href="../../../../../../org.junit.platform.suite.api/org/junit/platform/suite/api/DisableParentConfigurationParameters.html" title="annotation interface in org.junit.platform.suite.api"><code>DisableParentConfigurationParameters</code></a></li>
  </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>suiteClass</code> - the class to apply the configuration annotations from; never <code>null</code></dd>
+<dd><code>suiteClass</code> - the class to apply the configuration annotations from;
+ never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this builder for method chaining</dd>
 <dt>Since:</dt>
@@ -469,9 +474,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="applySelectorsAndFiltersFromSuite(java.lang.Class)">
 <h3>applySelectorsAndFiltersFromSuite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SuiteLauncherDiscoveryRequestBuilder.html" title="class in org.junit.platform.suite.commons">SuiteLauncherDiscoveryRequestBuilder</a></span>&nbsp;<span class="element-name">applySelectorsAndFiltersFromSuite</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;suiteClass)</span></div>
-<div class="block">Apply a suites annotation based discovery selectors and filters to this builder.
- <p>
- This will apply the configuration from:
+<div class="block">Apply a suite's annotation-based discovery selectors and filters to this
+ builder.
+
+ <p>This will apply the configuration from the following annotations.
  <ul>
    <li><a href="../../../../../../org.junit.platform.suite.api/org/junit/platform/suite/api/ExcludeClassNamePatterns.html" title="annotation interface in org.junit.platform.suite.api"><code>ExcludeClassNamePatterns</code></a></li>
    <li><a href="../../../../../../org.junit.platform.suite.api/org/junit/platform/suite/api/ExcludeEngines.html" title="annotation interface in org.junit.platform.suite.api"><code>ExcludeEngines</code></a></li>
@@ -492,7 +498,8 @@ loadScripts(document, 'script');</script>
  </ul></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>suiteClass</code> - the class to apply the discovery selectors and filter annotations from; never <code>null</code></dd>
+<dd><code>suiteClass</code> - the class to apply the discovery selectors and filter
+ annotations from; never <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this builder for method chaining</dd>
 <dt>Since:</dt>
