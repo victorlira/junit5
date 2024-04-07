@@ -108,10 +108,10 @@ loadScripts(document, 'script');</script>
 
  <h2 id="inheritance-heading">Inheritance</h2>
 
- <p><code>@ExtendWith</code> fields are inherited from superclasses as long as they
- are not <em>hidden</em> or <em>overridden</em>. Furthermore, <code>@ExtendWith</code>
- fields from superclasses will be registered before <code>@ExtendWith</code> fields
- in subclasses.
+ <p><code>@ExtendWith</code> fields are inherited from superclasses. Furthermore,
+ <code>@ExtendWith</code> fields from superclasses will be registered before
+ <code>@ExtendWith</code> fields in subclasses unless <code>@Order</code> is used to
+ alter that behavior (see below).
 
  <h2 id="registration-order-heading">Registration Order</h2>
 

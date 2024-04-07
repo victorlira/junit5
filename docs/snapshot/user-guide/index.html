@@ -869,6 +869,7 @@ pre.rouge .gs {
 <li><a href="#extensions-supported-utilities-reflection">5.15.3. Reflection Support</a></li>
 <li><a href="#extensions-supported-utilities-modifier">5.15.4. Modifier Support</a></li>
 <li><a href="#extensions-supported-utilities-conversion">5.15.5. Conversion Support</a></li>
+<li><a href="#extensions-supported-utilities-search-semantics">5.15.6. Field and Method Search Semantics</a></li>
 </ul>
 </li>
 <li><a href="#extensions-execution-order">5.16. Relative Execution Order of User Code and Extensions</a>
@@ -1165,71 +1166,71 @@ in the <code>junit-jupiter-api</code> module.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Test</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test method. Unlike JUnit 4&#8217;s <code>@Test</code> annotation, this annotation does not declare any attributes, since test extensions in JUnit Jupiter operate based on their own dedicated annotations. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test method. Unlike JUnit 4&#8217;s <code>@Test</code> annotation, this annotation does not declare any attributes, since test extensions in JUnit Jupiter operate based on their own dedicated annotations. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ParameterizedTest</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-parameterized-tests">parameterized test</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-parameterized-tests">parameterized test</a>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@RepeatedTest</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test template for a <a href="#writing-tests-repeated-tests">repeated test</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test template for a <a href="#writing-tests-repeated-tests">repeated test</a>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestFactory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test factory for <a href="#writing-tests-dynamic-tests">dynamic tests</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a test factory for <a href="#writing-tests-dynamic-tests">dynamic tests</a>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestTemplate</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-test-templates">template for test cases</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-test-templates">providers</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that a method is a <a href="#writing-tests-test-templates">template for test cases</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="#extensions-test-templates">providers</a>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestClassOrder</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-classes">test class execution order</a> for <code>@Nested</code> test classes in the annotated test class. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-classes">test class execution order</a> for <code>@Nested</code> test classes in the annotated test class. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestMethodOrder</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-methods">test method execution order</a> for the annotated test class; similar to JUnit 4&#8217;s <code>@FixMethodOrder</code>. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-execution-order-methods">test method execution order</a> for the annotated test class; similar to JUnit 4&#8217;s <code>@FixMethodOrder</code>. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TestInstance</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> for the annotated test class. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to configure the <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> for the annotated test class. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DisplayName</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-names">display name</a> for the test class or test method. Such annotations are not <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-names">display name</a> for the test class or test method. Such annotations are not inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@DisplayNameGeneration</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-name-generator">display name generator</a> for the test class. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Declares a custom <a href="#writing-tests-display-name-generator">display name generator</a> for the test class. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@Before</code>. Such methods are <em>inherited</em> – unless they are <em>overridden</em> or <em>superseded</em> (i.e., replaced based on signature only, irrespective of Java&#8217;s visibility rules).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@Before</code>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterEach</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@After</code>. Such methods are <em>inherited</em> – unless they are <em>overridden</em> or <em>superseded</em> (i.e., replaced based on signature only, irrespective of Java&#8217;s visibility rules).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4&#8217;s <code>@After</code>. Such methods are inherited unless they are overridden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@BeforeAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@BeforeClass</code>. Such methods are <em>inherited</em> – unless they are <em>hidden</em>, <em>overridden</em>, or <em>superseded</em>, (i.e., replaced based on signature only, irrespective of Java&#8217;s visibility rules) – and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>before</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@BeforeClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AfterAll</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are <em>inherited</em> – unless they are <em>hidden</em>, <em>overridden</em>, or <em>superseded</em>, (i.e., replaced based on signature only, irrespective of Java&#8217;s visibility rules) – and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4&#8217;s <code>@AfterClass</code>. Such methods are inherited unless they are overridden and must be <code>static</code> unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Nested</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a non-static <a href="#writing-tests-nested">nested test class</a>. On Java 8 through Java 15, <code>@BeforeAll</code> and <code>@AfterAll</code> methods cannot be used directly in a <code>@Nested</code> test class unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used. Beginning with Java 16, <code>@BeforeAll</code> and <code>@AfterAll</code> methods can be declared as <code>static</code> in a <code>@Nested</code> test class with either test instance lifecycle mode. Such annotations are not <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Denotes that the annotated class is a non-static <a href="#writing-tests-nested">nested test class</a>. On Java 8 through Java 15, <code>@BeforeAll</code> and <code>@AfterAll</code> methods cannot be used directly in a <code>@Nested</code> test class unless the "per-class" <a href="#writing-tests-test-instance-lifecycle">test instance lifecycle</a> is used. Beginning with Java 16, <code>@BeforeAll</code> and <code>@AfterAll</code> methods can be declared as <code>static</code> in a <code>@Nested</code> test class with either test instance lifecycle mode. Such annotations are not inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Tag</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to declare <a href="#writing-tests-tagging-and-filtering">tags for filtering tests</a>, either at the class or method level; analogous to test groups in TestNG or Categories in JUnit 4. Such annotations are <em>inherited</em> at the class level but not at the method level.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to declare <a href="#writing-tests-tagging-and-filtering">tags for filtering tests</a>, either at the class or method level; analogous to test groups in TestNG or Categories in JUnit 4. Such annotations are inherited at the class level but not at the method level.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Disabled</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#writing-tests-disabling">disable</a> a test class or test method; analogous to JUnit 4&#8217;s <code>@Ignore</code>. Such annotations are not <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#writing-tests-disabling">disable</a> a test class or test method; analogous to JUnit 4&#8217;s <code>@Ignore</code>. Such annotations are not inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@AutoClose</code></p></td>
@@ -1237,19 +1238,19 @@ in the <code>junit-jupiter-api</code> module.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@Timeout</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to fail a test, test factory, test template, or lifecycle method if its execution exceeds a given duration. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to fail a test, test factory, test template, or lifecycle method if its execution exceeds a given duration. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@TempDir</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to supply a <a href="#writing-tests-built-in-extensions-TempDirectory">temporary directory</a> via field injection or parameter injection in a lifecycle method or test method; located in the <code>org.junit.jupiter.api.io</code> package.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to supply a <a href="#writing-tests-built-in-extensions-TempDirectory">temporary directory</a> via field injection or parameter injection in a lifecycle method or test method; located in the <code>org.junit.jupiter.api.io</code> package.  Such fields are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@ExtendWith</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-declarative">register extensions declaratively</a>. Such annotations are <em>inherited</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-declarative">register extensions declaratively</a>. Such annotations are inherited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>@RegisterExtension</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-programmatic">register extensions programmatically</a> via fields. Such fields are <em>inherited</em> unless they are <em>shadowed</em>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to <a href="#extensions-registration-programmatic">register extensions programmatically</a> via fields. Such fields are inherited.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1416,6 +1417,34 @@ and lifecycle methods unless there is a technical reason for doing so – for ex
 a test class is extended by a test class in another package. Another technical reason for
 making classes and methods <code>public</code> is to simplify testing on the module path when using
 the Java Module System.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Field and method inheritance</div>
+<div class="paragraph">
+<p>Fields in test classes are inherited. For example, a <code>@TempDir</code> field from a superclass
+will always be applied in a subclass.</p>
+</div>
+<div class="paragraph">
+<p>Test methods and lifecycle methods are inherited unless they are overridden according to
+the visibility rules of the Java language. For example, a <code>@Test</code> method from a superclass
+will always be applied in a subclass unless the subclass explicitly overrides the method.
+Similarly, if a package-private <code>@Test</code> method is declared in a superclass that resides in
+a different package than the subclass, that <code>@Test</code> method will always be applied in the
+subclass since the subclass cannot override a package-private method from a superclass in
+a different package.</p>
+</div>
+<div class="paragraph">
+<p>See also: <a href="#extensions-supported-utilities-search-semantics">Field and Method Search Semantics</a></p>
 </div>
 </td>
 </tr>
@@ -6634,9 +6663,8 @@ name of the close method via the <code>value</code> attribute. For example, <cod
 instructs JUnit to look for a <code>shutdown()</code> method to close the resource.</p>
 </div>
 <div class="paragraph">
-<p><code>@AutoClose</code> fields are inherited from superclasses as long as they are not hidden.
-Furthermore, <code>@AutoClose</code> fields from subclasses will be closed before <code>@AutoClose</code> fields
-in superclasses.</p>
+<p><code>@AutoClose</code> fields are inherited from superclasses. Furthermore, <code>@AutoClose</code> fields from
+subclasses will be closed before <code>@AutoClose</code> fields in superclasses.</p>
 </div>
 <div class="paragraph">
 <p>When multiple <code>@AutoClose</code> fields exist within a given test class, the order in which the
@@ -9177,6 +9205,25 @@ using the <code>@Order</code> annotation. See the <a href="#extensions-registrat
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Extension Inheritance</div>
+<div class="paragraph">
+<p>Extensions registered declaratively via <code>@ExtendWith</code> on fields in superclasses will be
+inherited.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#extensions-registration-inheritance">Extension Inheritance</a> for details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -9233,6 +9280,25 @@ registered after non-annotated extensions. For example, assigning an extension a
 order value that is greater than the default order value allows <em>before</em> callback
 extensions to be registered last and <em>after</em> callback extensions to be registered first,
 relative to other programmatically registered extensions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Extension Inheritance</div>
+<div class="paragraph">
+<p>Extensions registered via <code>@RegisterExtension</code> or <code>@ExtendWith</code> on fields in superclasses
+will be inherited.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#extensions-registration-inheritance">Extension Inheritance</a> for details.</p>
 </div>
 </td>
 </tr>
@@ -9414,11 +9480,34 @@ support for <code>TestInfo</code>, <code>TestReporter</code>, etc.).</p>
 <div class="sect3">
 <h4 id="extensions-registration-inheritance"><a class="anchor" href="#extensions-registration-inheritance"></a>5.2.4. Extension Inheritance</h4>
 <div class="paragraph">
-<p>Registered extensions are inherited within test class hierarchies with top-down
-semantics. Similarly, extensions registered at the class-level are inherited at the
-method-level. Furthermore, a specific extension implementation can only be registered
-once for a given extension context and its parent contexts. Consequently, any attempt to
-register a duplicate extension implementation will be ignored.</p>
+<p>Registered extensions are inherited within test class hierarchies with top-down semantics.
+Similarly, extensions registered at the class-level are inherited at the method-level.
+This applies to all extensions, independent of how they are registered (declaratively or
+programmatically).</p>
+</div>
+<div class="paragraph">
+<p>This means that extensions registered declaratively via <code>@ExtendWith</code> on a superclass will
+be registered before extensions registered declaratively via <code>@ExtendWith</code> on a subclass.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, extensions registered programmatically via <code>@RegisterExtension</code> or
+<code>@ExtendWith</code> on fields in a superclass will be registered before extensions registered
+programmatically via <code>@RegisterExtension</code> or <code>@ExtendWith</code> on fields in a subclass, unless
+<code>@Order</code> is used to alter that behavior (see <a href="#extensions-registration-programmatic-order">Extension Registration Order</a> for details).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A specific extension implementation can only be registered once for a given
+extension context and its parent contexts. Consequently, any attempt to register a
+duplicate extension implementation will be ignored.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -10148,6 +10237,18 @@ and fields in a class or interface. Some of these methods search on implemented
 interfaces and within class hierarchies to find annotations. Consult the Javadoc for
 <code><a href="../api/org.junit.platform.commons/org/junit/platform/commons/support/AnnotationSupport.html">AnnotationSupport</a></code> for further details.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See also: <a href="#extensions-supported-utilities-search-semantics">Field and Method Search Semantics</a>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="extensions-supported-utilities-classes"><a class="anchor" href="#extensions-supported-utilities-classes"></a>5.15.2. Class Support</h4>
@@ -10165,6 +10266,18 @@ search of classes matching specified predicates, to load and create new instance
 class, and to find and invoke methods. Some of these methods traverse class hierarchies
 to locate matching methods. Consult the Javadoc for <code><a href="../api/org.junit.platform.commons/org/junit/platform/commons/support/ReflectionSupport.html">ReflectionSupport</a></code> for further
 details.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See also: <a href="#extensions-supported-utilities-search-semantics">Field and Method Search Semantics</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -10184,6 +10297,54 @@ provides support for converting from strings to primitive types and their corres
 wrapper types, date and time types from the <code>java.time package</code>, and some additional
 common Java types such as <code>File</code>, <code>BigDecimal</code>, <code>BigInteger</code>, <code>Currency</code>, <code>Locale</code>, <code>URI</code>,
 <code>URL</code>, <code>UUID</code>, etc. Consult the Javadoc for <code><a href="../api/org.junit.platform.commons/org/junit/platform/commons/support/conversion/ConversionSupport.html">ConversionSupport</a></code> for further details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extensions-supported-utilities-search-semantics"><a class="anchor" href="#extensions-supported-utilities-search-semantics"></a>5.15.6. Field and Method Search Semantics</h4>
+<div class="paragraph">
+<p>Various methods in <code>AnnotationSupport</code> and <code>ReflectionSupport</code> use search algorithms that
+traverse type hierarchies to locate matching fields and methods – for example,
+<code>AnnotationSupport.findAnnotatedFields(&#8230;&#8203;)</code>, <code>ReflectionSupport.findMethods(&#8230;&#8203;)</code>, etc.</p>
+</div>
+<div class="paragraph">
+<p>As of JUnit 5.11 (JUnit Platform 1.11), field and method search algorithms adhere to
+standard Java semantics regarding whether a given field or method is visible or overridden
+according to the rules of the Java language.</p>
+</div>
+<div class="paragraph">
+<p>Prior to JUnit 5.11, the field and method search algorithms applied what we now refer to
+as "legacy semantics". Legacy semantics consider fields and methods to be <em>hidden</em>,
+<em>shadowed</em>, or <em>superseded</em> by fields and methods in super types (superclasses or
+interfaces) based solely on the field&#8217;s name or the method&#8217;s signature, disregarding the
+actual Java language semantics for visibility and the rules that determine if one method
+overrides another method.</p>
+</div>
+<div class="paragraph">
+<p>Although the JUnit team recommends the use of the standard search semantics, developers
+may optionally revert to the legacy semantics via the
+<code>junit.platform.reflection.search.useLegacySemantics</code> JVM system property.</p>
+</div>
+<div class="paragraph">
+<p>For example, to enable legacy search semantics for fields and methods, you can start your
+JVM with the following system property.</p>
+</div>
+<div class="paragraph">
+<p><code>-Djunit.platform.reflection.search.useLegacySemantics=true</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Due to the low-level nature of the feature, the
+<code>junit.platform.reflection.search.useLegacySemantics</code> flag can only be set via a JVM
+system property. It cannot be set via a <a href="#running-tests-config-params">configuration
+parameter</a>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -10358,40 +10519,37 @@ for user-supplied <em>lifecycle methods</em> (see <a href="#writing-tests-defini
 <div class="ulist">
 <ul>
 <li>
-<p><code>@BeforeAll</code> methods are inherited from superclasses as long as they are not <em>hidden</em>,
-<em>overridden</em>, or <em>superseded</em> (i.e., replaced based on signature only, irrespective of
-Java&#8217;s visibility rules). Furthermore, <code>@BeforeAll</code> methods from superclasses will be
-executed <strong>before</strong> <code>@BeforeAll</code> methods in subclasses.</p>
+<p><code>@BeforeAll</code> methods are inherited from superclasses as long as they are not
+<em>overridden</em>. Furthermore, <code>@BeforeAll</code> methods from superclasses will be executed
+<strong>before</strong> <code>@BeforeAll</code> methods in subclasses.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Similarly, <code>@BeforeAll</code> methods declared in an interface are inherited as long as they
-are not <em>hidden</em> or <em>overridden</em>, and <code>@BeforeAll</code> methods from an interface will be
-executed <strong>before</strong> <code>@BeforeAll</code> methods in the class that implements the interface.</p>
+are not <em>overridden</em>, and <code>@BeforeAll</code> methods from an interface will be executed
+<strong>before</strong> <code>@BeforeAll</code> methods in the class that implements the interface.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>@AfterAll</code> methods are inherited from superclasses as long as they are not <em>hidden</em>,
-<em>overridden</em>, or <em>superseded</em> (i.e., replaced based on signature only, irrespective of
-Java&#8217;s visibility rules). Furthermore, <code>@AfterAll</code> methods from superclasses will be
-executed <strong>after</strong> <code>@AfterAll</code> methods in subclasses.</p>
+<p><code>@AfterAll</code> methods are inherited from superclasses as long as they are not
+<em>overridden</em>. Furthermore, <code>@AfterAll</code> methods from superclasses will be executed
+<strong>after</strong> <code>@AfterAll</code> methods in subclasses.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Similarly, <code>@AfterAll</code> methods declared in an interface are inherited as long as they
-are not <em>hidden</em> or <em>overridden</em>, and <code>@AfterAll</code> methods from an interface will be
-executed <strong>after</strong> <code>@AfterAll</code> methods in the class that implements the interface.</p>
+are not <em>overridden</em>, and <code>@AfterAll</code> methods from an interface will be executed
+<strong>after</strong> <code>@AfterAll</code> methods in the class that implements the interface.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p><code>@BeforeEach</code> methods are inherited from superclasses as long as they are not
-<em>overridden</em> or <em>superseded</em> (i.e., replaced based on signature only, irrespective of
-Java&#8217;s visibility rules). Furthermore, <code>@BeforeEach</code> methods from superclasses will be
-executed <strong>before</strong> <code>@BeforeEach</code> methods in subclasses.</p>
+<em>overridden</em>. Furthermore, <code>@BeforeEach</code> methods from superclasses will be executed
+<strong>before</strong> <code>@BeforeEach</code> methods in subclasses.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -10404,9 +10562,8 @@ long as they are not <em>overridden</em>, and <code>@BeforeEach</code> default m
 </li>
 <li>
 <p><code>@AfterEach</code> methods are inherited from superclasses as long as they are not
-<em>overridden</em> or <em>superseded</em> (i.e., replaced based on signature only, irrespective of
-Java&#8217;s visibility rules). Furthermore, <code>@AfterEach</code> methods from superclasses will be
-executed <strong>after</strong> <code>@AfterEach</code> methods in subclasses.</p>
+<em>overridden</em>. Furthermore, <code>@AfterEach</code> methods from superclasses will be executed
+<strong>after</strong> <code>@AfterEach</code> methods in subclasses.</p>
 <div class="ulist">
 <ul>
 <li>

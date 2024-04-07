@@ -118,17 +118,15 @@ loadScripts(document, 'script');</script>
 
  <h2 id="inheritance-and-execution-order-heading">Inheritance and Execution Order</h2>
 
- <p><code>@AfterAll</code> methods are inherited from superclasses as long as
- they are not <em>hidden</em> (default mode with <code>static</code> modifier),
- <em>overridden</em>, or <em>superseded</em> (i.e., replaced based on
- signature only, irrespective of Java's visibility rules). Furthermore,
- <code>@AfterAll</code> methods from superclasses will be executed before
- <code>@AfterAll</code> methods in subclasses.
+ <p><code>@AfterAll</code> methods are inherited from superclasses as long as they
+ are not <em>overridden</em> according to the visibility rules of the Java
+ language. Furthermore, <code>@AfterAll</code> methods from superclasses will be
+ executed after <code>@AfterAll</code> methods in subclasses.
 
- <p>Similarly, <code>@AfterAll</code> methods declared in an interface are
- inherited as long as they are not <em>hidden</em> or <em>overridden</em>,
- and <code>@AfterAll</code> methods from an interface will be executed after
- <code>@AfterAll</code> methods in the class that implements the interface.
+ <p>Similarly, <code>@AfterAll</code> methods declared in an interface are inherited
+ as long as they are not overridden, and <code>@AfterAll</code> methods from an
+ interface will be executed after <code>@AfterAll</code> methods in the class that
+ implements the interface.
 
  <p>JUnit Jupiter does not guarantee the execution order of multiple
  <code>@AfterAll</code> methods that are declared within a single test class or

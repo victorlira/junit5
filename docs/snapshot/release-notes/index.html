@@ -531,6 +531,13 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Field and method search algorithms now adhere to standard Java semantics regarding
+whether a given field or method is visible or overridden according to the rules of the
+Java language. See the new
+<a href="../user-guide/index.html#extensions-supported-utilities-search-semantics">Field and
+Method Search Semantics</a> section of the User Guide for details.</p>
+</li>
+<li>
 <p><code>ReflectionSupport.findFields(&#8230;&#8203;)</code> now returns a distinct set of fields.</p>
 </li>
 <li>
@@ -549,7 +556,13 @@ inside Spring Boot executable jars for Spring Boot 3.2 and later.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>As mentioned in the <em>Bug Fixes</em> section above, field and method search algorithms now
+adhere to standard Java semantics regarding whether a given field or method is visible
+or overridden according to the rules of the Java language. The changes in the search
+algorithms may, however, result in breaking changes for some use cases. In light of
+that, it is possible to revert to the previous "legacy semantics". See the new
+<a href="../user-guide/index.html#extensions-supported-utilities-search-semantics">Field and
+Method Search Semantics</a> section of the User Guide for details.</p>
 </li>
 </ul>
 </div>
@@ -577,7 +590,33 @@ actual type and value in addition to the required type.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>Due to changes in the JUnit Platform regarding field and method search algorithms (see
+<a href="#release-notes-5.11.0-M1-junit-platform-bug-fixes">Bug Fixes</a> above), numerous bugs have been
+addressed within JUnit Jupiter, including but not limited to the following.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Two <code>@TempDir</code> fields with the same name in a superclass and subclass will now both
+be injected.</p>
+</li>
+<li>
+<p>Two <code>@Test</code> methods with the same signature in a superclass and subclass will now
+both be invoked, as long as the <code>@Test</code> method in the subclass does not override the
+<code>@Test</code> method in the superclass, which can occur if the superclass method is <code>private</code>
+or if the superclass method is package-private and resides in a different package than
+the subclass.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The same applies to other types of test methods (<code>@TestFactory</code>,
+<code>@ParameterizedTest</code>, etc.) as well as lifecycle methods (<code>@BeforeAll</code>,
+<code>@AfterAll</code>, <code>@BeforeEach</code>, and <code>@AfterEach</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>

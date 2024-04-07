@@ -115,6 +115,13 @@ loadScripts(document, 'script');</script>
  <p><code>@TestFactory</code> methods may optionally declare parameters to be
  resolved by <a href="extension/ParameterResolver.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterResolvers</code></a>.
 
+ <h2 id="inheritance-heading">Inheritance</h2>
+
+ <p><code>@TestFactory</code> methods are inherited from superclasses as long as
+ they are not <em>overridden</em> according to the visibility rules of the Java
+ language. Similarly, <code>@TestFactory</code> methods declared as <em>interface
+ default methods</em> are inherited as long as they are not overridden.
+
  <h2 id="test-execution-order-heading">Test Execution Order</h2>
 
  <p>By default, test methods will be ordered using an algorithm that is
