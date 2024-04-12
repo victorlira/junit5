@@ -7296,6 +7296,8 @@ details).</p>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="groovy"><span class="n">test</span> <span class="o">{</span>
     <span class="n">systemProperty</span><span class="o">(</span><span class="s2">"java.util.logging.manager"</span><span class="o">,</span> <span class="s2">"org.apache.logging.log4j.jul.LogManager"</span><span class="o">)</span>
+    <span class="c1">// Avoid overhead (see https://logging.apache.org/log4j/2.x/manual/jmx.html#enabling-jmx)</span>
+    <span class="n">systemProperty</span><span class="o">(</span><span class="s2">"log4j2.disableJmx"</span><span class="o">,</span> <span class="s2">"true"</span><span class="o">)</span>
 <span class="o">}</span></code></pre>
 </div>
 </div>
