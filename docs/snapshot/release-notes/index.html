@@ -517,7 +517,23 @@ authors as well as build tool and IDE vendors.</p>
 <p><strong>Date of Release:</strong> ❓</p>
 </div>
 <div class="paragraph">
-<p><strong>Scope:</strong> ❓</p>
+<p><strong>Scope:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Numerous bug fixes and enhancements regarding field and method search algorithms</p>
+</li>
+<li>
+<p><code>@FieldSource</code> annotation for use with <code>@ParameterizedTest</code> methods</p>
+</li>
+<li>
+<p><code>@AutoClose</code> annotation to automatically close field resources in tests</p>
+</li>
+<li>
+<p><code>ConversionSupport</code> utility for converting from a string to a supported target type</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
@@ -637,17 +653,25 @@ previously depended on version 1.3.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>JAVA_23</code> has been added to the <code>JRE</code> enum for use with JRE-based execution conditions.</p>
-</li>
-<li>
-<p>Improved documentation for semantics of a disabled test regarding class-level lifecycle
-methods and callbacks.</p>
+<p>New <code>@FieldSource</code> annotation for use with <code>@ParameterizedTest</code> methods which allows
+you to source arguments from a local field or an external field referenced by
+fully-qualified field name. This feature is similar to the existing <code>@MethodSource</code>
+feature. See the
+<a href="../user-guide/index.html#writing-tests-parameterized-tests-sources-FieldSource">User
+Guide</a> for details.</p>
 </li>
 <li>
 <p>New <code>@AutoClose</code> annotation that can be applied to fields within tests to automatically
 close the annotated resource after test execution. See the
 <a href="../user-guide/index.html#writing-tests-built-in-extensions-AutoClose">User Guide</a> for
 details.</p>
+</li>
+<li>
+<p><code>JAVA_23</code> has been added to the <code>JRE</code> enum for use with JRE-based execution conditions.</p>
+</li>
+<li>
+<p>Improved documentation for semantics of a disabled test regarding class-level lifecycle
+methods and callbacks.</p>
 </li>
 </ul>
 </div>
