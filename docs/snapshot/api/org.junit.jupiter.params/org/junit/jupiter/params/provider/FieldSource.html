@@ -96,9 +96,9 @@ loadScripts(document, 'script');</script>
 <a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider">@ArgumentsSource</a>(org.junit.jupiter.params.provider.FieldArgumentsProvider.class)
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">FieldSource</span></div>
 <div class="block"><code>@FieldSource</code> is an <a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> which provides access to
- values returned from <a href="#value()">fields</a> of the class in which this
- annotation is declared or from static fields in external classes referenced
- by <em>fully-qualified field name</em>.
+ values of <a href="#value()">fields</a> of the class in which this annotation
+ is declared or from static fields in external classes referenced by
+ <em>fully qualified field name</em>.
 
  <p>Each field must be able to supply a <em>stream</em> of <em>arguments</em>,
  and each set of "arguments" within the "stream" will be provided as the physical
@@ -106,7 +106,7 @@ loadScripts(document, 'script');</script>
  <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method.
 
  <p>In this context, a "stream" is anything that JUnit can reliably convert to
- a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>; however, the actual concrete return
+ a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>; however, the actual concrete field
  type can take on many forms. Generally speaking this translates to a
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>, an <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link"><code>Iterable</code></a>, a
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a> of a stream
@@ -225,7 +225,7 @@ loadScripts(document, 'script');</script>
 <div class="block">The names of fields within the test class or in external classes to use
  as sources for arguments.
 
- <p>Fields in external classes must be referenced by <em>fully-qualified
+ <p>Fields in external classes must be referenced by <em>fully qualified
  field name</em> &mdash; for example,
  <code>"com.example.WebUtils#httpMethodNames"</code> or
  <code>"com.example.TopLevelClass$NestedClass#numbers"</code> for a field in a

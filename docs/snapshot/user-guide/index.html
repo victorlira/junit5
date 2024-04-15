@@ -4374,7 +4374,7 @@ of the annotated <code>@ParameterizedTest</code> method.</p>
 </div>
 <div class="paragraph">
 <p>In this context, a "stream" is anything that JUnit can reliably convert to a <code>Stream</code>;
-however, the actual concrete return type can take on many forms. Generally speaking this
+however, the actual concrete field type can take on many forms. Generally speaking this
 translates to a <code>Collection</code>, an <code>Iterable</code>, a <code>Supplier</code> of a stream (<code>Stream</code>,
 <code>DoubleStream</code>, <code>LongStream</code>, or <code>IntStream</code>), a <code>Supplier</code> of an <code>Iterator</code>, an array of
 objects, or an array of primitives. Each set of "arguments" within the "stream" can be
@@ -4493,7 +4493,7 @@ will be invoked twice: with the values <code>"apple"</code> and <code>"banana"</
 <code>org.junit.jupiter.params.provider.Arguments</code> interface.</p>
 </div>
 <div class="paragraph">
-<p>Similarly, <code>named(String, String)</code> is a static factory method defined in the
+<p>Similarly, <code>named(String, Object)</code> is a static factory method defined in the
 <code>org.junit.jupiter.api.Named</code> interface.</p>
 </div>
 </td>
@@ -4539,7 +4539,7 @@ will be invoked twice: with the values <code>"apple"</code> and <code>"banana"</
 </div>
 <div class="paragraph">
 <p>An external, <code>static</code> <code>@FieldSource</code> field can be referenced by providing its
-<em>fully-qualified field name</em> as demonstrated in the following example.</p>
+<em>fully qualified field name</em> as demonstrated in the following example.</p>
 </div>
 <div class="listingblock">
 <div class="content">
