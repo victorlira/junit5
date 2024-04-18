@@ -564,6 +564,10 @@ inside Spring Boot executable jars for Spring Boot 3.2 and later.</p>
 <p>The <code>junit-platform-suite-engine</code> now includes configuration provided via
 <code>@ConfigurationParameter</code> when selecting tests by <code>UniqueId</code>.</p>
 </li>
+<li>
+<p>In order to support using <code>@EnabledInNativeImage</code> on test classes,
+<code>UniqueIdTrackingListener</code> now tracks descendants of skipped test containers.</p>
+</li>
 </ul>
 </div>
 </div>
