@@ -533,6 +533,9 @@ authors as well as build tool and IDE vendors.</p>
 <li>
 <p><code>ConversionSupport</code> utility for converting from a string to a supported target type</p>
 </li>
+<li>
+<p>Various documentation improvements</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -600,7 +603,7 @@ logic that was previously private to JUnit Jupiter&#8217;s <code>@ParameterizedT
 actual type and value in addition to the required type.</p>
 </li>
 <li>
-<p>Updated open-test-reporting dependency to 0.1.0-M2.</p>
+<p>Updated <code>open-test-reporting</code> dependency to <code>0.1.0-M2</code>.</p>
 </li>
 </ul>
 </div>
@@ -641,10 +644,6 @@ the subclass.</p>
 </ul>
 </div>
 </li>
-<li>
-<p><code>TempDir</code> suppresses <code>NoSuchFileException</code> when deleting files that may have been deleted
-by another thread or process.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -678,7 +677,22 @@ close the annotated resource after test execution. See the
 details.</p>
 </li>
 <li>
+<p><code>@TempDir</code> now suppresses <code>NoSuchFileException</code> when attempting to delete files that may
+have been already deleted by another thread or process.</p>
+</li>
+<li>
 <p><code>JAVA_23</code> has been added to the <code>JRE</code> enum for use with JRE-based execution conditions.</p>
+</li>
+<li>
+<p>New <a href="../user-guide/index.html#writing-tests-exceptions">Exception Handling</a>
+documentation in the User Guide.</p>
+</li>
+<li>
+<p>Improved documentation for <a href="../user-guide/index.html#writing-tests-assumptions">Assumptions</a> in the User Guide.</p>
+</li>
+<li>
+<p>Improved Javadoc for <code>assertThrows()</code> and <code>assertThrowsExactly()</code> to make it clear that
+the supplied message is not the <em>expected message</em> of the thrown exception.</p>
 </li>
 <li>
 <p>Improved documentation for semantics of a disabled test regarding class-level lifecycle
@@ -690,35 +704,8 @@ methods and callbacks.</p>
 </div>
 <div class="sect2">
 <h3 id="release-notes-5.11.0-M1-junit-vintage"><a class="anchor" href="#release-notes-5.11.0-M1-junit-vintage"></a>JUnit Vintage</h3>
-<div class="sect3">
-<h4 id="release-notes-5.11.0-M1-junit-vintage-bug-fixes"><a class="anchor" href="#release-notes-5.11.0-M1-junit-vintage-bug-fixes"></a>Bug Fixes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.11.0-M1-junit-vintage-deprecations-and-breaking-changes"><a class="anchor" href="#release-notes-5.11.0-M1-junit-vintage-deprecations-and-breaking-changes"></a>Deprecations and Breaking Changes</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="release-notes-5.11.0-M1-junit-vintage-new-features-and-improvements"><a class="anchor" href="#release-notes-5.11.0-M1-junit-vintage-new-features-and-improvements"></a>New Features and Improvements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>❓</p>
-</li>
-</ul>
-</div>
+<div class="paragraph">
+<p>No changes.</p>
 </div>
 </div>
 </div>
