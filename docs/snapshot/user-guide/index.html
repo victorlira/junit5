@@ -2047,10 +2047,30 @@ then use them in tests like in the <code>assertWithHamcrestMatcher()</code> meth
 <div class="sect2">
 <h3 id="writing-tests-assumptions"><a class="anchor" href="#writing-tests-assumptions"></a>2.6. Assumptions</h3>
 <div class="paragraph">
-<p>JUnit Jupiter comes with a subset of the assumption methods that JUnit 4 provides and
+<p>Assumptions are typically used whenever it does not make sense to continue execution of a
+given test — for example, if the test depends on something that does not exist in the
+current runtime environment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When an assumption is valid, the assumption method does not throw an exception, and
+execution of the test continues as usual.</p>
+</li>
+<li>
+<p>When an assumption is invalid, the assumption method throws an exception of type
+<code>org.opentest4j.TestAbortedException</code> to signal that the test should be aborted instead
+of marked as a failure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>JUnit Jupiter comes with a subset of the <em>assumption</em> methods that JUnit 4 provides and
 adds a few that lend themselves well to being used with Java 8 lambda expressions and
-method references. All JUnit Jupiter assumptions are static methods in the
-<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/Assumptions.html">org.junit.jupiter.api.Assumptions</a></code> class.</p>
+method references.</p>
+</div>
+<div class="paragraph">
+<p>All JUnit Jupiter assumptions are static methods in the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/Assumptions.html">org.junit.jupiter.api.Assumptions</a></code> class.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2101,10 +2121,9 @@ method references. All JUnit Jupiter assumptions are static methods in the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As of JUnit Jupiter 5.4, it is also possible to use methods from JUnit 4&#8217;s
-<code>org.junit.Assume</code> class for assumptions. Specifically, JUnit Jupiter supports JUnit 4&#8217;s
-<code>AssumptionViolatedException</code> to signal that a test should be aborted instead of marked
-as a failure.
+It is also possible to use methods from JUnit 4&#8217;s <code>org.junit.Assume</code> class for
+assumptions. Specifically, JUnit Jupiter supports JUnit 4&#8217;s <code>AssumptionViolatedException</code>
+to signal that a test should be aborted instead of marked as a failure.
 </td>
 </tr>
 </table>
@@ -2115,13 +2134,41 @@ as a failure.
 <div class="paragraph">
 <p>JUnit Jupiter provides robust support for handling test exceptions. This includes the
 built-in mechanisms for managing test failures due to exceptions, the role of exceptions
-in implementing assertions, and how to specifically assert non-throwing conditions in code.</p>
+in implementing assertions and assumptions, and how to specifically assert non-throwing
+conditions in code.</p>
 </div>
 <div class="sect3">
 <h4 id="writing-tests-exceptions-uncaught"><a class="anchor" href="#writing-tests-exceptions-uncaught"></a>2.7.1. Uncaught Exceptions</h4>
 <div class="paragraph">
-<p>In JUnit Jupiter, if an exception is thrown and not caught within the test method, the
-framework will mark the test as failed.</p>
+<p>In JUnit Jupiter, if an exception is thrown from a test method, a lifecycle method, or an
+extension and not caught within that test method, lifecycle method, or extension, the
+framework will mark the test or test class as failed.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Failed assumptions deviate from this general rule.</p>
+</div>
+<div class="paragraph">
+<p>In contrast to failed assertions, failed assumptions do not result in a test failure;
+rather, a failed assumption results in a test being aborted.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#writing-tests-assumptions">Assumptions</a> for further details and examples.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the following example, the <code>failsDueToUncaughtException()</code> method throws an
+<code>ArithmeticException</code>. Since the exception is not caught within the test method, JUnit
+Jupiter will mark the test as failed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2135,11 +2182,6 @@ framework will mark the test as failed.</p>
 <span class="o">}</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>In the above example, the <code>failsDueToUncaughtException()</code> method throws an
-<code>ArithmeticException</code>. Since the exception is not caught within the test method, JUnit
-Jupiter will mark the test as failed.</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -2147,7 +2189,7 @@ Jupiter will mark the test as failed.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-It&#8217;s important to clarify that specifying a <code>throws</code> clause in the test method has
+It&#8217;s important to note that specifying a <code>throws</code> clause in the test method has
 no effect on the outcome of the test. JUnit Jupiter does not interpret a <code>throws</code> clause
 as an expectation or assertion about what exceptions the test method should throw. A test
 fails only if an exception is thrown unexpectedly or if an assertion fails.
@@ -2195,6 +2237,11 @@ is an instance of <code>AssertionError</code>.
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>In the following example, the <code>failsDueToUncaughtAssertionError()</code> method throws an
+<code>AssertionError</code>. Since the exception is not caught within the test method, JUnit Jupiter
+will mark the test as failed.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kd">private</span> <span class="kd">final</span> <span class="nc">Calculator</span> <span class="n">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Calculator</span><span class="o">();</span>
@@ -2206,11 +2253,6 @@ is an instance of <code>AssertionError</code>.
     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">99</span><span class="o">,</span> <span class="n">calculator</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
 <span class="o">}</span></code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>In the above example, the <code>failsDueToUncaughtAssertionError()</code> method throws an
-<code>AssertionError</code>. Since the exception is not caught within the test method, JUnit Jupiter
-will mark the test as failed.</p>
 </div>
 </div>
 <div class="sect3">
