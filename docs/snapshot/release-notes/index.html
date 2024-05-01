@@ -529,8 +529,8 @@ authors as well as build tool and IDE vendors.</p>
 </div>
 <div class="paragraph">
 <p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/74?closed=1">5.11.0-M2</a> milestone page in the
-JUnit repository on GitHub.</p>
+<a href="https://github.com/junit-team/junit5/milestone/74?closed=1">5.11.0-M2</a> milestone page in the JUnit
+repository on GitHub.</p>
 </div>
 <div class="sect2">
 <h3 id="release-notes-5.11.0-M2-overall-improvements"><a class="anchor" href="#release-notes-5.11.0-M2-overall-improvements"></a>Overall Improvements</h3>
@@ -539,8 +539,8 @@ JUnit repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The shipped bytecode was compiled with the <code>-parameters</code> option of <code>javac</code> and thus now
-contains metadata for reflection on parameters such as their names.</p>
+<p>Java classes in published artifacts are now compiled with the <code>-parameters</code> option of
+<code>javac</code> and thus now contain metadata for reflection on parameters such as their names.</p>
 </li>
 </ul>
 </div>
@@ -573,7 +573,16 @@ contains metadata for reflection on parameters such as their names.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p><code>NamespacedHierarchicalStore</code> now throws an <code>IllegalStateException</code> for any attempt to
+modify or query the store after it has been closed. In addition, an attempt to close a
+store that has already been closed will have no effect.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>See <a href="https://github.com/junit-team/junit5/issues/3614">issue 3614</a> for details.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
