@@ -4729,11 +4729,11 @@ be invoked four times: with the values <code>"apple"</code>, <code>"banana"</cod
 </div>
 <div class="paragraph">
 <p>It is also possible to provide a <code>Stream</code>, <code>DoubleStream</code>, <code>IntStream</code>, <code>LongStream</code>, or
-<code>Iterator</code> as the source of arguments via a <code>@FieldSource</code> field as long as the stream is
-wrapped in a <code>java.util.function.Supplier</code>. The following example demonstrates how to
-provide a <code>Supplier</code> of a <code>Stream</code> of named arguments. This parameterized test method
-will be invoked twice: with the values <code>"apple"</code> and <code>"banana"</code> and with display names
-<code>Apple</code> and <code>Banana</code>, respectively.</p>
+<code>Iterator</code> as the source of arguments via a <code>@FieldSource</code> field as long as the stream or
+iterator is wrapped in a <code>java.util.function.Supplier</code>. The following example demonstrates
+how to provide a <code>Supplier</code> of a <code>Stream</code> of named arguments. This parameterized test
+method will be invoked twice: with the values <code>"apple"</code> and <code>"banana"</code> and with display
+names <code>Apple</code> and <code>Banana</code>, respectively.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -13282,12 +13282,12 @@ value of lower stability.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.support.store</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NamespacedHierarchicalStore</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.support.store</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>NamespacedHierarchicalStoreException</code> <em>(class)</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.jfr</code></p></td>
