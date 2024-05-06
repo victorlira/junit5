@@ -115,7 +115,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
  <a href="#%3Cinit%3E(org.junit.platform.engine.support.store.NamespacedHierarchicalStore,org.junit.platform.engine.support.store.NamespacedHierarchicalStore.CloseAction)"><code>NamespacedHierarchicalStore(NamespacedHierarchicalStore, CloseAction)</code></a>
  constructor.
 
- <p>This class is thread-safe.</div>
+ <p>This class is thread-safe. Please note, however, that thread safety is
+ not guaranteed while the <a href="#close()"><code>close()</code></a> method is being invoked.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.10</dd>
