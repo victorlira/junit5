@@ -223,7 +223,7 @@ V&gt;&nbsp;V</code></div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a><wbr>&lt;<a href="NamespacedHierarchicalStore.html" title="type parameter in NamespacedHierarchicalStore">N</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newChild()" class="member-name-link">newChild</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Create a child store with this store as its parent using the same close
+<div class="block">Create a child store with this store as its parent and this store's close
  action.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
@@ -303,7 +303,7 @@ V&gt;&nbsp;V</code></div>
 <section class="detail" id="newChild()">
 <h3>newChild</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="NamespacedHierarchicalStore.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStore</a>&lt;<a href="NamespacedHierarchicalStore.html" title="type parameter in NamespacedHierarchicalStore">N</a>&gt;</span>&nbsp;<span class="element-name">newChild</span>()</div>
-<div class="block">Create a child store with this store as its parent using the same close
+<div class="block">Create a child store with this store as its parent and this store's close
  action.</div>
 </section>
 </li>
@@ -365,7 +365,8 @@ V&gt;&nbsp;V</code></div>
 <dt>Returns:</dt>
 <dd>the stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+<dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if this store has already been
+ closed</dd>
 </dl>
 </section>
 </li>
@@ -387,8 +388,7 @@ V&gt;&nbsp;V</code></div>
 <dd>the stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if the stored value cannot
- be cast to the required type</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+ be cast to the required type, or if this store has already been closed</dd>
 </dl>
 </section>
 </li>
@@ -410,7 +410,8 @@ V&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/
 <dt>Returns:</dt>
 <dd>the stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+<dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if this store has already been
+ closed</dd>
 </dl>
 </section>
 </li>
@@ -437,8 +438,7 @@ V&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-n
 <dd>the stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if the stored value cannot
- be cast to the required type</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+ be cast to the required type, or if this store has already been closed</dd>
 </dl>
 </section>
 </li>
@@ -463,8 +463,7 @@ V&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-n
 <dd>the previously stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if an error occurs while
- storing the value</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+ storing the value, or if this store has already been closed</dd>
 </dl>
 </section>
 </li>
@@ -485,7 +484,8 @@ V&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-n
 <dt>Returns:</dt>
 <dd>the previously stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+<dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if this store has already been
+ closed</dd>
 </dl>
 </section>
 </li>
@@ -510,8 +510,7 @@ V&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-n
 <dd>the previously stored value; may be <code>null</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="NamespacedHierarchicalStoreException.html" title="class in org.junit.platform.engine.support.store">NamespacedHierarchicalStoreException</a></code> - if the stored value cannot
- be cast to the required type</dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html" title="class or interface in java.lang" class="external-link">IllegalStateException</a></code> - if this store has already been closed</dd>
+ be cast to the required type, or if this store has already been closed</dd>
 </dl>
 </section>
 </li>
