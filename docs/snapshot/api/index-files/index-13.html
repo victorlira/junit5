@@ -162,13 +162,13 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html#message(java.lang.String)" class="member-name-link">message(String)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html" title="class in org.junit.platform.testkit.engine">TestExecutionResultConditions</a></dt>
 <dd>
-<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.25.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if a
+<div class="block">Create a new <code>Condition</code> that matches if and only if a
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>'s <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#getMessage()" title="class or interface in java.lang" class="external-link">message</a> is equal
  to the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link"><code>String</code></a>.</div>
 </dd>
 <dt><a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html#message(java.util.function.Predicate)" class="member-name-link">message(Predicate&lt;String&gt;)</a> - Static method in class org.junit.platform.testkit.engine.<a href="../org.junit.platform.testkit/org/junit/platform/testkit/engine/TestExecutionResultConditions.html" title="class in org.junit.platform.testkit.engine">TestExecutionResultConditions</a></dt>
 <dd>
-<div class="block">Create a new <a href="https://javadoc.io/doc/org.assertj/assertj-core/3.25.3/org/assertj/core/api/Condition.html" title="class or interface in org.assertj.core.api" class="external-link"><code>Condition</code></a> that matches if and only if a
+<div class="block">Create a new <code>Condition</code> that matches if and only if a
  <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>'s <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#getMessage()" title="class or interface in java.lang" class="external-link">message</a> matches
  the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a>.</div>
 </dd>
@@ -239,10 +239,16 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params.provider">MethodSource</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
-<div class="block"><code>@MethodSource</code> is an <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> which provides access
- to values returned from <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html#value()">factory methods</a> of the class in
- which this annotation is declared or from static factory methods in external
- classes referenced by <em>fully qualified method name</em>.</div>
+<div class="block"><code>@MethodSource</code> is a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a>
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> which provides access to values returned from
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html#value()">factory methods</a> of the class in which this annotation
+ is declared or from static factory methods in external classes referenced
+ by <em>fully qualified method name</em>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSources.html" class="type-name-link" title="annotation interface in org.junit.jupiter.params.provider">MethodSources</a> - Annotation Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
+<dd>
+<div class="block"><code>@MethodSources</code> is a simple container for one or more
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>MethodSource</code></a> annotations.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/condition/DisabledForJreRange.html#min()" class="member-name-link">min()</a> - Element in annotation interface org.junit.jupiter.api.condition.<a href="../org.junit.jupiter.api/org/junit/jupiter/api/condition/DisabledForJreRange.html" title="annotation interface in org.junit.jupiter.api.condition">DisabledForJreRange</a></dt>
 <dd>

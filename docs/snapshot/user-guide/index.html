@@ -684,6 +684,7 @@ pre.rouge .gs {
 <li><a href="#writing-tests-parameterized-tests-sources-CsvSource">@CsvSource</a></li>
 <li><a href="#writing-tests-parameterized-tests-sources-CsvFileSource">@CsvFileSource</a></li>
 <li><a href="#writing-tests-parameterized-tests-sources-ArgumentsSource">@ArgumentsSource</a></li>
+<li><a href="#writing-tests-parameterized-repeatable-sources">Multiple sources using repeatable annotations</a></li>
 </ul>
 </li>
 <li><a href="#writing-tests-parameterized-tests-argument-conversion">2.17.4. Argument Conversion</a>
@@ -5150,6 +5151,69 @@ class or as a <code>static</code> nested class.</p>
 <p>If you wish to implement a custom <code>ArgumentsProvider</code> that also consumes an annotation
 (like built-in providers such as <code><a href="https://github.com/junit-team/junit5/blob/main/junit-jupiter-params/src/main/java/org/junit/jupiter/params/provider/ValueArgumentsProvider.java">ValueArgumentsProvider</a></code> or <code><a href="https://github.com/junit-team/junit5/blob/main/junit-jupiter-params/src/main/java/org/junit/jupiter/params/provider/CsvArgumentsProvider.java">CsvArgumentsProvider</a></code>),
 you have the possibility to extend the <code><a href="../api/org.junit.jupiter.params/org/junit/jupiter/params/provider/AnnotationBasedArgumentsProvider.html">AnnotationBasedArgumentsProvider</a></code> class.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="writing-tests-parameterized-repeatable-sources"><a class="anchor" href="#writing-tests-parameterized-repeatable-sources"></a>Multiple sources using repeatable annotations</h5>
+<div class="paragraph">
+<p>Repeatable annotations provide a convenient way to specify multiple sources from
+different providers.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"A parameterized test that makes use of repeatable annotations"</span><span class="o">)</span>
+<span class="nd">@ParameterizedTest</span>
+<span class="nd">@MethodSource</span><span class="o">(</span><span class="s">"someProvider"</span><span class="o">)</span>
+<span class="nd">@MethodSource</span><span class="o">(</span><span class="s">"otherProvider"</span><span class="o">)</span>
+<span class="kt">void</span> <span class="nf">testWithRepeatedAnnotation</span><span class="o">(</span><span class="nc">String</span> <span class="n">argument</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">assertNotNull</span><span class="o">(</span><span class="n">argument</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">static</span> <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">someProvider</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"foo"</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">static</span> <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">otherProvider</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"bar"</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Following the above parameterized test, a test case will run for each argument:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[1] foo
+[2] bar</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following annotations are repeatable:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>@ValueSource</code></p>
+</li>
+<li>
+<p><code>@EnumSource</code></p>
+</li>
+<li>
+<p><code>@MethodSource</code></p>
+</li>
+<li>
+<p><code>@FieldSource</code></p>
+</li>
+<li>
+<p><code>@CsvSource</code></p>
+</li>
+<li>
+<p><code>@CsvFileSource</code></p>
+</li>
+<li>
+<p><code>@ArgumentsSource</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -13152,6 +13216,11 @@ value of lower stability.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldSource</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.jupiter.params.provider</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FieldSources</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>5.11</code></p></td>
 </tr>
 <tr>
