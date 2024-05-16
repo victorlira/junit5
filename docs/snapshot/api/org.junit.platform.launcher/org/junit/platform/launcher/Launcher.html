@@ -105,7 +105,7 @@ loadScripts(document, 'script');</script>
  <a href="../../../../../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html#getId()">ID</a> that is unique
  among the registered test engines. For example, the default implementation
  returned by <a href="core/LauncherFactory.html#create()"><code>LauncherFactory.create()</code></a>
- dynamically discovers test engines via Java's <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.
+ dynamically discovers test engines via Java's <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.
 
  <p>Test discovery and execution require a <a href="LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a>
  that is passed to all registered engines. Each engine decides which tests it
@@ -118,7 +118,7 @@ loadScripts(document, 'script');</script>
  in the order in which they were registered.  The default implementation
  returned by <a href="core/LauncherFactory.html#create()"><code>LauncherFactory.create()</code></a>
  dynamically discovers test execution listeners via Java's
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>1.0</dd>

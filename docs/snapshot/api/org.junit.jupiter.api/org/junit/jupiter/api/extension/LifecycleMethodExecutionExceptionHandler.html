@@ -133,7 +133,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  handler methods for the same lifecycle will not be invoked; otherwise, the
  corresponding handler method of the next registered
  <code>LifecycleMethodExecutionExceptionHandler</code> (if there is one) will be
- invoked with any <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by the previous handler.</div>
+ invoked with any <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> thrown by the previous handler.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.5</dd>
@@ -160,30 +160,30 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleAfterAllMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)" class="member-name-link">handleAfterAllMethodExecutionException</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@AfterAll</code> lifecycle method.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleAfterEachMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)" class="member-name-link">handleAfterEachMethodExecutionException</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@AfterEach</code> lifecycle method.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleBeforeAllMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)" class="member-name-link">handleBeforeAllMethodExecutionException</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@BeforeAll</code> lifecycle method.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#handleBeforeEachMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)" class="member-name-link">handleBeforeEachMethodExecutionException</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@BeforeEach</code> lifecycle method.</div>
 </div>
 </div>
@@ -204,9 +204,9 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <section class="detail" id="handleBeforeAllMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)">
 <h3>handleBeforeAllMethodExecutionException</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleBeforeAllMethodExecutionException</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
-                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
+                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@BeforeAll</code> lifecycle method.
 
  <p>Please refer to the class-level Javadoc for
@@ -216,7 +216,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <dd><code>context</code> - the current extension context; never <code>null</code></dd>
 <dd><code>throwable</code> - the <code>Throwable</code> to handle; never <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>
@@ -224,9 +224,9 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <section class="detail" id="handleBeforeEachMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)">
 <h3>handleBeforeEachMethodExecutionException</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleBeforeEachMethodExecutionException</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
-                                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
+                                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@BeforeEach</code> lifecycle method.
 
  <p>Please refer to the class-level Javadoc for
@@ -236,7 +236,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <dd><code>context</code> - the current extension context; never <code>null</code></dd>
 <dd><code>throwable</code> - the <code>Throwable</code> to handle; never <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>
@@ -244,9 +244,9 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <section class="detail" id="handleAfterEachMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)">
 <h3>handleAfterEachMethodExecutionException</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleAfterEachMethodExecutionException</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
-                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
+                                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@AfterEach</code> lifecycle method.
 
  <p>Please refer to the class-level Javadoc for
@@ -256,7 +256,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <dd><code>context</code> - the current extension context; never <code>null</code></dd>
 <dd><code>throwable</code> - the <code>Throwable</code> to handle; never <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>
@@ -264,9 +264,9 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <section class="detail" id="handleAfterAllMethodExecutionException(org.junit.jupiter.api.extension.ExtensionContext,java.lang.Throwable)">
 <h3>handleAfterAllMethodExecutionException</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handleAfterAllMethodExecutionException</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
-                                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
-<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&nbsp;throwable)</span>
+                                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+<div class="block">Handle the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> that was thrown during execution of
  a <code>@AfterAll</code> lifecycle method.
 
  <p>Please refer to the class-level Javadoc for
@@ -276,7 +276,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <dd><code>context</code> - the current extension context; never <code>null</code></dd>
 <dd><code>throwable</code> - the <code>Throwable</code> to handle; never <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>

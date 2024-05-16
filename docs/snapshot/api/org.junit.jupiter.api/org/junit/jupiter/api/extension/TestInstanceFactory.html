@@ -100,7 +100,7 @@ loadScripts(document, 'script');</script>
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.7")
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">TestInstanceFactory</span><span class="extends-implements">
@@ -120,8 +120,8 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  given test class. Registering multiple factories for any single test class
  will result in an exception being thrown for all tests in that class, in any
  subclass, and in any nested class. Note that any <code>TestInstanceFactory</code>
- registered in a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#getSuperclass()" title="class or interface in java.lang" class="external-link">superclass</a> or
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#getEnclosingClass()" title="class or interface in java.lang" class="external-link">enclosing</a> class (i.e., in the case of
+ registered in a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html#getSuperclass()" title="class or interface in java.lang" class="external-link">superclass</a> or
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html#getEnclosingClass()" title="class or interface in java.lang" class="external-link">enclosing</a> class (i.e., in the case of
  a <code>@Nested</code> test class) is <em>inherited</em>. It is therefore the
  user's responsibility to ensure that only a single <code>TestInstanceFactory</code>
  is registered for any specific test class.
@@ -158,7 +158,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createTestInstance(org.junit.jupiter.api.extension.TestInstanceFactoryContext,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">createTestInstance</a><wbr>(<a href="TestInstanceFactoryContext.html" title="interface in org.junit.jupiter.api.extension">TestInstanceFactoryContext</a>&nbsp;factoryContext,
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -181,14 +181,14 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <li>
 <section class="detail" id="createTestInstance(org.junit.jupiter.api.extension.TestInstanceFactoryContext,org.junit.jupiter.api.extension.ExtensionContext)">
 <h3>createTestInstance</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">createTestInstance</span><wbr><span class="parameters">(<a href="TestInstanceFactoryContext.html" title="interface in org.junit.jupiter.api.extension">TestInstanceFactoryContext</a>&nbsp;factoryContext,
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">createTestInstance</span><wbr><span class="parameters">(<a href="TestInstanceFactoryContext.html" title="interface in org.junit.jupiter.api.extension">TestInstanceFactoryContext</a>&nbsp;factoryContext,
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</span>
                    throws <span class="exceptions"><a href="TestInstantiationException.html" title="class in org.junit.jupiter.api.extension">TestInstantiationException</a></span></div>
 <div class="block">Callback for creating a test instance for the supplied context.
 
  <p><strong>Note</strong>: the <code>ExtensionContext</code> supplied to a
  <code>TestInstanceFactory</code> will always return an empty
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a> value from
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a> value from
  <a href="ExtensionContext.html#getTestInstance()"><code>getTestInstance()</code></a> since the
  test instance cannot exist before it has been created by a
  <code>TestInstanceFactory</code> or the framework itself.</div>

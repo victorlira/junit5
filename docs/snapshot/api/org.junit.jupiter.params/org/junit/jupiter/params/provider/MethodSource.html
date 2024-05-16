@@ -88,15 +88,15 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="MethodSources.html" title="annotation interface in org.junit.jupiter.params.provider">MethodSources.class</a>)
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Target.html" title="class or interface in java.lang.annotation" class="external-link">@Target</a>({<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#ANNOTATION_TYPE" title="class or interface in java.lang.annotation" class="external-link">ANNOTATION_TYPE</a>,<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/ElementType.html#METHOD" title="class or interface in java.lang.annotation" class="external-link">METHOD</a>})
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Retention.html" title="class or interface in java.lang.annotation" class="external-link">@Retention</a>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME" title="class or interface in java.lang.annotation" class="external-link">RUNTIME</a>)
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Documented.html" title="class or interface in java.lang.annotation" class="external-link">@Documented</a>
+<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">@Repeatable</a>(<a href="MethodSources.html" title="annotation interface in org.junit.jupiter.params.provider">MethodSources.class</a>)
 <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.7")
 <a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider">@ArgumentsSource</a>(org.junit.jupiter.params.provider.MethodArgumentsProvider.class)
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">MethodSource</span></div>
-<div class="block"><code>@MethodSource</code> is a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a>
+<div class="block"><code>@MethodSource</code> is a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/annotation/Repeatable.html" title="class or interface in java.lang.annotation" class="external-link">repeatable</a>
  <a href="ArgumentsSource.html" title="annotation interface in org.junit.jupiter.params.provider"><code>ArgumentsSource</code></a> which provides access to values returned from
  <a href="#value()">factory methods</a> of the class in which this annotation
  is declared or from static factory methods in external classes referenced
@@ -106,17 +106,17 @@ loadScripts(document, 'script');</script>
  and each set of "arguments" within the "stream" will be provided as the physical
  arguments for individual invocations of the annotated
  <a href="../ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method. Generally speaking this
- translates to a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>
+ translates to a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>
  (i.e., <code>Stream&lt;Arguments&gt;</code>); however, the actual concrete return type
  can take on many forms. In this context, a "stream" is anything that JUnit
  can reliably convert into a <code>Stream</code>, such as
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/DoubleStream.html" title="class or interface in java.util.stream" class="external-link"><code>DoubleStream</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/LongStream.html" title="class or interface in java.util.stream" class="external-link"><code>LongStream</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/IntStream.html" title="class or interface in java.util.stream" class="external-link"><code>IntStream</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link"><code>Iterable</code></a>, an array of objects, or an array of primitives. Each set of
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/DoubleStream.html" title="class or interface in java.util.stream" class="external-link"><code>DoubleStream</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/LongStream.html" title="class or interface in java.util.stream" class="external-link"><code>LongStream</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/IntStream.html" title="class or interface in java.util.stream" class="external-link"><code>IntStream</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link"><code>Collection</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link"><code>Iterator</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link"><code>Iterable</code></a>, an array of objects, or an array of primitives. Each set of
  "arguments" within the "stream" can be supplied as an instance of
  <a href="Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a>, an array of objects (e.g., <code>Object[]</code>,
  <code>String[]</code>, etc.), or a single <em>value</em> if the parameterized test
@@ -193,7 +193,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Optional Element</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
 <div class="col-second even-row-color"><code><a href="#value()" class="member-name-link">value</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The names of factory methods within the test class or in external classes
@@ -214,7 +214,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="value()">
 <h3>value</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">value</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</span>&nbsp;<span class="element-name">value</span></div>
 <div class="block">The names of factory methods within the test class or in external classes
  to use as sources for arguments.
 

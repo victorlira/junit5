@@ -114,7 +114,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  <a href="#provideTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)"><code>provideTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)</code></a>. The former is called by the
  framework to determine whether this extension wants to act on a test template
  that is about to be executed. If so, the latter is called and must return a
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension"><code>TestTemplateInvocationContext</code></a> instances. Otherwise,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link"><code>Stream</code></a> of <a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension"><code>TestTemplateInvocationContext</code></a> instances. Otherwise,
  this provider is ignored for the execution of the current test template.
 
  <p>A provider that has returned <code>true</code> from its <a href="#supportsTestTemplate(org.junit.jupiter.api.extension.ExtensionContext)"><code>supportsTestTemplate(org.junit.jupiter.api.extension.ExtensionContext)</code></a>
@@ -153,7 +153,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;<a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">provideTestTemplateInvocationContexts</a><wbr>(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Provide <a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a>
@@ -204,7 +204,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <li>
 <section class="detail" id="provideTestTemplateInvocationContexts(org.junit.jupiter.api.extension.ExtensionContext)">
 <h3>provideTestTemplateInvocationContexts</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a>&gt;</span>&nbsp;<span class="element-name">provideTestTemplateInvocationContexts</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</span></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a>&lt;<a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">TestTemplateInvocationContext</a>&gt;</span>&nbsp;<span class="element-name">provideTestTemplateInvocationContexts</span><wbr><span class="parameters">(<a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;context)</span></div>
 <div class="block">Provide <a href="TestTemplateInvocationContext.html" title="interface in org.junit.jupiter.api.extension">invocation contexts</a>
  for the test template method represented by the supplied <code>context</code>.
 
@@ -213,8 +213,8 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  this method is allowed to return an empty <code>Stream</code> but not <code>null</code>.
 
  <p>The returned <code>Stream</code> will be properly closed by calling
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/BaseStream.html#close()" title="class or interface in java.util.stream" class="external-link"><code>BaseStream.close()</code></a>, making it safe to use a resource such as
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html#lines(java.nio.file.Path)" title="class or interface in java.nio.file" class="external-link"><code>Files.lines()</code></a>.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/BaseStream.html#close()" title="class or interface in java.util.stream" class="external-link"><code>BaseStream.close()</code></a>, making it safe to use a resource such as
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#lines(java.nio.file.Path)" title="class or interface in java.nio.file" class="external-link"><code>Files.lines()</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>context</code> - the extension context for the test template method about

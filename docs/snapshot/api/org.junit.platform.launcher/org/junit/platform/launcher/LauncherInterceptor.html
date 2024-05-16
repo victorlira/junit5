@@ -104,7 +104,7 @@ loadScripts(document, 'script');</script>
  <ul>
      <li>
          creation of <a href="LauncherSessionListener.html" title="interface in org.junit.platform.launcher"><code>LauncherSessionListener</code></a> instances registered via the
-         <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism
+         <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism
      </li>
      <li>
          creation of <a href="Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a> instances
@@ -117,13 +117,13 @@ loadScripts(document, 'script');</script>
  </ul>
 
  <p>Implementations of this interface can be registered via the
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism by additionally
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism by additionally
  setting the <a href="LauncherConstants.html#ENABLE_LAUNCHER_INTERCEPTORS">"junit.platform.launcher.interceptors.enabled"</a>
  configuration parameter to <code>true</code>.
 
- <p>A typical use case is to create a custom <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link"><code>ClassLoader</code></a> in the
+ <p>A typical use case is to create a custom <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/ClassLoader.html" title="class or interface in java.lang" class="external-link"><code>ClassLoader</code></a> in the
  constructor of the implementing class, replace the
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#setContextClassLoader(java.lang.ClassLoader)" title="class or interface in java.lang" class="external-link"><code>contextClassLoader</code></a> of the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.html#setContextClassLoader(java.lang.ClassLoader)" title="class or interface in java.lang" class="external-link"><code>contextClassLoader</code></a> of the
  current thread while <a href="#intercept(org.junit.platform.launcher.LauncherInterceptor.Invocation)"><code>intercepting</code></a> invocations,
  and close the custom <code>ClassLoader</code> in <a href="#close()"><code>close()</code></a></div>
 <dl class="notes">

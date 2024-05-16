@@ -96,22 +96,22 @@ loadScripts(document, 'script');</script>
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.0")
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">Executable</span></div>
 <div class="block"><code>Executable</code> is a functional interface that can be used to
  implement any generic block of code that potentially throws a
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
 
- <p>The <code>Executable</code> interface is similar to <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link"><code>Runnable</code></a>,
+ <p>The <code>Executable</code> interface is similar to <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link"><code>Runnable</code></a>,
  except that an <code>Executable</code> can throw any kind of exception.
 
  <h2 id="rationale-for-throwing-throwable-instead-of-exception-heading">Rationale for throwing <code>Throwable</code> instead of <code>Exception</code></h2>
 
  <p>Although Java applications typically throw exceptions that are instances
- of <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>, or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AssertionError.html" title="class or interface in java.lang" class="external-link"><code>AssertionError</code></a> (in testing
+ of <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>, or <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AssertionError.html" title="class or interface in java.lang" class="external-link"><code>AssertionError</code></a> (in testing
  scenarios), there may be use cases where an <code>Executable</code> needs to
  explicitly throw a <code>Throwable</code>. In order to support such specialized
  use cases, <a href="#execute()"><code>execute()</code></a> is declared to throw <code>Throwable</code>.</div>
@@ -166,10 +166,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="execute()">
 <h3>execute</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">execute</span>()
-      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>

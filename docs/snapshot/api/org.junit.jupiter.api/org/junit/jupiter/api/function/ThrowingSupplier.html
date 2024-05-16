@@ -100,23 +100,23 @@ loadScripts(document, 'script');</script>
 <dd>This is a functional interface and can therefore be used as the assignment target for a lambda expression or method reference.</dd>
 </dl>
 <hr>
-<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
+<div class="type-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/FunctionalInterface.html" title="class or interface in java.lang" class="external-link">@FunctionalInterface</a>
 <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="5.0")
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ThrowingSupplier&lt;T&gt;</span></div>
 <div class="block"><code>ThrowingSupplier</code> is a functional interface that can be used to
  implement any generic block of code that returns an object and
- potentially throws a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
+ potentially throws a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
 
  <p>The <code>ThrowingSupplier</code> interface is similar to
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>, except that a <code>ThrowingSupplier</code>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a>, except that a <code>ThrowingSupplier</code>
  can throw any kind of exception, including checked exceptions.
 
  <h2 id="rationale-for-throwing-throwable-instead-of-exception-heading">Rationale for throwing <code>Throwable</code> instead of <code>Exception</code></h2>
 
  <p>Although Java applications typically throw exceptions that are instances
- of <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>, or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/AssertionError.html" title="class or interface in java.lang" class="external-link"><code>AssertionError</code></a> (in testing
+ of <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/RuntimeException.html" title="class or interface in java.lang" class="external-link"><code>RuntimeException</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Error.html" title="class or interface in java.lang" class="external-link"><code>Error</code></a>, or <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/AssertionError.html" title="class or interface in java.lang" class="external-link"><code>AssertionError</code></a> (in testing
  scenarios), there may be use cases where a <code>ThrowingSupplier</code> needs to
  explicitly throw a <code>Throwable</code>. In order to support such specialized
  use cases, <a href="#get()"><code>get()</code></a> is declared to throw <code>Throwable</code>.</div>
@@ -126,7 +126,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link"><code>Supplier</code></a></li>
 <li><a href="../Assertions.html#assertTimeout(java.time.Duration,org.junit.jupiter.api.function.ThrowingSupplier)"><code>Assertions.assertTimeout(java.time.Duration, ThrowingSupplier)</code></a></li>
 <li><a href="../Assertions.html#assertTimeoutPreemptively(java.time.Duration,org.junit.jupiter.api.function.ThrowingSupplier)"><code>Assertions.assertTimeoutPreemptively(java.time.Duration, ThrowingSupplier)</code></a></li>
 <li><a href="Executable.html" title="interface in org.junit.jupiter.api.function"><code>Executable</code></a></li>
@@ -171,13 +171,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="get()">
 <h3>get</h3>
 <div class="member-signature"><span class="return-type"><a href="ThrowingSupplier.html" title="type parameter in ThrowingSupplier">T</a></span>&nbsp;<span class="element-name">get</span>()
-throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
+throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span></div>
 <div class="block">Get a result, potentially throwing an exception.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a result</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></dd>
 </dl>
 </section>
 </li>

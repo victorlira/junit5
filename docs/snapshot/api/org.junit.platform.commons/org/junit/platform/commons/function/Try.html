@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.junit.platform.commons.function</a></div>
 <h1 title="Class Try" class="title">Class Try&lt;V&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">org.junit.platform.commons.function.Try&lt;V&gt;</div>
 </div>
 <section class="class-description" id="class-description">
@@ -98,12 +98,12 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#MAINTAINED" title="class or interface in org.apiguardian.api" class="external-link">MAINTAINED</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.4")
 </span><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Try&lt;V&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">A container object which may either contain a nullable value in case of
  <em>success</em> or an exception in case of <em>failure</em>.
 
  <p>Instances of this class should be returned by methods instead of
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a> when callers might want to report the exception via logging
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a> when callers might want to report the exception via logging
  or by wrapping it in another exception at a later point in time, e.g. via
  <a href="#getOrThrow(java.util.function.Function)"><code>getOrThrow(Function)</code></a>.
 
@@ -147,7 +147,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;U&gt;&nbsp;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;U&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#andThen(java.util.function.Function)" class="member-name-link">andThen</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>,<wbr><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;&gt;&nbsp;function)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#andThen(java.util.function.Function)" class="member-name-link">andThen</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>,<wbr><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;&gt;&nbsp;function)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">If this <code>Try</code> is a success, apply the supplied function to its
  value and return the resulting <code>Try</code>; if this <code>Try</code> is a
@@ -161,14 +161,14 @@ loadScripts(document, 'script');</script>
  transformer's outcome; if this <code>Try</code> is a failure, do nothing.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;V&gt;&nbsp;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;V&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#call(java.util.concurrent.Callable)" class="member-name-link">call</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;V&gt;&nbsp;action)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#call(java.util.concurrent.Callable)" class="member-name-link">call</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;V&gt;&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link"><code>Callable</code></a> and return a successful <code>Try</code>
+<div class="block">Call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link"><code>Callable</code></a> and return a successful <code>Try</code>
  that contains the returned value or, in case an exception was thrown, a
  failed <code>Try</code> that contains the exception.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;V&gt;&nbsp;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;V&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#failure(java.lang.Exception)" class="member-name-link">failure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;cause)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#failure(java.lang.Exception)" class="member-name-link">failure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;cause)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Convert the supplied exception into a failed <code>Try</code>.</div>
 </div>
@@ -178,33 +178,33 @@ loadScripts(document, 'script');</script>
 <div class="block">If this <code>Try</code> is a success, get the contained value; if this
  <code>Try</code> is a failure, throw the contained exception.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;E extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;<br><a href="Try.html" title="type parameter in Try">V</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrThrow(java.util.function.Function)" class="member-name-link">getOrThrow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>,<wbr>E&gt;&nbsp;exceptionTransformer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;<br><a href="Try.html" title="type parameter in Try">V</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrThrow(java.util.function.Function)" class="member-name-link">getOrThrow</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>,<wbr>E&gt;&nbsp;exceptionTransformer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">If this <code>Try</code> is a success, get the contained value; if this
- <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a> with the
- contained exception and throw the resulting <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>.</div>
+ <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a> with the
+ contained exception and throw the resulting <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#ifFailure(java.util.function.Consumer)" class="member-name-link">ifFailure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;&nbsp;causeConsumer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#ifFailure(java.util.function.Consumer)" class="member-name-link">ifFailure</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;&nbsp;causeConsumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If this <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
+<div class="block">If this <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
  the contained exception; otherwise, do nothing.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#ifSuccess(java.util.function.Consumer)" class="member-name-link">ifSuccess</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;valueConsumer)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#ifSuccess(java.util.function.Consumer)" class="member-name-link">ifSuccess</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;valueConsumer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If this <code>Try</code> is a success, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
+<div class="block">If this <code>Try</code> is a success, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
  the contained value; otherwise, do nothing.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElse(java.util.function.Supplier)" class="member-name-link">orElse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&gt;&nbsp;supplier)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElse(java.util.function.Supplier)" class="member-name-link">orElse</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&gt;&nbsp;supplier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">If this <code>Try</code> is a failure, call the supplied supplier and return
  the resulting <code>Try</code>; if this <code>Try</code> is a success, do nothing.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Try.html" title="class in org.junit.platform.commons.function">Try</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElseTry(java.util.concurrent.Callable)" class="member-name-link">orElseTry</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElseTry(java.util.concurrent.Callable)" class="member-name-link">orElseTry</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">If this <code>Try</code> is a failure, call the supplied action and return a
  new successful or failed <code>Try</code> depending on the action's outcome;
@@ -215,19 +215,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Convert the supplied value into a succeeded <code>Try</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a><wbr>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toOptional()" class="member-name-link">toOptional</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If this <code>Try</code> is a failure, return an empty <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; if
+<div class="block">If this <code>Try</code> is a failure, return an empty <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; if
  this <code>Try</code> is a success, wrap the contained value using
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html#ofNullable(T)" title="class or interface in java.util" class="external-link"><code>Optional.ofNullable(Object)</code></a>.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html#ofNullable(T)" title="class or interface in java.util" class="external-link"><code>Optional.ofNullable(Object)</code></a>.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -242,8 +242,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="call(java.util.concurrent.Callable)">
 <h3>call</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;V&gt;</span>&nbsp;<span class="element-name">call</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;V&gt;&nbsp;action)</span></div>
-<div class="block">Call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link"><code>Callable</code></a> and return a successful <code>Try</code>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;V&gt;</span>&nbsp;<span class="element-name">call</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;V&gt;&nbsp;action)</span></div>
+<div class="block">Call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link"><code>Callable</code></a> and return a successful <code>Try</code>
  that contains the returned value or, in case an exception was thrown, a
  failed <code>Try</code> that contains the exception.</div>
 <dl class="notes">
@@ -279,7 +279,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="failure(java.lang.Exception)">
 <h3>failure</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;V&gt;</span>&nbsp;<span class="element-name">failure</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;cause)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;V&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;V&gt;</span>&nbsp;<span class="element-name">failure</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&nbsp;cause)</span></div>
 <div class="block">Convert the supplied exception into a failed <code>Try</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -308,7 +308,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="andThen(java.util.function.Function)">
 <h3>andThen</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;</span>&nbsp;<span class="element-name">andThen</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>,<wbr><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;&gt;&nbsp;function)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;</span>&nbsp;<span class="element-name">andThen</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>,<wbr><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;U&gt;&gt;&nbsp;function)</span></div>
 <div class="block">If this <code>Try</code> is a success, apply the supplied function to its
  value and return the resulting <code>Try</code>; if this <code>Try</code> is a
  failure, do nothing.</div>
@@ -323,7 +323,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="orElseTry(java.util.concurrent.Callable)">
 <h3>orElseTry</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">orElseTry</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;action)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">orElseTry</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/Callable.html" title="class or interface in java.util.concurrent" class="external-link">Callable</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;action)</span></div>
 <div class="block">If this <code>Try</code> is a failure, call the supplied action and return a
  new successful or failed <code>Try</code> depending on the action's outcome;
  if this <code>Try</code> is a success, do nothing.</div>
@@ -338,7 +338,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="orElse(java.util.function.Supplier)">
 <h3>orElse</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">orElse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&gt;&nbsp;supplier)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">orElse</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Supplier.html" title="class or interface in java.util.function" class="external-link">Supplier</a>&lt;<a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&gt;&nbsp;supplier)</span></div>
 <div class="block">If this <code>Try</code> is a failure, call the supplied supplier and return
  the resulting <code>Try</code>; if this <code>Try</code> is a success, do nothing.</div>
 <dl class="notes">
@@ -353,25 +353,25 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="get()">
 <h3>get</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="type parameter in Try">V</a></span>&nbsp;<span class="element-name">get</span>()
-               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">If this <code>Try</code> is a success, get the contained value; if this
  <code>Try</code> is a failure, throw the contained exception.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the contained value, if available; potentially <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code> - if this <code>Try</code> is a failure</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code> - if this <code>Try</code> is a failure</dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getOrThrow(java.util.function.Function)">
 <h3>getOrThrow</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="type parameter in Try">V</a></span>&nbsp;<span class="element-name">getOrThrow</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>,<wbr>E&gt;&nbsp;exceptionTransformer)</span>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;E extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;</span>&nbsp;<span class="return-type"><a href="Try.html" title="type parameter in Try">V</a></span>&nbsp;<span class="element-name">getOrThrow</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>,<wbr>E&gt;&nbsp;exceptionTransformer)</span>
                                             throws <span class="exceptions">E</span></div>
 <div class="block">If this <code>Try</code> is a success, get the contained value; if this
- <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a> with the
- contained exception and throw the resulting <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>.</div>
+ <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link"><code>Function</code></a> with the
+ contained exception and throw the resulting <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link"><code>Exception</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>exceptionTransformer</code> - the transformer to be called with the
@@ -386,8 +386,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="ifSuccess(java.util.function.Consumer)">
 <h3>ifSuccess</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">ifSuccess</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;valueConsumer)</span></div>
-<div class="block">If this <code>Try</code> is a success, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">ifSuccess</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;&nbsp;valueConsumer)</span></div>
+<div class="block">If this <code>Try</code> is a success, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
  the contained value; otherwise, do nothing.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -401,8 +401,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="ifFailure(java.util.function.Consumer)">
 <h3>ifFailure</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">ifFailure</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;&nbsp;causeConsumer)</span></div>
-<div class="block">If this <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Try.html" title="class in org.junit.platform.commons.function">Try</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">ifFailure</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a>&gt;&nbsp;causeConsumer)</span></div>
+<div class="block">If this <code>Try</code> is a failure, call the supplied <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link"><code>Consumer</code></a> with
  the contained exception; otherwise, do nothing.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -416,13 +416,13 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="toOptional()">
 <h3>toOptional</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">toOptional</span>()</div>
-<div class="block">If this <code>Try</code> is a failure, return an empty <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; if
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link">Optional</a>&lt;<a href="Try.html" title="type parameter in Try">V</a>&gt;</span>&nbsp;<span class="element-name">toOptional</span>()</div>
+<div class="block">If this <code>Try</code> is a failure, return an empty <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; if
  this <code>Try</code> is a success, wrap the contained value using
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html#ofNullable(T)" title="class or interface in java.util" class="external-link"><code>Optional.ofNullable(Object)</code></a>.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html#ofNullable(T)" title="class or interface in java.util" class="external-link"><code>Optional.ofNullable(Object)</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>an <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; never <code>null</code> but potentially
+<dd>an <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html" title="class or interface in java.util" class="external-link"><code>Optional</code></a>; never <code>null</code> but potentially
  <em>empty</em></dd>
 </dl>
 </section>

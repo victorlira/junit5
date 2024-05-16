@@ -193,7 +193,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Execute the <em>behavior</em> of this node.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a><wbr>&lt;<a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getExclusiveResources()" class="member-name-link">getExclusiveResources</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Get the set of <a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">exclusive resources</a>
@@ -248,13 +248,13 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="prepare(C)">
 <h3 id="prepare(org.junit.platform.engine.support.hierarchical.EngineExecutionContext)">prepare</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Node.html" title="type parameter in Node">C</a></span>&nbsp;<span class="element-name">prepare</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context)</span>
-           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Prepare the supplied <code>context</code> prior to execution.
 
  <p>The default implementation returns the supplied <code>context</code> unmodified.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -268,7 +268,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="cleanUp(C)">
 <h3 id="cleanUp(org.junit.platform.engine.support.hierarchical.EngineExecutionContext)">cleanUp</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">cleanUp</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context)</span>
-              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Clean up the supplied <code>context</code> after execution.
 
  <p>The default implementation does nothing.</div>
@@ -276,7 +276,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>context</code> - the context to execute in</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>Since:</dt>
 <dd>1.1</dd>
 <dt>See Also:</dt>
@@ -292,14 +292,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="shouldBeSkipped(C)">
 <h3 id="shouldBeSkipped(org.junit.platform.engine.support.hierarchical.EngineExecutionContext)">shouldBeSkipped</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Node.SkipResult.html" title="class in org.junit.platform.engine.support.hierarchical">Node.SkipResult</a></span>&nbsp;<span class="element-name">shouldBeSkipped</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context)</span>
-                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Determine if the execution of the supplied <code>context</code> should be
  <em>skipped</em>.
 
  <p>The default implementation returns <a href="Node.SkipResult.html#doNotSkip()"><code>Node.SkipResult.doNotSkip()</code></a>.</div>
 <dl class="notes">
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 </dl>
 </section>
 </li>
@@ -307,7 +307,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="before(C)">
 <h3 id="before(org.junit.platform.engine.support.hierarchical.EngineExecutionContext)">before</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Node.html" title="type parameter in Node">C</a></span>&nbsp;<span class="element-name">before</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context)</span>
-          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Execute the <em>before</em> behavior of this node.
 
  <p>This method will be called once <em>before</em> <a href="#execute(C,org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor)">execution</a> of this node.
@@ -320,7 +320,7 @@ loadScripts(document, 'script');</script>
 <dd>the new context to be used for children of this node; never
  <code>null</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -336,7 +336,7 @@ loadScripts(document, 'script');</script>
 <h3 id="execute(org.junit.platform.engine.support.hierarchical.EngineExecutionContext,org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor)">execute</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Node.html" title="type parameter in Node">C</a></span>&nbsp;<span class="element-name">execute</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context,
  <a href="Node.DynamicTestExecutor.html" title="interface in org.junit.platform.engine.support.hierarchical">Node.DynamicTestExecutor</a>&nbsp;dynamicTestExecutor)</span>
-           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Execute the <em>behavior</em> of this node.
 
  <p>Containers typically do not implement this method since the
@@ -354,7 +354,7 @@ loadScripts(document, 'script');</script>
 <dd>the new context to be used for children of this node and for the
  <em>after</em> behavior of the parent of this node, if any</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
@@ -369,7 +369,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="after(C)">
 <h3 id="after(org.junit.platform.engine.support.hierarchical.EngineExecutionContext)">after</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">after</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context)</span>
-            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Execute the <em>after</em> behavior of this node.
 
  <p>This method will be called once <em>after</em> <a href="#execute(C,org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor)">execution</a> of this node.
@@ -379,7 +379,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>context</code> - the context to execute in</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
@@ -397,7 +397,7 @@ loadScripts(document, 'script');</script>
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10")
 </span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">around</span><wbr><span class="parameters">(<a href="Node.html" title="type parameter in Node">C</a>&nbsp;context,
  <a href="Node.Invocation.html" title="interface in org.junit.platform.engine.support.hierarchical">Node.Invocation</a>&lt;<a href="Node.html" title="type parameter in Node">C</a>&gt;&nbsp;invocation)</span>
-             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
+             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></span></div>
 <div class="block">Wraps around the invocation of <a href="#before(C)"><code>before(EngineExecutionContext)</code></a>,
  <a href="#execute(C,org.junit.platform.engine.support.hierarchical.Node.DynamicTestExecutor)"><code>execute(EngineExecutionContext, DynamicTestExecutor)</code></a>, and
  <a href="#after(C)"><code>after(EngineExecutionContext)</code></a>.</div>
@@ -406,7 +406,7 @@ loadScripts(document, 'script');</script>
 <dd><code>context</code> - context the context to execute in</dd>
 <dd><code>invocation</code> - the wrapped invocation (must be invoked exactly once)</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Exception.html" title="class or interface in java.lang" class="external-link">Exception</a></code></dd>
 <dt>Since:</dt>
 <dd>1.4</dd>
 </dl>
@@ -462,7 +462,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#STABLE" title="class or interface in org.apiguardian.api" class="external-link">STABLE</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.10",
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#consumers()" title="class or interface in org.apiguardian.api" class="external-link">consumers</a>="org.junit.platform.engine.support.hierarchical")
-</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a>&gt;</span>&nbsp;<span class="element-name">getExclusiveResources</span>()</div>
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">ExclusiveResource</a>&gt;</span>&nbsp;<span class="element-name">getExclusiveResources</span>()</div>
 <div class="block">Get the set of <a href="ExclusiveResource.html" title="class in org.junit.platform.engine.support.hierarchical">exclusive resources</a>
  required to execute this node.
 

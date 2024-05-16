@@ -105,7 +105,7 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">ParameterResolver</span><span class="extends-implements">
 extends <a href="Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a></span></div>
 <div class="block"><code>ParameterResolver</code> defines the API for <a href="Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extensions</code></a>
- that wish to dynamically resolve arguments for <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link">parameters</a>
+ that wish to dynamically resolve arguments for <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link">parameters</a>
  at runtime.
 
  <p>If a constructor for a test class or a
@@ -150,11 +150,11 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resolveParameter(org.junit.jupiter.api.extension.ParameterContext,org.junit.jupiter.api.extension.ExtensionContext)" class="member-name-link">resolveParameter</a><wbr>(<a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;parameterContext,
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Resolve an argument for the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a>
+<div class="block">Resolve an argument for the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a>
  for the supplied <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
@@ -162,7 +162,7 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Determine if this resolver supports resolution of an argument for the
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a> for the supplied
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a> for the supplied
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.</div>
 </div>
 </div>
@@ -186,10 +186,10 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</span>
                    throws <span class="exceptions"><a href="ParameterResolutionException.html" title="class in org.junit.jupiter.api.extension">ParameterResolutionException</a></span></div>
 <div class="block">Determine if this resolver supports resolution of an argument for the
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a> for the supplied
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a> for the supplied
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.
 
- <p>The <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a> or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Constructor.html" title="class or interface in java.lang.reflect" class="external-link"><code>Constructor</code></a>
+ <p>The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a> or <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Constructor.html" title="class or interface in java.lang.reflect" class="external-link"><code>Constructor</code></a>
  in which the parameter is declared can be retrieved via
  <a href="ParameterContext.html#getDeclaringExecutable()"><code>ParameterContext.getDeclaringExecutable()</code></a>.</div>
 <dl class="notes">
@@ -215,17 +215,17 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
 <li>
 <section class="detail" id="resolveParameter(org.junit.jupiter.api.extension.ParameterContext,org.junit.jupiter.api.extension.ExtensionContext)">
 <h3>resolveParameter</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">resolveParameter</span><wbr><span class="parameters">(<a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;parameterContext,
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">resolveParameter</span><wbr><span class="parameters">(<a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension">ParameterContext</a>&nbsp;parameterContext,
  <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension">ExtensionContext</a>&nbsp;extensionContext)</span>
                  throws <span class="exceptions"><a href="ParameterResolutionException.html" title="class in org.junit.jupiter.api.extension">ParameterResolutionException</a></span></div>
-<div class="block">Resolve an argument for the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a>
+<div class="block">Resolve an argument for the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Parameter.html" title="class or interface in java.lang.reflect" class="external-link"><code>Parameter</code></a> in the supplied <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a>
  for the supplied <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.
 
  <p>This method is only called by the framework if <a href="#supportsParameter(org.junit.jupiter.api.extension.ParameterContext,org.junit.jupiter.api.extension.ExtensionContext)"><code>supportsParameter(org.junit.jupiter.api.extension.ParameterContext, org.junit.jupiter.api.extension.ExtensionContext)</code></a>
  previously returned <code>true</code> for the same <a href="ParameterContext.html" title="interface in org.junit.jupiter.api.extension"><code>ParameterContext</code></a>
  and <a href="ExtensionContext.html" title="interface in org.junit.jupiter.api.extension"><code>ExtensionContext</code></a>.
 
- <p>The <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a> or <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/reflect/Constructor.html" title="class or interface in java.lang.reflect" class="external-link"><code>Constructor</code></a>
+ <p>The <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a> or <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Constructor.html" title="class or interface in java.lang.reflect" class="external-link"><code>Constructor</code></a>
  in which the parameter is declared can be retrieved via
  <a href="ParameterContext.html#getDeclaringExecutable()"><code>ParameterContext.getDeclaringExecutable()</code></a>.</div>
 <dl class="notes">

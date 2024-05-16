@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.junit.platform.engine.support.hierarchical</a></div>
 <h1 title="Class ThrowableCollector" class="title">Class ThrowableCollector</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
 <div class="inheritance">org.junit.platform.engine.support.hierarchical.ThrowableCollector</div>
 </div>
 <section class="class-description" id="class-description">
@@ -102,15 +102,15 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#MAINTAINED" title="class or interface in org.apiguardian.api" class="external-link">MAINTAINED</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.3")
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">ThrowableCollector</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Simple component that can be used to collect one or more instances of
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.
 
  <p>This class distinguishes between <code>Throwables</code> that <em>abort</em>
  and those that <em>fail</em> test execution. The latter take precedence over
  the former, i.e. if both types of <code>Throwables</code> were collected, the ones
  that abort execution are reported as
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> <code>Throwables</code>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> <code>Throwables</code>
  of the first <code>Throwable</code> that failed execution.</div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -138,7 +138,7 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><code><a href="ThrowableCollector.Executable.html" class="type-name-link" title="interface in org.junit.platform.engine.support.hierarchical">ThrowableCollector.Executable</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Functional interface for an executable block of code that may throw a
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="ThrowableCollector.Factory.html" class="type-name-link" title="interface in org.junit.platform.engine.support.hierarchical">ThrowableCollector.Factory</a></code></div>
@@ -156,10 +156,10 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Predicate)" class="member-name-link">ThrowableCollector</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;abortedExecutionPredicate)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.function.Predicate)" class="member-name-link">ThrowableCollector</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;abortedExecutionPredicate)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create a new <code>ThrowableCollector</code> that uses the supplied
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> to determine whether a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> to determine whether a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
  <em>aborted</em> or <em>failed</em> execution.</div>
 </div>
 </div>
@@ -185,13 +185,13 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#execute(org.junit.platform.engine.support.hierarchical.ThrowableCollector.Executable)" class="member-name-link">execute</a><wbr>(<a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical">ThrowableCollector.Executable</a>&nbsp;executable)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Execute the supplied <a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical"><code>ThrowableCollector.Executable</code></a> and collect any <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
+<div class="block">Execute the supplied <a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical"><code>ThrowableCollector.Executable</code></a> and collect any <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
  thrown during the execution.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getThrowable()" class="member-name-link">getThrowable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get the first <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> collected by this
+<div class="block">Get the first <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> collected by this
  <code>ThrowableCollector</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
@@ -209,14 +209,14 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine">TestExecutionResult</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toTestExecutionResult()" class="member-name-link">toTestExecutionResult</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Convert the collected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwables</code></a> into a <a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a>.</div>
+<div class="block">Convert the collected <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwables</code></a> into a <a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a>.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -231,9 +231,9 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.function.Predicate)">
 <h3>ThrowableCollector</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThrowableCollector</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;abortedExecutionPredicate)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThrowableCollector</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link">Predicate</a>&lt;? super <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a>&gt;&nbsp;abortedExecutionPredicate)</span></div>
 <div class="block">Create a new <code>ThrowableCollector</code> that uses the supplied
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> to determine whether a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Predicate.html" title="class or interface in java.util.function" class="external-link"><code>Predicate</code></a> to determine whether a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
  <em>aborted</em> or <em>failed</em> execution.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -254,11 +254,11 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="execute(org.junit.platform.engine.support.hierarchical.ThrowableCollector.Executable)">
 <h3>execute</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">execute</span><wbr><span class="parameters">(<a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical">ThrowableCollector.Executable</a>&nbsp;executable)</span></div>
-<div class="block">Execute the supplied <a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical"><code>ThrowableCollector.Executable</code></a> and collect any <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
+<div class="block">Execute the supplied <a href="ThrowableCollector.Executable.html" title="interface in org.junit.platform.engine.support.hierarchical"><code>ThrowableCollector.Executable</code></a> and collect any <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a>
  thrown during the execution.
 
  <p>If the <code>Executable</code> throws an <em>unrecoverable</em> exception
- &mdash; for example, an <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/OutOfMemoryError.html" title="class or interface in java.lang" class="external-link"><code>OutOfMemoryError</code></a> &mdash; this method will
+ &mdash; for example, an <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/OutOfMemoryError.html" title="class or interface in java.lang" class="external-link"><code>OutOfMemoryError</code></a> &mdash; this method will
  rethrow it.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -275,20 +275,20 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getThrowable()">
 <h3>getThrowable</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span>&nbsp;<span class="element-name">getThrowable</span>()</div>
-<div class="block">Get the first <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> collected by this
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link">Throwable</a></span>&nbsp;<span class="element-name">getThrowable</span>()</div>
+<div class="block">Get the first <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwable</code></a> collected by this
  <code>ThrowableCollector</code>.
 
  <p>If this collector is not empty, the first collected <code>Throwable</code>
  will be returned with any additional <code>Throwables</code>
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> in the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> in the
  first <code>Throwable</code>.
 
  <p>If the first collected <code>Throwable</code> <em>aborted</em> execution
  and at least one later collected <code>Throwable</code> <em>failed</em>
  execution, the first <em>failing</em> <code>Throwable</code> will be returned
  with the previous <em>aborting</em> and any additional <code>Throwables</code>
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> inside.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> inside.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>the first collected <code>Throwable</code> or <code>null</code> if this
@@ -328,7 +328,7 @@ loadScripts(document, 'script');</script>
 
  <p>If this collector is not empty, the first collected <code>Throwable</code>
  will be thrown with any additional <code>Throwables</code>
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> in the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)" title="class or interface in java.lang" class="external-link">suppressed</a> in the
  first <code>Throwable</code>. Note, however, that the <code>Throwable</code>
  will not be wrapped. Rather, it will be
  <a href="../../../../../../../org.junit.platform.commons/org/junit/platform/commons/util/ExceptionUtils.html#throwAsUncheckedException(java.lang.Throwable)">masked</a>
@@ -350,7 +350,7 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="annotations"><a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html" title="class or interface in org.apiguardian.api" class="external-link">@API</a>(<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#status()" title="class or interface in org.apiguardian.api" class="external-link">status</a>=<a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.Status.html#MAINTAINED" title="class or interface in org.apiguardian.api" class="external-link">MAINTAINED</a>,
      <a href="https://apiguardian-team.github.io/apiguardian/docs/1.1.2/api/org/apiguardian/api/API.html#since()" title="class or interface in org.apiguardian.api" class="external-link">since</a>="1.6")
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine">TestExecutionResult</a></span>&nbsp;<span class="element-name">toTestExecutionResult</span>()</div>
-<div class="block">Convert the collected <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwables</code></a> into a <a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a>.</div>
+<div class="block">Convert the collected <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Throwable.html" title="class or interface in java.lang" class="external-link"><code>Throwables</code></a> into a <a href="../../TestExecutionResult.html" title="class in org.junit.platform.engine"><code>TestExecutionResult</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd><a href="../../TestExecutionResult.html#aborted(java.lang.Throwable)">aborted</a> if the collected
