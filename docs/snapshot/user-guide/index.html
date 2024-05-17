@@ -791,9 +791,9 @@ pre.rouge .gs {
 <ul class="sectlevel3">
 <li><a href="#running-tests-console-launcher-options">4.3.1. Subcommands and Options</a>
 <ul class="sectlevel4">
-<li><a href="#discovering-tests">Discovering tests</a></li>
-<li><a href="#executing-tests">Executing tests</a></li>
-<li><a href="#listing-test-engines">Listing test engines</a></li>
+<li><a href="#running-tests-console-launcher-options-discovering-tests">Discovering tests</a></li>
+<li><a href="#running-tests-console-launcher-options-executing-tests">Executing tests</a></li>
+<li><a href="#running-tests-console-launcher-options-listing-test-engines">Listing test engines</a></li>
 </ul>
 </li>
 <li><a href="#running-tests-console-launcher-argument-files">4.3.2. Argument Files (@-files)</a></li>
@@ -813,24 +813,25 @@ pre.rouge .gs {
 <li><a href="#running-tests-junit-platform-runner-test-suite">4.4.4. Test Suite</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-config-params">4.5. Configuration Parameters</a>
+<li><a href="#running-tests-discovery-selectors">4.5. Discovery Selectors</a></li>
+<li><a href="#running-tests-config-params">4.6. Configuration Parameters</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-config-params-deactivation-pattern">4.5.1. Pattern Matching Syntax</a></li>
+<li><a href="#running-tests-config-params-deactivation-pattern">4.6.1. Pattern Matching Syntax</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-tags">4.6. Tags</a>
+<li><a href="#running-tests-tags">4.7. Tags</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-tag-syntax-rules">4.6.1. Syntax Rules for Tags</a></li>
-<li><a href="#running-tests-tag-expressions">4.6.2. Tag Expressions</a></li>
+<li><a href="#running-tests-tag-syntax-rules">4.7.1. Syntax Rules for Tags</a></li>
+<li><a href="#running-tests-tag-expressions">4.7.2. Tag Expressions</a></li>
 </ul>
 </li>
-<li><a href="#running-tests-capturing-output">4.7. Capturing Standard Output/Error</a></li>
-<li><a href="#running-tests-listeners">4.8. Using Listeners and Interceptors</a>
+<li><a href="#running-tests-capturing-output">4.8. Capturing Standard Output/Error</a></li>
+<li><a href="#running-tests-listeners">4.9. Using Listeners and Interceptors</a>
 <ul class="sectlevel3">
-<li><a href="#running-tests-listeners-flight-recorder">4.8.1. Flight Recorder Support</a></li>
+<li><a href="#running-tests-listeners-flight-recorder">4.9.1. Flight Recorder Support</a></li>
 </ul>
 </li>
-<li><a href="#stacktrace-pruning">4.9. Stack Trace Pruning</a></li>
+<li><a href="#stacktrace-pruning">4.10. Stack Trace Pruning</a></li>
 </ul>
 </li>
 <li><a href="#extensions">5. Extension Model</a>
@@ -6205,8 +6206,8 @@ implementations.</p>
 <dt class="hdlist1"><code>MethodSource</code> </dt>
 <dd>
 <p>If the <code>URI</code> contains the <code>method</code> scheme and the fully qualified method name (FQMN)&#8201;&#8212;&#8201;for example, <code>method:org.junit.Foo#bar(java.lang.String, java.lang.String[])</code>. Please
-refer to the Javadoc for <code>DiscoverySelectors.selectMethod(String)</code> for the supported
-formats for a FQMN.</p>
+refer to the Javadoc for <code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html">DiscoverySelectors</a>.<a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectMethod(java.lang.String)">selectMethod</a></code> for the
+supported formats for a FQMN.</p>
 </dd>
 <dt class="hdlist1"><code>ClassSource</code> </dt>
 <dd>
@@ -8434,7 +8435,7 @@ https://junit.org/junit5/docs/snapshot/user-guide/</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="discovering-tests"><a class="anchor" href="#discovering-tests"></a>Discovering tests</h5>
+<h5 id="running-tests-console-launcher-options-discovering-tests"><a class="anchor" href="#running-tests-console-launcher-options-discovering-tests"></a>Discovering tests</h5>
 <div class="listingblock">
 <div class="content">
 <pre>Usage: junit discover [OPTIONS]
@@ -8467,9 +8468,17 @@ SELECTORS
   -r, --select-resource=RESOURCE
                              Select a classpath resource for test discovery. This option can
                                be repeated.
-  -i, --select-iteration=TYPE:VALUE[INDEX(..INDEX)?(,INDEX(..INDEX)?)*]
-                             Select iterations for test discovery (e.g. method:com.acme.Foo#m()
-                               [1..2]). This option can be repeated.
+  -i, --select-iteration=PREFIX:VALUE[INDEX(..INDEX)?(,INDEX(..INDEX)?)*]
+                             Select iterations for test discovery via a prefixed identifier
+                               and a list of indexes or index ranges (e.g. method:com.acme.
+                               Foo#m()[1..2] selects the first and second iteration of the m()
+                               method in the com.acme.Foo class). This option can be repeated.
+      --select=PREFIX:VALUE  Select via a prefixed identifier (e.g. method:com.acme.Foo#m
+                               selects the m() method in the com.acme.Foo class). This option
+                               can be repeated.
+
+  For more information on selectors including syntax examples, see
+  https://junit.org/junit5/docs/current/user-guide/#running-tests-discovery-selectors
 
 FILTERS
 
@@ -8527,7 +8536,7 @@ https://junit.org/junit5/docs/snapshot/user-guide/</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="executing-tests"><a class="anchor" href="#executing-tests"></a>Executing tests</h5>
+<h5 id="running-tests-console-launcher-options-executing-tests"><a class="anchor" href="#running-tests-console-launcher-options-executing-tests"></a>Executing tests</h5>
 <div class="listingblock">
 <div class="content">
 <pre>Usage: junit execute [OPTIONS]
@@ -8560,9 +8569,17 @@ SELECTORS
   -r, --select-resource=RESOURCE
                              Select a classpath resource for test discovery. This option can
                                be repeated.
-  -i, --select-iteration=TYPE:VALUE[INDEX(..INDEX)?(,INDEX(..INDEX)?)*]
-                             Select iterations for test discovery (e.g. method:com.acme.Foo#m()
-                               [1..2]). This option can be repeated.
+  -i, --select-iteration=PREFIX:VALUE[INDEX(..INDEX)?(,INDEX(..INDEX)?)*]
+                             Select iterations for test discovery via a prefixed identifier
+                               and a list of indexes or index ranges (e.g. method:com.acme.
+                               Foo#m()[1..2] selects the first and second iteration of the m()
+                               method in the com.acme.Foo class). This option can be repeated.
+      --select=PREFIX:VALUE  Select via a prefixed identifier (e.g. method:com.acme.Foo#m
+                               selects the m() method in the com.acme.Foo class). This option
+                               can be repeated.
+
+  For more information on selectors including syntax examples, see
+  https://junit.org/junit5/docs/current/user-guide/#running-tests-discovery-selectors
 
 FILTERS
 
@@ -8626,7 +8643,7 @@ https://junit.org/junit5/docs/snapshot/user-guide/</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="listing-test-engines"><a class="anchor" href="#listing-test-engines"></a>Listing test engines</h5>
+<h5 id="running-tests-console-launcher-options-listing-test-engines"><a class="anchor" href="#running-tests-console-launcher-options-listing-test-engines"></a>Listing test engines</h5>
 <div class="listingblock">
 <div class="content">
 <pre>Usage: junit engines [OPTIONS]
@@ -8920,7 +8937,134 @@ infrastructure.
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-config-params"><a class="anchor" href="#running-tests-config-params"></a>4.5. Configuration Parameters</h3>
+<h3 id="running-tests-discovery-selectors"><a class="anchor" href="#running-tests-discovery-selectors"></a>4.5. Discovery Selectors</h3>
+<div class="paragraph">
+<p>The JUnit Platform provides a rich set of discovery selectors that can be used to specify
+which tests should be discovered or executed.</p>
+</div>
+<div class="paragraph">
+<p>Discovery selectors can be created programmatically using the factory methods in the
+<code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html">DiscoverySelectors</a></code> class, specified declaratively via annotations when using the
+<a href="#junit-platform-suite-engine">JUnit Platform Suite Engine</a>, via options of the <a href="#running-tests-console-launcher">Console Launcher</a>, or
+generically as strings via their identifiers.</p>
+</div>
+<div class="paragraph">
+<p>The following discovery selectors are provided out of the box:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Java Type</th>
+<th class="tableblock halign-left valign-top">API</th>
+<th class="tableblock halign-left valign-top">Annotation</th>
+<th class="tableblock halign-left valign-top">Console Launcher</th>
+<th class="tableblock halign-left valign-top">Identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathResourceSelector.html">ClasspathResourceSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectClasspathResource(java.lang.String)">selectClasspathResource</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectClasspathResource.html">@SelectClasspathResource</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-resource /foo.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>resource:/foo.csv</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathRootSelector.html">ClasspathRootSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectClasspathRoots(java.util.Set)">selectClasspathRoots</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--scan-classpath bin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>classpath-root:bin</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/ClassSelector.html">ClassSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectClass(java.lang.String)">selectClass</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectClasses.html">@SelectClasses</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-class com.acme.Foo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>class:com.acme.Foo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DirectorySelector.html">DirectorySelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectDirectory(java.lang.String)">selectDirectory</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectDirectories.html">@SelectDirectories</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-directory foo/bar</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>directory:foo/bar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/FileSelector.html">FileSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectFile(java.lang.String)">selectFile</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectFile.html">@SelectFile</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-file dir/foo.txt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file:dir/foo.txt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/IterationSelector.html">IterationSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectIteration(org.junit.platform.engine.DiscoverySelector,int...)">selectIteration</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/Select.html">@Select</a>("&lt;identifier&gt;")</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-iteration method=com.acme.Foo#m[1..2]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>iteration:method:com.acme.Foo#m[1..2]</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/MethodSelector.html">MethodSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectMethod(java.lang.String)">selectMethod</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectMethod.html">@SelectMethod</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-method com.acme.Foo#m</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>method:com.acme.Foo#m</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/ModuleSelector.html">ModuleSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectModule(java.lang.String)">selectModule</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectModules.html">@SelectModules</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-module com.acme</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>module:com.acme</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/NestedClassSelector.html">NestedClassSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectNestedClass(java.util.List,java.lang.Class)">selectNestedClass</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/Select.html">@Select</a>("&lt;identifier&gt;")</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select &lt;identifier&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nested-class:com.acme.Foo/Bar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/NestedMethodSelector.html">NestedMethodSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectNestedMethod(java.util.List,java.lang.Class,java.lang.String)">selectNestedMethod</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/Select.html">@Select</a>("&lt;identifier&gt;")</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select &lt;identifier&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nested-method:com.acme.Foo/Bar#m</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/PackageSelector.html">PackageSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectPackage(java.lang.String)">selectPackage</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectPackages.html">@SelectPackages</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-package com.acme.foo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>package:com.acme.foo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/UniqueIdSelector.html">UniqueIdSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectUniqueId(java.lang.String)">selectUniqueId</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/Select.html">@Select</a>("&lt;identifier&gt;")</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select &lt;identifier&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uid:&#8230;&#8203;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/UriSelector.html">UriSelector</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#selectUri(java.lang.String)">selectUri</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="../api/org.junit.platform.suite.api/org/junit/platform/suite/api/SelectUris.html">@SelectUris</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>--select-uri file:///foo.txt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uri:file:///foo.txt</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="running-tests-config-params"><a class="anchor" href="#running-tests-config-params"></a>4.6. Configuration Parameters</h3>
 <div class="paragraph">
 <p>In addition to instructing the platform which test classes and test engines to include,
 which packages to scan, etc., it is sometimes necessary to provide additional custom
@@ -8998,7 +9142,7 @@ those supplied via the configuration file.
 </table>
 </div>
 <div class="sect3">
-<h4 id="running-tests-config-params-deactivation-pattern"><a class="anchor" href="#running-tests-config-params-deactivation-pattern"></a>4.5.1. Pattern Matching Syntax</h4>
+<h4 id="running-tests-config-params-deactivation-pattern"><a class="anchor" href="#running-tests-config-params-deactivation-pattern"></a>4.6.1. Pattern Matching Syntax</h4>
 <div class="paragraph">
 <p>This section describes the pattern matching syntax that is applied to the <em>configuration
 parameters</em> used for the following features.</p>
@@ -9061,7 +9205,7 @@ FQCN is exactly <code>org.example.MyCustomImpl</code> or <code>org.example.Their
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-tags"><a class="anchor" href="#running-tests-tags"></a>4.6. Tags</h3>
+<h3 id="running-tests-tags"><a class="anchor" href="#running-tests-tags"></a>4.7. Tags</h3>
 <div class="paragraph">
 <p>Tags are a JUnit Platform concept for marking and filtering tests. The programming model
 for adding tags to containers and tests is defined by the testing framework. For example,
@@ -9072,7 +9216,7 @@ Vintage engine maps <code>@Category</code> annotations to tags (see
 own annotation or other means for users to specify tags.</p>
 </div>
 <div class="sect3">
-<h4 id="running-tests-tag-syntax-rules"><a class="anchor" href="#running-tests-tag-syntax-rules"></a>4.6.1. Syntax Rules for Tags</h4>
+<h4 id="running-tests-tag-syntax-rules"><a class="anchor" href="#running-tests-tag-syntax-rules"></a>4.7.1. Syntax Rules for Tags</h4>
 <div class="paragraph">
 <p>Regardless how a tag is specified, the JUnit Platform enforces the following rules:</p>
 </div>
@@ -9129,7 +9273,7 @@ characters have been removed.
 </div>
 </div>
 <div class="sect3">
-<h4 id="running-tests-tag-expressions"><a class="anchor" href="#running-tests-tag-expressions"></a>4.6.2. Tag Expressions</h4>
+<h4 id="running-tests-tag-expressions"><a class="anchor" href="#running-tests-tag-expressions"></a>4.7.2. Tag Expressions</h4>
 <div class="paragraph">
 <p>Tag expressions are boolean expressions with the operators <code>!</code>, <code>&amp;</code> and <code>|</code>. In addition,
 <code>(</code> and <code>)</code> can be used to adjust for operator precedence.</p>
@@ -9214,7 +9358,7 @@ expressions can be useful.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-capturing-output"><a class="anchor" href="#running-tests-capturing-output"></a>4.7. Capturing Standard Output/Error</h3>
+<h3 id="running-tests-capturing-output"><a class="anchor" href="#running-tests-capturing-output"></a>4.8. Capturing Standard Output/Error</h3>
 <div class="paragraph">
 <p>Since version 1.3, the JUnit Platform provides opt-in support for capturing output
 printed to <code>System.out</code> and <code>System.err</code>. To enable it, set the
@@ -9238,7 +9382,7 @@ to attribute it to a specific test or container.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="running-tests-listeners"><a class="anchor" href="#running-tests-listeners"></a>4.8. Using Listeners and Interceptors</h3>
+<h3 id="running-tests-listeners"><a class="anchor" href="#running-tests-listeners"></a>4.9. Using Listeners and Interceptors</h3>
 <div class="paragraph">
 <p>The JUnit Platform provides the following listener APIs that allow JUnit, third parties,
 and custom user code to react to events fired at various points during the discovery and
@@ -9343,7 +9487,7 @@ unique IDs once execution of the <code>TestPlan</code> has finished.</p>
 </dl>
 </div>
 <div class="sect3">
-<h4 id="running-tests-listeners-flight-recorder"><a class="anchor" href="#running-tests-listeners-flight-recorder"></a>4.8.1. Flight Recorder Support</h4>
+<h4 id="running-tests-listeners-flight-recorder"><a class="anchor" href="#running-tests-listeners-flight-recorder"></a>4.9.1. Flight Recorder Support</h4>
 <div class="paragraph">
 <p>Since version 1.7, the JUnit Platform provides opt-in support for generating Flight
 Recorder events. <a href="https://openjdk.java.net/jeps/328">JEP 328</a> describes the Java Flight
@@ -9413,7 +9557,7 @@ give it a try and provide feedback to the JUnit team so they can improve and eve
 </div>
 </div>
 <div class="sect2">
-<h3 id="stacktrace-pruning"><a class="anchor" href="#stacktrace-pruning"></a>4.9. Stack Trace Pruning</h3>
+<h3 id="stacktrace-pruning"><a class="anchor" href="#stacktrace-pruning"></a>4.10. Stack Trace Pruning</h3>
 <div class="paragraph">
 <p>Since version 1.10, the JUnit Platform provides built-in support for pruning stack traces
 produced by failing tests. This feature is enabled by default but can be disabled by
@@ -13249,9 +13393,44 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.9</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelector.toIdentifier()</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectorIdentifier</code> <em>(class)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClassSelector.getClassLoader()</code> <em>(method)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectorIdentifierParser</code> <em>(interface)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectors.parse(DiscoverySelectorIdentifier)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectors.parse(String)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectors.parseAll(Collection&lt;DiscoverySelectorIdentifier&gt;)</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DiscoverySelectors.parseAll(String[])</code> <em>(method)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.engine.discovery</code></p></td>
@@ -13405,6 +13584,11 @@ value of lower stability.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SelectClasses.names()</code> <em>(annotation attribute)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
 </tr>
@@ -13417,6 +13601,11 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>SelectMethods</code> <em>(annotation)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Selects</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>

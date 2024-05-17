@@ -67,6 +67,10 @@ loadScripts(document, 'script');</script>
  <a href="../org.junit.platform.engine/org/junit/platform/engine/TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on packages.</div>
 </dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/PackageSelector.IdentifierParser.html" class="type-name-link" title="class in org.junit.platform.engine.discovery">PackageSelector.IdentifierParser</a> - Class in <a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/package-summary.html">org.junit.platform.engine.discovery</a></dt>
+<dd>
+<div class="block">The <a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/PackageSelector.html" title="class in org.junit.platform.engine.discovery"><code>PackageSelectors</code></a>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/PackageSource.html" class="type-name-link" title="class in org.junit.platform.engine.support.descriptor">PackageSource</a> - Class in <a href="../org.junit.platform.engine/org/junit/platform/engine/support/descriptor/package-summary.html">org.junit.platform.engine.support.descriptor</a></dt>
 <dd>
 <div class="block">Package based <a href="../org.junit.platform.engine/org/junit/platform/engine/TestSource.html" title="interface in org.junit.platform.engine"><code>TestSource</code></a>.</div>
@@ -176,10 +180,67 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Set the parent configuration parameters to use for the request.</div>
 </dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectorIdentifierParser.Context.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Method in interface org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectorIdentifierParser.Context.html" title="interface in org.junit.platform.engine.discovery">DiscoverySelectorIdentifierParser.Context</a></dt>
+<dd>
+<div class="block">Parse the supplied selector.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Static method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery">DiscoverySelectors</a></dt>
+<dd>
+<div class="block">Parse the supplied string representation of a
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifier</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Static method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine">DiscoverySelectorIdentifier</a></dt>
+<dd>
+<div class="block">Parse the supplied string representation of a
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifier</code></a> in the format <code>prefix:value</code>.</div>
+</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - Static method in class org.junit.platform.engine.<a href="../org.junit.platform.engine/org/junit/platform/engine/UniqueId.html" title="class in org.junit.platform.engine">UniqueId</a></dt>
 <dd>
 <div class="block">Parse a <code>UniqueId</code> from the supplied string representation using the
  default format.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier)" class="member-name-link">parse(DiscoverySelectorIdentifier)</a> - Static method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery">DiscoverySelectors</a></dt>
+<dd>
+<div class="block">Parse the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifier</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathResourceSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathResourceSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClasspathResourceSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathRootSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClasspathRootSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClasspathRootSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClassSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ClassSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClassSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DirectorySelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DirectorySelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">DirectorySelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectorIdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in interface org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery">DiscoverySelectorIdentifierParser</a></dt>
+<dd>
+<div class="block">Parse the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifier</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/FileSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/FileSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">FileSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/IterationSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/IterationSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">IterationSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/MethodSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/MethodSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">MethodSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ModuleSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/ModuleSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ModuleSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/NestedClassSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/NestedClassSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">NestedClassSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/NestedMethodSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/NestedMethodSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">NestedMethodSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/PackageSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/PackageSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">PackageSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/UniqueIdSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/UniqueIdSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">UniqueIdSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/UriSelector.IdentifierParser.html#parse(org.junit.platform.engine.DiscoverySelectorIdentifier,org.junit.platform.engine.discovery.DiscoverySelectorIdentifierParser.Context)" class="member-name-link">parse(DiscoverySelectorIdentifier, DiscoverySelectorIdentifierParser.Context)</a> - Method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/UriSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">UriSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#parseAll(java.lang.String...)" class="member-name-link">parseAll(String...)</a> - Static method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery">DiscoverySelectors</a></dt>
+<dd>
+<div class="block">Parse the supplied string representations of
+ <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifiers</code></a>.</div>
+</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html#parseAll(java.util.Collection)" class="member-name-link">parseAll(Collection&lt;DiscoverySelectorIdentifier&gt;)</a> - Static method in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery">DiscoverySelectors</a></dt>
+<dd>
+<div class="block">Parse the supplied <a href="../org.junit.platform.engine/org/junit/platform/engine/DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifiers</code></a>.</div>
 </dd>
 <dt><a href="../org.junit.platform.launcher/org/junit/platform/launcher/tagexpression/TagExpression.html#parseFrom(java.lang.String)" class="member-name-link">parseFrom(String)</a> - Static method in interface org.junit.platform.launcher.tagexpression.<a href="../org.junit.platform.launcher/org/junit/platform/launcher/tagexpression/TagExpression.html" title="interface in org.junit.platform.launcher.tagexpression">TagExpression</a></dt>
 <dd>
@@ -282,6 +343,8 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="../org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html#preemptive-timeouts-heading" class="search-tag-link">Preemptive Timeouts</a> - Search tag in class org.junit.jupiter.api.Assertions</dt>
 <dd>Section</dd>
+<dt><a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/IterationSelector.IdentifierParser.html#PREFIX" class="member-name-link">PREFIX</a> - Static variable in class org.junit.platform.engine.discovery.<a href="../org.junit.platform.engine/org/junit/platform/engine/discovery/IterationSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">IterationSelector.IdentifierParser</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="../org.junit.platform.engine/org/junit/platform/engine/support/config/PrefixedConfigurationParameters.html" class="type-name-link" title="class in org.junit.platform.engine.support.config">PrefixedConfigurationParameters</a> - Class in <a href="../org.junit.platform.engine/org/junit/platform/engine/support/config/package-summary.html">org.junit.platform.engine.support.config</a></dt>
 <dd>
 <div class="block">View of <a href="../org.junit.platform.engine/org/junit/platform/engine/ConfigurationParameters.html" title="interface in org.junit.platform.engine"><code>ConfigurationParameters</code></a> that applies a supplied prefix to all

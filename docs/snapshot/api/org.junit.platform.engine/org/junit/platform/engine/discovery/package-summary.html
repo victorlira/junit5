@@ -117,12 +117,22 @@ loadScripts(document, 'script');</script>
  from the classpath &mdash; for example, to load XML or JSON files from the classpath,
  potentially within JARs.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ClasspathRootSelector.html" title="class in org.junit.platform.engine.discovery">ClasspathRootSelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ClasspathResourceSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClasspathResourceSelector.IdentifierParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="ClasspathResourceSelector.html" title="class in org.junit.platform.engine.discovery"><code>ClasspathResourceSelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ClasspathRootSelector.html" title="class in org.junit.platform.engine.discovery">ClasspathRootSelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a <em>classpath root</em> so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can search for class
  files or resources within the physical classpath &mdash; for example, to
  scan for test classes.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ClasspathRootSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClasspathRootSelector.IdentifierParser</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="ClasspathRootSelector.html" title="class in org.junit.platform.engine.discovery"><code>ClasspathRootSelectors</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ClassSelector.html" title="class in org.junit.platform.engine.discovery">ClassSelector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -130,12 +140,30 @@ loadScripts(document, 'script');</script>
  that <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on classes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DirectorySelector.html" title="class in org.junit.platform.engine.discovery">DirectorySelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ClassSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ClassSelector.IdentifierParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="ClassSelector.html" title="class in org.junit.platform.engine.discovery"><code>ClassSelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DirectorySelector.html" title="class in org.junit.platform.engine.discovery">DirectorySelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a directory so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a>
  can discover tests or containers based on directories in the
  file system.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DirectorySelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">DirectorySelector.IdentifierParser</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="DirectorySelector.html" title="class in org.junit.platform.engine.discovery"><code>DirectorySelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery">DiscoverySelectorIdentifierParser</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Parser for <a href="../DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifiers</code></a>
+ with a specific prefix.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DiscoverySelectorIdentifierParser.Context.html" title="interface in org.junit.platform.engine.discovery">DiscoverySelectorIdentifierParser.Context</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Context for parsing <a href="../DiscoverySelectorIdentifier.html" title="class in org.junit.platform.engine"><code>DiscoverySelectorIdentifiers</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DiscoverySelectors.html" title="class in org.junit.platform.engine.discovery">DiscoverySelectors</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -154,12 +182,21 @@ loadScripts(document, 'script');</script>
  can discover tests or containers based on files in the
  file system.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IterationSelector.html" title="class in org.junit.platform.engine.discovery">IterationSelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="FileSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">FileSelector.IdentifierParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="FileSelector.html" title="class in org.junit.platform.engine.discovery"><code>FileSelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="IterationSelector.html" title="class in org.junit.platform.engine.discovery">IterationSelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects the iterations of a parent
  <code>DiscoverySelector</code> via their indices so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  a subset of the iterations of tests or containers.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IterationSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">IterationSelector.IdentifierParser</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="IterationSelector.html" title="class in org.junit.platform.engine.discovery"><code>IterationSelectors</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodSelector.html" title="class in org.junit.platform.engine.discovery">MethodSelector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -168,11 +205,19 @@ loadScripts(document, 'script');</script>
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover tests
  or containers based on methods.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ModuleSelector.html" title="class in org.junit.platform.engine.discovery">ModuleSelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MethodSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">MethodSelector.IdentifierParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="MethodSelector.html" title="class in org.junit.platform.engine.discovery"><code>MethodSelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ModuleSelector.html" title="class in org.junit.platform.engine.discovery">ModuleSelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a module name so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on modules.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ModuleSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">ModuleSelector.IdentifierParser</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="ModuleSelector.html" title="class in org.junit.platform.engine.discovery"><code>ModuleSelectors</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="NestedClassSelector.html" title="class in org.junit.platform.engine.discovery">NestedClassSelector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -181,13 +226,23 @@ loadScripts(document, 'script');</script>
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on classes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="NestedMethodSelector.html" title="class in org.junit.platform.engine.discovery">NestedMethodSelector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="NestedClassSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">NestedClassSelector.IdentifierParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="NestedClassSelector.html" title="class in org.junit.platform.engine.discovery"><code>NestedClassSelectors</code></a>.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="NestedMethodSelector.html" title="class in org.junit.platform.engine.discovery">NestedMethodSelector</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a nested <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a>
  or a combination of enclosing classes names, class name, method
  name, and parameter types so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on methods.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="NestedMethodSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">NestedMethodSelector.IdentifierParser</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="NestedMethodSelector.html" title="class in org.junit.platform.engine.discovery"><code>NestedMethodSelectors</code></a>.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PackageNameFilter.html" title="interface in org.junit.platform.engine.discovery">PackageNameFilter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
@@ -199,17 +254,30 @@ loadScripts(document, 'script');</script>
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on packages.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UniqueIdSelector.html" title="class in org.junit.platform.engine.discovery">UniqueIdSelector</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="PackageSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">PackageSelector.IdentifierParser</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="PackageSelector.html" title="class in org.junit.platform.engine.discovery"><code>PackageSelectors</code></a>.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="UniqueIdSelector.html" title="class in org.junit.platform.engine.discovery">UniqueIdSelector</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a <a href="../UniqueId.html" title="class in org.junit.platform.engine"><code>UniqueId</code></a> so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a> can discover
  tests or containers based on unique IDs.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UniqueIdSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">UniqueIdSelector.IdentifierParser</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for
+ <a href="UniqueIdSelector.html" title="class in org.junit.platform.engine.discovery"><code>UniqueIdSelectors</code></a>.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="UriSelector.html" title="class in org.junit.platform.engine.discovery">UriSelector</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../DiscoverySelector.html" title="interface in org.junit.platform.engine"><code>DiscoverySelector</code></a> that selects a <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/URI.html" title="class or interface in java.net" class="external-link"><code>URI</code></a> so that
  <a href="../TestEngine.html" title="interface in org.junit.platform.engine"><code>TestEngines</code></a>
  can discover tests or containers based on URIs.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="UriSelector.IdentifierParser.html" title="class in org.junit.platform.engine.discovery">UriSelector.IdentifierParser</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">The <a href="DiscoverySelectorIdentifierParser.html" title="interface in org.junit.platform.engine.discovery"><code>DiscoverySelectorIdentifierParser</code></a> for <a href="UriSelector.html" title="class in org.junit.platform.engine.discovery"><code>UriSelectors</code></a>.</div>
 </div>
 </div>
 </div>
