@@ -536,8 +536,8 @@ authors as well as build tool and IDE vendors.</p>
 </div>
 <div class="paragraph">
 <p>For a complete list of all <em>closed</em> issues and pull requests for this release, consult the
-<a href="https://github.com/junit-team/junit5/milestone/77?closed=1">5.11.0-M3</a> milestone page in the
-JUnit repository on GitHub.</p>
+<a href="https://github.com/junit-team/junit5/milestone/77?closed=1">5.11.0-M3</a> milestone page in the JUnit
+repository on GitHub.</p>
 </div>
 <div class="sect2">
 <h3 id="release-notes-5.11.0-M3-junit-platform"><a class="anchor" href="#release-notes-5.11.0-M3-junit-platform"></a>JUnit Platform</h3>
@@ -652,7 +652,7 @@ JUnit repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Repeatable <code>@..Source</code> annotations</p>
+<p>Repeatable <code>@..Source</code> annotations for parameterized tests</p>
 </li>
 <li>
 <p>Extensible syntax for specifying discovery selectors</p>
@@ -694,7 +694,9 @@ repository on GitHub.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Fixed a bug where <code>TestIdentifier</code> could cause a <code>NullPointerException</code> on deserialize when there is no parent identifier. See <a href="https://github.com/junit-team/junit5/issues/3819">issue 3819</a>.</p>
+<p>Attempting to deserialize a <code>TestIdentifier</code> no longer causes a <code>NullPointerException</code>
+when there is no parent identifier. See
+<a href="https://github.com/junit-team/junit5/issues/3819">issue 3819</a>.</p>
 </li>
 </ul>
 </div>
@@ -727,6 +729,9 @@ annotation.</p>
 </div>
 </li>
 <li>
+<p>The Console Launcher now provides a <code>--version</code> option.</p>
+</li>
+<li>
 <p><code>NamespacedHierarchicalStore</code> now throws an <code>IllegalStateException</code> for any attempt to
 modify or query the store after it has been closed. In addition, an attempt to close a
 store that has already been closed will have no effect.</p>
@@ -737,9 +742,6 @@ store that has already been closed will have no effect.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>The Console Launcher now provides a <code>--version</code> option.</p>
 </li>
 </ul>
 </div>
@@ -763,9 +765,10 @@ generated during class initialization.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Support <code>@..Source</code> annotations as repeatable for parameterized tests. See the
+<p><code>@..Source</code> annotations for parameterized tests can now be used as repeatable
+annotations. See the
 <a href="../user-guide/index.html#writing-tests-parameterized-repeatable-sources">User Guide</a>
-for more details.</p>
+for details.</p>
 </li>
 </ul>
 </div>
