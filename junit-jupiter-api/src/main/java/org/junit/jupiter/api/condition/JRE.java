@@ -249,16 +249,16 @@ public enum JRE {
 	}
 
 	/**
-	 * @return {@code true} if <em>this</em> {@code JRE} is known to be the
-	 * Java Runtime Environment version for the currently executing JVM or if
-	 * the version is {@link #OTHER}
+	 * Whether <em>this</em> {@code JRE} is known to be the Java Runtime
+	 * Environment version for the currently executing JVM or if the version is
+	 * {@link #OTHER}
 	 */
 	public boolean isCurrentVersion() {
 		return this == CURRENT_VERSION;
 	}
 
 	/**
-	 * @return the {@link JRE} for the currently executing JVM, potentially
+	 * Get the {@link JRE} for the currently executing JVM, potentially
 	 * {@link #OTHER}
 	 *
 	 * @since 5.7

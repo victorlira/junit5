@@ -9,9 +9,6 @@
 			<property name="processJavadoc" value="true" />
 		</module>
 		<module name="AvoidStarImport"/>
-		<module name="IllegalImport">
-			<property name="illegalPkgs" value="org.jetbrains.annotations" />
-		</module>
 		<module name="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineJavaCheck">
 			<property name="id" value="primitiveClassLiterals"/>
 			<property name="maximum" value="0"/>

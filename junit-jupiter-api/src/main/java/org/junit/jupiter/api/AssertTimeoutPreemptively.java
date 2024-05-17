@@ -25,6 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.function.ThrowingSupplier;
 import org.junit.platform.commons.JUnitException;
@@ -149,7 +150,8 @@ class AssertTimeoutPreemptively {
 	private static class TimeoutThreadFactory implements ThreadFactory {
 		private static final AtomicInteger threadNumber = new AtomicInteger(1);
 
-		public Thread newThread(Runnable r) {
+		@Override
+		public Thread newThread(@NotNull Runnable r) {
 			return new Thread(r, "junit-timeout-thread-" + threadNumber.getAndIncrement());
 		}
 	}

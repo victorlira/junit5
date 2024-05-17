@@ -146,8 +146,8 @@ public enum OS {
 	}
 
 	/**
-	 * @return {@code true} if <em>this</em> {@code OS} is known to be the
-	 * operating system on which the current JVM is executing
+	 * Whether <em>this</em> {@code OS} is known to be the operating system on
+	 * which the current JVM is executing
 	 */
 	public boolean isCurrentOs() {
 		return this == CURRENT_OS;

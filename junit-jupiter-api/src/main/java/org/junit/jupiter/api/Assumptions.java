@@ -268,6 +268,7 @@ public class Assumptions {
 	 * @since 5.9
 	 */
 	@API(status = STABLE, since = "5.9")
+	@SuppressWarnings({ "DoNotCallSuggester", "TypeParameterUnusedInFormals" })
 	public static <V> V abort() {
 		throw new TestAbortedException();
 	}
@@ -291,6 +292,7 @@ public class Assumptions {
 	 * @since 5.9
 	 */
 	@API(status = STABLE, since = "5.9")
+	@SuppressWarnings({ "DoNotCallSuggester", "TypeParameterUnusedInFormals" })
 	public static <V> V abort(String message) {
 		throw new TestAbortedException(message);
 	}
@@ -307,6 +309,7 @@ public class Assumptions {
 	 * @since 5.9
 	 */
 	@API(status = STABLE, since = "5.9")
+	@SuppressWarnings({ "DoNotCallSuggester", "TypeParameterUnusedInFormals" })
 	public static <V> V abort(Supplier<String> messageSupplier) {
 		throw new TestAbortedException(messageSupplier.get());
 	}
