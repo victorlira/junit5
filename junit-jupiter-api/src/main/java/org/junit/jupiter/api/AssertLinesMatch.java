@@ -24,9 +24,6 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import com.google.errorprone.annotations.FormatMethod;
-import com.google.errorprone.annotations.FormatString;
-
 /**
  * {@code AssertLinesMatch} is a collection of utility methods that support asserting
  * lines of {@link String} equality or {@link java.util.regex.Pattern}-match in tests.
@@ -195,8 +192,8 @@ class AssertLinesMatch {
 			return line.substring(0, MAX_SNIPPET_LENGTH - 5) + "[...]";
 		}
 
-		@FormatMethod
-		void fail(@FormatString String format, Object... args) {
+		@SuppressWarnings("AnnotateFormatMethod")
+		void fail(String format, Object... args) {
 			String newLine = System.lineSeparator();
 			assertionFailure() //
 					.message(messageOrSupplier) //

@@ -15,7 +15,6 @@ dependencies {
 	api(projects.junitJupiterApi)
 
 	compileOnlyApi(libs.apiguardian)
-	compileOnly(libs.errorprone.annotations)
 	compileOnly(libs.jetbrainsAnnotations)
 
 	testImplementation(projects.junitPlatformLauncher)
@@ -36,8 +35,7 @@ dependencies {
 tasks {
 	compileModule {
 		options.compilerArgs.addAll(listOf(
-			"--add-modules", "com.google.errorprone.annotations,org.jetbrains.annotations",
-			"--add-reads", "org.junit.jupiter.api=com.google.errorprone.annotations",
+			"--add-modules", "org.jetbrains.annotations",
 			"--add-reads", "org.junit.jupiter.api=org.jetbrains.annotations",
 		))
 	}

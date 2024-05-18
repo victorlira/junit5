@@ -7,7 +7,6 @@ assertj = "3.25.3"
 bnd = "7.0.0"
 checkstyle = "10.16.0"
 eclipse = "4.31.100"
-errorprone = "2.27.1"
 gradleVersionsPlugin = "0.51.0"
 jacoco = "0.8.7"
 jmh = "1.37"
@@ -33,8 +32,7 @@ bndlib = { module = "biz.aQute.bnd:biz.aQute.bndlib", version.ref = "bnd" }
 checkstyle = { module = "com.puppycrawl.tools:checkstyle", version.ref = "checkstyle" }
 classgraph = { module = "io.github.classgraph:classgraph", version = "4.8.172" }
 commons-io = { module = "commons-io:commons-io", version = "2.16.1" }
-errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "errorprone" }
-errorprone-core = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone" }
+errorprone-core = { module = "com.google.errorprone:error_prone_core", version = "2.27.1" }
 gradle-commonCustomUserData = { module = "com.gradle:common-custom-user-data-gradle-plugin", version = "2.0.1" }
 gradle-foojayResolver = { module = "org.gradle.toolchains:foojay-resolver", version = "0.8.0" }
 gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version = "3.17.3" }

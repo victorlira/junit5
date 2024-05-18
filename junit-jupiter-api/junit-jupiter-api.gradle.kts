@@ -23,7 +23,6 @@ dependencies {
 	compileOnlyApi(libs.apiguardian)
 
 	compileOnly(kotlin("stdlib"))
-	compileOnly(libs.errorprone.annotations)
 	compileOnly(libs.jetbrainsAnnotations)
 
 	osgiVerification(projects.junitJupiterEngine)
@@ -36,8 +35,7 @@ dependencies {
 tasks {
 	compileModule {
 		options.compilerArgs.addAll(listOf(
-			"--add-modules", "com.google.errorprone.annotations,org.jetbrains.annotations",
-			"--add-reads", "${javaModuleName}=com.google.errorprone.annotations",
+			"--add-modules", "org.jetbrains.annotations",
 			"--add-reads", "${javaModuleName}=org.jetbrains.annotations",
 		))
 	}
