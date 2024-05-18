@@ -10,6 +10,7 @@
 
 package org.junit.jupiter.api.extension;
 
+import static java.util.Objects.requireNonNull;
 import static org.apiguardian.api.API.Status.DEPRECATED;
 import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 import static org.apiguardian.api.API.Status.STABLE;
@@ -26,6 +27,7 @@ import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.TestTemplate;
+import org.junit.platform.commons.annotation.Nullable;
 
 /**
  * {@code InvocationInterceptor} defines the API for {@link Extension
@@ -71,7 +73,7 @@ public interface InvocationInterceptor extends Extension {
 	default <T> T interceptTestClassConstructor(Invocation<T> invocation,
 			ReflectiveInvocationContext<Constructor<T>> invocationContext, ExtensionContext extensionContext)
 			throws Throwable {
-		return invocation.proceed();
+		return requireNonNull(invocation.proceed());
 	}
 
 	/**
@@ -133,6 +135,7 @@ public interface InvocationInterceptor extends Extension {
 	 * @return the result of the invocation; potentially {@code null}
 	 * @throws Throwable in case of failures
 	 */
+	@Nullable
 	default <T> T interceptTestFactoryMethod(Invocation<T> invocation,
 			ReflectiveInvocationContext<Method> invocationContext, ExtensionContext extensionContext) throws Throwable {
 		return invocation.proceed();
@@ -232,6 +235,7 @@ public interface InvocationInterceptor extends Extension {
 		 * @return the result of this invocation; potentially {@code null}.
 		 * @throws Throwable in case the invocation failed
 		 */
+		@Nullable
 		T proceed() throws Throwable;
 
 		/**

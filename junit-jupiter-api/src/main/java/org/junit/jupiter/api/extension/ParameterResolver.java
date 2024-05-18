@@ -15,6 +15,7 @@ import static org.apiguardian.api.API.Status.STABLE;
 import java.lang.reflect.Parameter;
 
 import org.apiguardian.api.API;
+import org.junit.platform.commons.annotation.Nullable;
 
 /**
  * {@code ParameterResolver} defines the API for {@link Extension Extensions}
@@ -87,6 +88,7 @@ public interface ParameterResolver extends Extension {
 	 * @see #supportsParameter
 	 * @see ParameterContext
 	 */
+	@Nullable
 	Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext)
 			throws ParameterResolutionException;
 

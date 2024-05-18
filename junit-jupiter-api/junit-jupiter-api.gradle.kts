@@ -9,8 +9,10 @@ description = "JUnit Jupiter API"
 
 nullaway {
 	annotatedPackages.addAll(
+		"org.junit.jupiter.api.extension",
 		"org.junit.jupiter.api.function",
 		"org.junit.jupiter.api.io",
+		"org.junit.jupiter.api.parallel",
 	)
 }
 

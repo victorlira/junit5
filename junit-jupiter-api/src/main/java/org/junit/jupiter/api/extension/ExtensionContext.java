@@ -10,6 +10,7 @@
 
 package org.junit.jupiter.api.extension;
 
+import static java.util.Objects.requireNonNull;
 import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 import static org.apiguardian.api.API.Status.STABLE;
 
@@ -28,6 +29,7 @@ import org.apiguardian.api.API;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.platform.commons.PreconditionViolationException;
+import org.junit.platform.commons.annotation.Nullable;
 import org.junit.platform.commons.support.ReflectionSupport;
 import org.junit.platform.commons.util.Preconditions;
 
@@ -448,6 +450,7 @@ public interface ExtensionContext {
 		 * @see #get(Object, Class)
 		 * @see #getOrDefault(Object, Class, Object)
 		 */
+		@Nullable
 		Object get(Object key);
 
 		/**
@@ -466,6 +469,7 @@ public interface ExtensionContext {
 		 * @see #get(Object)
 		 * @see #getOrDefault(Object, Class, Object)
 		 */
+		@Nullable
 		<V> V get(Object key, Class<V> requiredType);
 
 		/**
@@ -483,7 +487,7 @@ public interface ExtensionContext {
 		 * @param requiredType the required type of the value; never {@code null}
 		 * @param defaultValue the default value
 		 * @param <V> the value type
-		 * @return the value; potentially {@code null}
+		 * @return the value; never {@code null}
 		 * @since 5.5
 		 * @see #get(Object, Class)
 		 */
@@ -525,7 +529,7 @@ public interface ExtensionContext {
 		 */
 		@API(status = STABLE, since = "5.1")
 		default <V> V getOrComputeIfAbsent(Class<V> type) {
-			return getOrComputeIfAbsent(type, ReflectionSupport::newInstance, type);
+			return requireNonNull(getOrComputeIfAbsent(type, ReflectionSupport::newInstance, type));
 		}
 
 		/**
@@ -583,6 +587,7 @@ public interface ExtensionContext {
 		 * @see #getOrComputeIfAbsent(Object, Function)
 		 * @see CloseableResource
 		 */
+		@Nullable
 		<K, V> V getOrComputeIfAbsent(K key, Function<K, V> defaultCreator, Class<V> requiredType);
 
 		/**
@@ -618,6 +623,7 @@ public interface ExtensionContext {
 		 * for the specified key
 		 * @see #remove(Object, Class)
 		 */
+		@Nullable
 		Object remove(Object key);
 
 		/**
@@ -635,6 +641,7 @@ public interface ExtensionContext {
 		 * for the specified key
 		 * @see #remove(Object)
 		 */
+		@Nullable
 		<V> V remove(Object key, Class<V> requiredType);
 
 	}

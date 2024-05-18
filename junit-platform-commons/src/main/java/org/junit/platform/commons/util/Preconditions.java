@@ -19,6 +19,8 @@ import java.util.function.Supplier;
 
 import org.apiguardian.api.API;
 import org.junit.platform.commons.PreconditionViolationException;
+import org.junit.platform.commons.annotation.NotNull;
+import org.junit.platform.commons.annotation.Nullable;
 
 /**
  * Collection of utilities for asserting preconditions for method and
@@ -65,7 +67,9 @@ public final class Preconditions {
 	 * @throws PreconditionViolationException if the supplied object is {@code null}
 	 * @see #condition(boolean, Supplier)
 	 */
-	public static <T> T notNull(T object, Supplier<String> messageSupplier) throws PreconditionViolationException {
+	@NotNull
+	public static <T> T notNull(@Nullable T object, Supplier<String> messageSupplier)
+			throws PreconditionViolationException {
 		condition(object != null, messageSupplier);
 		return object;
 	}

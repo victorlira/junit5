@@ -20,6 +20,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
 import org.junit.jupiter.api.extension.ParameterResolver;
+import org.junit.platform.commons.annotation.Nullable;
 import org.junit.platform.commons.util.Preconditions;
 
 /**
@@ -51,8 +52,8 @@ public abstract class TypeBasedParameterResolver<T> implements ParameterResolver
 	}
 
 	private Type enclosedTypeOfParameterResolver() {
-		ParameterizedType typeBasedParameterResolverSuperclass = findTypeBasedParameterResolverSuperclass(getClass());
-		Preconditions.notNull(typeBasedParameterResolverSuperclass,
+		ParameterizedType typeBasedParameterResolverSuperclass = Preconditions.notNull(
+			findTypeBasedParameterResolverSuperclass(getClass()),
 			() -> String.format(
 				"Failed to discover parameter type supported by %s; "
 						+ "potentially caused by lacking parameterized type in class declaration.",
@@ -60,6 +61,7 @@ public abstract class TypeBasedParameterResolver<T> implements ParameterResolver
 		return typeBasedParameterResolverSuperclass.getActualTypeArguments()[0];
 	}
 
+	@Nullable
 	private ParameterizedType findTypeBasedParameterResolverSuperclass(Class<?> clazz) {
 		Class<?> superclass = clazz.getSuperclass();
 

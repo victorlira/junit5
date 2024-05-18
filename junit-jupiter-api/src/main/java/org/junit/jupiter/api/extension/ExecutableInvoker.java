@@ -16,6 +16,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 import org.apiguardian.api.API;
+import org.junit.platform.commons.annotation.Nullable;
 
 /**
  * {@code ExecutableInvoker} allows invoking methods and constructors
@@ -44,7 +45,7 @@ public interface ExecutableInvoker {
 	 * @param target the target on which the executable will be invoked;
 	 * can be {@code null} for {@code static} methods
 	 */
-	Object invoke(Method method, Object target);
+	Object invoke(Method method, @Nullable Object target);
 
 	/**
 	 * Invoke the supplied top-level constructor with dynamic parameter resolution.
@@ -67,6 +68,6 @@ public interface ExecutableInvoker {
 	 * to the constructor; must be {@code null} for top-level classes
 	 * or {@code static} nested classes
 	 */
-	<T> T invoke(Constructor<T> constructor, Object outerInstance);
+	<T> T invoke(Constructor<T> constructor, @Nullable Object outerInstance);
 
 }
