@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.ir.backend.js.compile
-
 plugins {
 	id("junitbuild.kotlin-library-conventions")
 	`java-test-fixtures`
@@ -11,6 +9,7 @@ description = "JUnit Jupiter API"
 
 nullaway {
 	annotatedPackages.addAll(
+		"org.junit.jupiter.api.function",
 		"org.junit.jupiter.api.io",
 	)
 }

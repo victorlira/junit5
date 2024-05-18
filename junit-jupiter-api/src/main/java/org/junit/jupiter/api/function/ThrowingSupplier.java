@@ -13,6 +13,7 @@ package org.junit.jupiter.api.function;
 import static org.apiguardian.api.API.Status.STABLE;
 
 import org.apiguardian.api.API;
+import org.junit.platform.commons.annotation.Nullable;
 
 /**
  * {@code ThrowingSupplier} is a functional interface that can be used to
@@ -49,6 +50,7 @@ public interface ThrowingSupplier<T> {
 	 *
 	 * @return a result
 	 */
+	@Nullable
 	T get() throws Throwable;
 
 }
