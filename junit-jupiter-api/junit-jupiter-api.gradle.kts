@@ -23,7 +23,6 @@ dependencies {
 	compileOnlyApi(libs.apiguardian)
 
 	compileOnly(kotlin("stdlib"))
-	compileOnly(libs.jetbrainsAnnotations)
 
 	osgiVerification(projects.junitJupiterEngine)
 	osgiVerification(projects.junitPlatformLauncher)
@@ -33,12 +32,6 @@ dependencies {
 }
 
 tasks {
-	compileModule {
-		options.compilerArgs.addAll(listOf(
-			"--add-modules", "org.jetbrains.annotations",
-			"--add-reads", "${javaModuleName}=org.jetbrains.annotations",
-		))
-	}
 	jar {
 		bundle {
 			val version = project.version
