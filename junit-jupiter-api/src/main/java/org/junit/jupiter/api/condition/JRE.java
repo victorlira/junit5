@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 import java.util.EnumSet;
 
 import org.apiguardian.api.API;
+import org.junit.platform.commons.annotation.Nullable;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
 import org.junit.platform.commons.util.ReflectionUtils;
@@ -182,8 +183,10 @@ public enum JRE {
 
 	private static final Logger logger = LoggerFactory.getLogger(JRE.class);
 
+	@Nullable
 	private static final JRE CURRENT_VERSION = determineCurrentVersion();
 
+	@Nullable
 	private static JRE determineCurrentVersion() {
 		String javaVersion = System.getProperty("java.version");
 		boolean javaVersionIsBlank = StringUtils.isBlank(javaVersion);
@@ -264,6 +267,7 @@ public enum JRE {
 	 * @since 5.7
 	 */
 	@API(status = STABLE, since = "5.7")
+	@Nullable("in case the current JRE is 'unknown'")
 	public static JRE currentVersion() {
 		return CURRENT_VERSION;
 	}
