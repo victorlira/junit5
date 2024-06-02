@@ -457,6 +457,18 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Architectures on which the annotated class or method should be enabled.</div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_OR_ARGUMENTS_WITH_NAMES_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="block">Placeholder for either <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_PLACEHOLDER"><code>ParameterizedTest.ARGUMENT_SET_NAME_PLACEHOLDER</code></a> or
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENTS_WITH_NAMES_PLACEHOLDER"><code>ParameterizedTest.ARGUMENTS_WITH_NAMES_PLACEHOLDER</code></a>, depending on whether the
+ current set of arguments was created via
+ <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html#argumentSet(java.lang.String,java.lang.Object...)"><code>argumentSet()</code></a>: <code>{argumentSetNameOrArgumentsWithNames}</code>.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html#ARGUMENT_SET_NAME_PLACEHOLDER" class="member-name-link">ARGUMENT_SET_NAME_PLACEHOLDER</a> - Static variable in annotation interface org.junit.jupiter.params.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params">ParameterizedTest</a></dt>
+<dd>
+<div class="block">Placeholder for the name of the argument set for the current invocation
+ of a <code>@ParameterizedTest</code> method: <code>{argumentSetName}</code>.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentAccessException.html" class="type-name-link" title="class in org.junit.jupiter.params.aggregator">ArgumentAccessException</a> - Exception Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></dt>
 <dd>
 <div class="block"><code>ArgumentAccessException</code> is an exception thrown by an
@@ -506,6 +518,11 @@ loadScripts(document, 'script');</script>
  of the current invocation of a <code>@ParameterizedTest</code> method:
  <code>{argumentsWithNames}</code></div>
 </dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html" class="type-name-link" title="class in org.junit.jupiter.params.provider">Arguments.ArgumentSet</a> - Class in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
+<dd>
+<div class="block">Specialization of <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider"><code>Arguments</code></a> that associates a <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html#getName()"><code>name</code></a>
+ with a set of <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html#get()"><code>arguments</code></a>.</div>
+</dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/ArgumentsAccessor.html" class="type-name-link" title="interface in org.junit.jupiter.params.aggregator">ArgumentsAccessor</a> - Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/aggregator/package-summary.html">org.junit.jupiter.params.aggregator</a></dt>
 <dd>
 <div class="block"><code>ArgumentsAccessor</code> defines the public API for accessing arguments provided
@@ -529,6 +546,11 @@ loadScripts(document, 'script');</script>
  provided by an <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" title="interface in org.junit.jupiter.params.provider"><code>ArgumentsProvider</code></a> for a single invocation of a
  <a href="../org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html" title="annotation interface in org.junit.jupiter.params"><code>@ParameterizedTest</code></a> method
  into a single object.</div>
+</dd>
+<dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html#argumentSet(java.lang.String,java.lang.Object...)" class="member-name-link">argumentSet(String, Object...)</a> - Static method in interface org.junit.jupiter.params.provider.<a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.html" title="interface in org.junit.jupiter.params.provider">Arguments</a></dt>
+<dd>
+<div class="block">Factory method for creating an <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/Arguments.ArgumentSet.html" title="class in org.junit.jupiter.params.provider"><code>Arguments.ArgumentSet</code></a> based on the supplied
+ <code>name</code> and <code>arguments</code>.</div>
 </dd>
 <dt><a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/ArgumentsProvider.html" class="type-name-link" title="interface in org.junit.jupiter.params.provider">ArgumentsProvider</a> - Interface in <a href="../org.junit.jupiter.params/org/junit/jupiter/params/provider/package-summary.html">org.junit.jupiter.params.provider</a></dt>
 <dd>
