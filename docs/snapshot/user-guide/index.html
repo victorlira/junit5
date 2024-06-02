@@ -5695,15 +5695,17 @@ action with a custom <code>@CsvToPerson</code> annotation.</p>
 <h4 id="writing-tests-parameterized-tests-display-names"><a class="anchor" href="#writing-tests-parameterized-tests-display-names"></a>2.17.6. Customizing Display Names</h4>
 <div class="paragraph">
 <p>By default, the display name of a parameterized test invocation contains the invocation
-index and the <code>String</code> representation of all arguments for that specific invocation.
-Each of them is preceded by the parameter name (unless the argument is only available via
-an <code>ArgumentsAccessor</code> or <code>ArgumentAggregator</code>), if present in the bytecode (for Java,
-test code must be compiled with the <code>-parameters</code> compiler flag).</p>
+index and the <code>String</code> representation of all arguments for that specific invocation. Each
+argument is preceded by its parameter name (unless the argument is only available via an
+<code>ArgumentsAccessor</code> or <code>ArgumentAggregator</code>), if the parameter name is present in the
+bytecode (for Java, test code must be compiled with the <code>-parameters</code> compiler flag).</p>
 </div>
 <div class="paragraph">
 <p>However, you can customize invocation display names via the <code>name</code> attribute of the
 <code>@ParameterizedTest</code> annotation like in the following example.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"Display name of container"</span><span class="o">)</span>
@@ -5725,9 +5727,22 @@ the following.</p>
 └─ 3 ==&gt; the rank of 'lemon, lime' is 3 ✔</pre>
 </div>
 </div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>Please note that <code>name</code> is a <code>MessageFormat</code> pattern. Thus, a single quote (<code>'</code>) needs to
 be represented as a doubled single quote (<code>''</code>) in order to be displayed.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following placeholders are supported within custom display names.</p>
@@ -5786,6 +5801,8 @@ to 512 characters.
 names for arguments using the <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/Named.html">Named</a></code> API. A custom name will be used if the argument is
 included in the invocation display name, like in the example below.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"A parameterized test with named arguments"</span><span class="o">)</span>
@@ -5802,12 +5819,37 @@ included in the invocation display name, like in the example below.</p>
 <span class="o">}</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>When executing the above method using the <code>ConsoleLauncher</code> you will see output similar to
+the following.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>A parameterized test with named arguments ✔
 ├─ 1: An important file ✔
 └─ 2: Another file ✔</pre>
 </div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note that <code>arguments(Object&#8230;&#8203;)</code> is a static factory method defined in the
+<code>org.junit.jupiter.params.provider.Arguments</code> interface.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, <code>named(String, Object)</code> is a static factory method defined in the
+<code>org.junit.jupiter.api.Named</code> interface.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>If you&#8217;d like to set a default name pattern for all parameterized tests in your project,
