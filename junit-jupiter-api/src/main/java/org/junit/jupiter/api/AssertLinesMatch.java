@@ -24,6 +24,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.junit.platform.commons.annotation.Nullable;
+
 /**
  * {@code AssertLinesMatch} is a collection of utility methods that support asserting
  * lines of {@link String} equality or {@link java.util.regex.Pattern}-match in tests.
@@ -68,7 +70,7 @@ class AssertLinesMatch {
 		assertLinesMatch(expectedListOfStrings, actualListOfStrings, messageOrSupplier);
 	}
 
-	static void assertLinesMatch(List<String> expectedLines, List<String> actualLines, Object messageOrSupplier) {
+	static void assertLinesMatch(@Nullable List<String> expectedLines, @Nullable List<String> actualLines, Object messageOrSupplier) {
 		notNull(expectedLines, "expectedLines must not be null");
 		notNull(actualLines, "actualLines must not be null");
 

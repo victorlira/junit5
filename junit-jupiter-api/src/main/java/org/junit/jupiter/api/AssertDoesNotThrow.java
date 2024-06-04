@@ -16,6 +16,7 @@ import java.util.function.Supplier;
 
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.api.function.ThrowingSupplier;
+import org.junit.platform.commons.annotation.Nullable;
 import org.junit.platform.commons.util.StringUtils;
 import org.junit.platform.commons.util.UnrecoverableExceptions;
 import org.opentest4j.AssertionFailedError;
@@ -36,7 +37,7 @@ class AssertDoesNotThrow {
 		assertDoesNotThrow(executable, (Object) null);
 	}
 
-	static void assertDoesNotThrow(Executable executable, String message) {
+	static void assertDoesNotThrow(Executable executable, @Nullable String message) {
 		assertDoesNotThrow(executable, (Object) message);
 	}
 
@@ -44,7 +45,7 @@ class AssertDoesNotThrow {
 		assertDoesNotThrow(executable, (Object) messageSupplier);
 	}
 
-	private static void assertDoesNotThrow(Executable executable, Object messageOrSupplier) {
+	private static void assertDoesNotThrow(Executable executable, @Nullable Object messageOrSupplier) {
 		try {
 			executable.execute();
 		}
@@ -58,7 +59,7 @@ class AssertDoesNotThrow {
 		return assertDoesNotThrow(supplier, (Object) null);
 	}
 
-	static <T> T assertDoesNotThrow(ThrowingSupplier<T> supplier, String message) {
+	static <T> T assertDoesNotThrow(ThrowingSupplier<T> supplier, @Nullable String message) {
 		return assertDoesNotThrow(supplier, (Object) message);
 	}
 
@@ -66,7 +67,7 @@ class AssertDoesNotThrow {
 		return assertDoesNotThrow(supplier, (Object) messageSupplier);
 	}
 
-	private static <T> T assertDoesNotThrow(ThrowingSupplier<T> supplier, Object messageOrSupplier) {
+	private static <T> T assertDoesNotThrow(ThrowingSupplier<T> supplier, @Nullable Object messageOrSupplier) {
 		try {
 			return supplier.get();
 		}
@@ -76,7 +77,7 @@ class AssertDoesNotThrow {
 		}
 	}
 
-	private static AssertionFailedError createAssertionFailedError(Object messageOrSupplier, Throwable t) {
+	private static AssertionFailedError createAssertionFailedError(@Nullable Object messageOrSupplier, Throwable t) {
 		return assertionFailure() //
 				.message(messageOrSupplier) //
 				.reason("Unexpected exception thrown: " + t.getClass().getName() + buildSuffix(t.getMessage())) //
@@ -84,7 +85,7 @@ class AssertDoesNotThrow {
 				.build();
 	}
 
-	private static String buildSuffix(String message) {
+	private static String buildSuffix(@Nullable String message) {
 		return StringUtils.isNotBlank(message) ? ": " + message : "";
 	}
 

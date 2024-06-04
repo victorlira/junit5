@@ -17,6 +17,8 @@ import static org.junit.jupiter.api.AssertionUtils.objectsAreEqual;
 
 import java.util.function.Supplier;
 
+import org.junit.platform.commons.annotation.Nullable;
+
 /**
  * {@code AssertEquals} is a collection of utility methods that support asserting
  * equality on objects and primitives in tests.
@@ -33,7 +35,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(byte expected, byte actual, String message) {
+	static void assertEquals(byte expected, byte actual, @Nullable String message) {
 		if (expected != actual) {
 			failNotEqual(expected, actual, message);
 		}
@@ -49,7 +51,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(char expected, char actual, String message) {
+	static void assertEquals(char expected, char actual, @Nullable String message) {
 		if (expected != actual) {
 			failNotEqual(expected, actual, message);
 		}
@@ -65,7 +67,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(double expected, double actual, String message) {
+	static void assertEquals(double expected, double actual, @Nullable String message) {
 		if (!doublesAreEqual(expected, actual)) {
 			failNotEqual(expected, actual, message);
 		}
@@ -81,7 +83,7 @@ class AssertEquals {
 		assertEquals(expected, actual, delta, (String) null);
 	}
 
-	static void assertEquals(double expected, double actual, double delta, String message) {
+	static void assertEquals(double expected, double actual, double delta, @Nullable String message) {
 		if (!doublesAreEqual(expected, actual, delta)) {
 			failNotEqual(expected, actual, message);
 		}
@@ -97,7 +99,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(float expected, float actual, String message) {
+	static void assertEquals(float expected, float actual, @Nullable String message) {
 		if (!floatsAreEqual(expected, actual)) {
 			failNotEqual(expected, actual, message);
 		}
@@ -113,7 +115,7 @@ class AssertEquals {
 		assertEquals(expected, actual, delta, (String) null);
 	}
 
-	static void assertEquals(float expected, float actual, float delta, String message) {
+	static void assertEquals(float expected, float actual, float delta, @Nullable String message) {
 		if (!floatsAreEqual(expected, actual, delta)) {
 			failNotEqual(expected, actual, message);
 		}
@@ -129,7 +131,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(short expected, short actual, String message) {
+	static void assertEquals(short expected, short actual, @Nullable String message) {
 		if (expected != actual) {
 			failNotEqual(expected, actual, message);
 		}
@@ -145,7 +147,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(int expected, int actual, String message) {
+	static void assertEquals(int expected, int actual, @Nullable String message) {
 		if (expected != actual) {
 			failNotEqual(expected, actual, message);
 		}
@@ -161,7 +163,7 @@ class AssertEquals {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(long expected, long actual, String message) {
+	static void assertEquals(long expected, long actual, @Nullable String message) {
 		if (expected != actual) {
 			failNotEqual(expected, actual, message);
 		}
@@ -173,23 +175,23 @@ class AssertEquals {
 		}
 	}
 
-	static void assertEquals(Object expected, Object actual) {
+	static void assertEquals(@Nullable Object expected, @Nullable Object actual) {
 		assertEquals(expected, actual, (String) null);
 	}
 
-	static void assertEquals(Object expected, Object actual, String message) {
+	static void assertEquals(@Nullable Object expected, @Nullable Object actual, @Nullable String message) {
 		if (!objectsAreEqual(expected, actual)) {
 			failNotEqual(expected, actual, message);
 		}
 	}
 
-	static void assertEquals(Object expected, Object actual, Supplier<String> messageSupplier) {
+	static void assertEquals(@Nullable Object expected, @Nullable Object actual, Supplier<String> messageSupplier) {
 		if (!objectsAreEqual(expected, actual)) {
 			failNotEqual(expected, actual, messageSupplier);
 		}
 	}
 
-	private static void failNotEqual(Object expected, Object actual, Object messageOrSupplier) {
+	private static void failNotEqual(@Nullable Object expected, @Nullable Object actual, @Nullable Object messageOrSupplier) {
 		assertionFailure() //
 				.message(messageOrSupplier) //
 				.expected(expected) //

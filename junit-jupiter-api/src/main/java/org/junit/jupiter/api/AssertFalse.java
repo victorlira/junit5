@@ -15,6 +15,8 @@ import static org.junit.jupiter.api.AssertionFailureBuilder.assertionFailure;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
+import org.junit.platform.commons.annotation.Nullable;
+
 /**
  * {@code AssertFalse} is a collection of utility methods that support asserting
  * {@code false} in tests.
@@ -31,7 +33,7 @@ class AssertFalse {
 		assertFalse(condition, (String) null);
 	}
 
-	static void assertFalse(boolean condition, String message) {
+	static void assertFalse(boolean condition, @Nullable String message) {
 		if (condition) {
 			failNotFalse(message);
 		}
@@ -47,7 +49,7 @@ class AssertFalse {
 		assertFalse(booleanSupplier.getAsBoolean(), (String) null);
 	}
 
-	static void assertFalse(BooleanSupplier booleanSupplier, String message) {
+	static void assertFalse(BooleanSupplier booleanSupplier, @Nullable String message) {
 		assertFalse(booleanSupplier.getAsBoolean(), message);
 	}
 
@@ -55,7 +57,7 @@ class AssertFalse {
 		assertFalse(booleanSupplier.getAsBoolean(), messageSupplier);
 	}
 
-	private static void failNotFalse(Object messageOrSupplier) {
+	private static void failNotFalse(@Nullable Object messageOrSupplier) {
 		assertionFailure() //
 				.message(messageOrSupplier) //
 				.expected(false) //
