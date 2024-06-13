@@ -1919,25 +1919,26 @@ functions in the <code>org.junit.jupiter.api</code> package.</p>
 <span class="k">import</span> <span class="nn">java.time.Duration</span>
 
 <span class="kd">class</span> <span class="nc">KotlinAssertionsDemo</span> <span class="p">{</span>
-
     <span class="k">private</span> <span class="kd">val</span> <span class="py">person</span> <span class="p">=</span> <span class="nc">Person</span><span class="p">(</span><span class="s">"Jane"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">)</span>
     <span class="k">private</span> <span class="kd">val</span> <span class="py">people</span> <span class="p">=</span> <span class="nf">setOf</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="nc">Person</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span> <span class="s">"Doe"</span><span class="p">))</span>
 
     <span class="nd">@Test</span>
     <span class="k">fun</span> <span class="nf">`exception</span> <span class="n">absence</span> <span class="nf">testing`</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">val</span> <span class="py">calculator</span> <span class="p">=</span> <span class="nc">Calculator</span><span class="p">()</span>
-        <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="nf">assertDoesNotThrow</span><span class="p">(</span><span class="s">"Should not throw an exception"</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
+        <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span>
+            <span class="nf">assertDoesNotThrow</span><span class="p">(</span><span class="s">"Should not throw an exception"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
         <span class="nf">assertEquals</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="nd">@Test</span>
     <span class="k">fun</span> <span class="nf">`expected</span> <span class="n">exception</span> <span class="nf">testing`</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">val</span> <span class="py">calculator</span> <span class="p">=</span> <span class="nc">Calculator</span><span class="p">()</span>
-        <span class="kd">val</span> <span class="py">exception</span> <span class="p">=</span> <span class="n">assertThrows</span><span class="p">&lt;</span><span class="nc">ArithmeticException</span><span class="p">&gt;</span> <span class="p">(</span><span class="s">"Should throw an exception"</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="p">}</span>
+        <span class="kd">val</span> <span class="py">exception</span> <span class="p">=</span>
+            <span class="n">assertThrows</span><span class="p">&lt;</span><span class="nc">ArithmeticException</span><span class="p">&gt;</span> <span class="p">(</span><span class="s">"Should throw an exception"</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">calculator</span><span class="p">.</span><span class="nf">divide</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">}</span>
         <span class="nf">assertEquals</span><span class="p">(</span><span class="s">"/ by zero"</span><span class="p">,</span> <span class="n">exception</span><span class="p">.</span><span class="n">message</span><span class="p">)</span>
     <span class="p">}</span>
 
@@ -1974,9 +1975,10 @@ functions in the <code>org.junit.jupiter.api</code> package.</p>
     <span class="nd">@Test</span>
     <span class="k">fun</span> <span class="nf">`timeout</span> <span class="n">not</span> <span class="n">exceeded</span> <span class="nf">testing`</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">val</span> <span class="py">fibonacciCalculator</span> <span class="p">=</span> <span class="nc">FibonacciCalculator</span><span class="p">()</span>
-        <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="nf">assertTimeout</span><span class="p">(</span><span class="nc">Duration</span><span class="p">.</span><span class="nf">ofMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span> <span class="p">{</span>
-            <span class="n">fibonacciCalculator</span><span class="p">.</span><span class="nf">fib</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
-        <span class="p">}</span>
+        <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span>
+            <span class="nf">assertTimeout</span><span class="p">(</span><span class="nc">Duration</span><span class="p">.</span><span class="nf">ofMillis</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">fibonacciCalculator</span><span class="p">.</span><span class="nf">fib</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+            <span class="p">}</span>
         <span class="nf">assertEquals</span><span class="p">(</span><span class="mi">377</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
     <span class="p">}</span>
 
@@ -10158,13 +10160,14 @@ has been ported to Kotlin.</p>
 <div class="title">Registering an extension via a static field in Kotlin</div>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="kotlin"><span class="kd">class</span> <span class="nc">KotlinWebServerDemo</span> <span class="p">{</span>
-
     <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
-        <span class="nd">@JvmStatic</span>
+        <span class="nd">@JvmField</span>
         <span class="nd">@RegisterExtension</span>
-        <span class="kd">val</span> <span class="py">server</span> <span class="p">=</span> <span class="nc">WebServerExtension</span><span class="p">.</span><span class="nf">builder</span><span class="p">()</span>
-            <span class="p">.</span><span class="nf">enableSecurity</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>
-            <span class="p">.</span><span class="nf">build</span><span class="p">()</span>
+        <span class="kd">val</span> <span class="py">server</span> <span class="p">=</span>
+            <span class="nc">WebServerExtension</span>
+                <span class="p">.</span><span class="nf">builder</span><span class="p">()</span>
+                <span class="p">.</span><span class="nf">enableSecurity</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">build</span><span class="p">()</span><span class="o">!!</span>
     <span class="p">}</span>
 
     <span class="nd">@Test</span>
