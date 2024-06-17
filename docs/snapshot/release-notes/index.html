@@ -704,7 +704,8 @@ repository on GitHub.</p>
 <li>
 <p>Attempting to deserialize a <code>TestIdentifier</code> no longer causes a <code>NullPointerException</code>
 when there is no parent identifier. See
-<a href="https://github.com/junit-team/junit5/issues/3819">issue 3819</a>.</p>
+<a href="https://github.com/junit-team/junit5/issues/3819">issue 3819</a> (backported to
+5.10.3).</p>
 </li>
 </ul>
 </div>
@@ -763,7 +764,7 @@ store that has already been closed will have no effect.</p>
 <ul>
 <li>
 <p><code>MethodOrderer.Random</code> and <code>ClassOrderer.Random</code> now use the same default seed that is
-generated during class initialization.</p>
+generated during class initialization (backported to 5.10.3).</p>
 </li>
 </ul>
 </div>
@@ -850,11 +851,12 @@ inside Spring Boot executable jars for Spring Boot 3.2 and later.</p>
 </li>
 <li>
 <p>The <code>junit-platform-suite-engine</code> now includes configuration provided via
-<code>@ConfigurationParameter</code> when selecting tests by <code>UniqueId</code>.</p>
+<code>@ConfigurationParameter</code> when selecting tests by <code>UniqueId</code> (backported to 5.10.3).</p>
 </li>
 <li>
 <p>In order to support using <code>@EnabledInNativeImage</code> on test classes,
-<code>UniqueIdTrackingListener</code> now tracks descendants of skipped test containers.</p>
+<code>UniqueIdTrackingListener</code> now tracks descendants of skipped test containers (backported
+to 5.10.3).</p>
 </li>
 </ul>
 </div>
