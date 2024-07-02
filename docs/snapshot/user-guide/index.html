@@ -12853,12 +12853,12 @@ by adding the file to <code>src/test/resources</code>):</p>
 <p>In order to intercept the creation of instances of <code><a href="../api/org.junit.platform.launcher/org/junit/platform/launcher/Launcher.html">Launcher</a></code> and
 <code><a href="../api/org.junit.platform.launcher/org/junit/platform/launcher/LauncherSessionListener.html">LauncherSessionListener</a></code> and calls to the <code>discover</code> and <code>execute</code> methods of the
 former, clients can register custom implementations of <code><a href="../api/org.junit.platform.launcher/org/junit/platform/launcher/LauncherInterceptor.html">LauncherInterceptor</a></code> via Java&#8217;s
-<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html">ServiceLoader</a></code> mechanism by additionally setting the
+<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html">ServiceLoader</a></code> mechanism by setting the
 <code>junit.platform.launcher.interceptors.enabled</code> <a href="#running-tests-config-params">configuration parameter</a> to <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>A typical use case is to create a custom replace the <code>ClassLoader</code> used by the JUnit
-Platform to load test classes and engine implementations.</p>
+<p>A typical use case is to create a custom interceptor to replace the <code>ClassLoader</code> used by
+the JUnit Platform to load test classes and engine implementations.</p>
 </div>
 <div class="listingblock">
 <div class="content">
