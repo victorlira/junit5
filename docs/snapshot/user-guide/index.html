@@ -7177,9 +7177,10 @@ they are instantiated, but they can assume that their <code>createTempDirectory(
 thread.</p>
 </div>
 <div class="paragraph">
-<p>The default implementation available in Jupiter delegates the directory creation to
-<code>java.nio.file.Files::createTempDirectory</code>, passing <code>junit</code> as the prefix string to be
-used in generating the directory&#8217;s name.</p>
+<p>The default implementation available in Jupiter delegates directory creation to
+<code>java.nio.file.Files::createTempDirectory</code> which uses the default file system and the
+system&#8217;s temporary directory as the parent directory. It passes <code>junit-</code> as the prefix
+string of the generated directory name to help identify it as a created by JUnit.</p>
 </div>
 <div class="paragraph">
 <p>The following example defines a factory that uses the test name as the directory name

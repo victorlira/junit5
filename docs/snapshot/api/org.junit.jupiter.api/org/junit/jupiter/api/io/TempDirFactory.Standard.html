@@ -107,7 +107,10 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="TempDirFactory.html" title="interface in org.junit.jupiter.api.io">TempDirFactory</a></span></div>
 <div class="block">Standard <a href="TempDirFactory.html" title="interface in org.junit.jupiter.api.io"><code>TempDirFactory</code></a> implementation which delegates to
- <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute...)" title="class or interface in java.nio.file" class="external-link"><code>Files.createTempDirectory(java.nio.file.Path, java.lang.String, java.nio.file.attribute.FileAttribute&lt;?&gt;...)</code></a> using <code>"junit"</code> as the prefix.</div>
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute...)" title="class or interface in java.nio.file" class="external-link"><code>Files.createTempDirectory(java.nio.file.Path, java.lang.String, java.nio.file.attribute.FileAttribute&lt;?&gt;...)</code></a> using <code>"junit-,"</code> as prefix.
+
+ <p>The created temporary directory is always created in the default
+ file system with the system's default temporary directory as its parent.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
