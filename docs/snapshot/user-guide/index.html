@@ -8650,6 +8650,8 @@ RUNTIME CONFIGURATION
       -cp, --classpath, --class-path=PATH
                              Provide additional classpath entries -- for example, for adding
                                engines and their dependencies. This option can be repeated.
+      --config-resource=PATH Set configuration parameters for test discovery and execution via
+                               a classpath resource. This option can be repeated.
       --config=KEY=VALUE     Set a configuration parameter for test discovery and execution.
                                This option can be repeated.
 
@@ -8751,6 +8753,8 @@ RUNTIME CONFIGURATION
       -cp, --classpath, --class-path=PATH
                              Provide additional classpath entries -- for example, for adding
                                engines and their dependencies. This option can be repeated.
+      --config-resource=PATH Set configuration parameters for test discovery and execution via
+                               a classpath resource. This option can be repeated.
       --config=KEY=VALUE     Set a configuration parameter for test discovery and execution.
                                This option can be repeated.
 
@@ -9232,19 +9236,21 @@ engines running on the JUnit Platform via one of the following mechanisms.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>configurationParameter()</code> and <code>configurationParameters()</code> methods in the
-<code>LauncherDiscoveryRequestBuilder</code> which is used to build a request supplied to the
-<a href="#launcher-api"><code>Launcher</code> API</a>. When running tests via one of the tools provided
-by the JUnit Platform you can specify configuration parameters as follows:</p>
+<p>The <code>configurationParameter()</code> and <code>configurationParameters()</code> methods in
+<code>LauncherDiscoveryRequestBuilder</code> which
+is used to build a request supplied to the <a href="#launcher-api">Launcher API</a>.
+<br>
+When running tests via one of the tools provided by the JUnit Platform you can specify
+configuration parameters as follows:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#running-tests-console-launcher">Console Launcher</a>: use the <code>--config</code>
-command-line option.</p>
+<p><a href="#running-tests-console-launcher">Console Launcher</a>: use the <code>--config</code> command-line
+option.</p>
 </li>
 <li>
-<p><a href="#running-tests-build-gradle-config-params">Gradle</a>: use the
-<code>systemProperty</code> or <code>systemProperties</code> DSL.</p>
+<p><a href="#running-tests-build-gradle-config-params">Gradle</a>: use the <code>systemProperty</code> or
+<code>systemProperties</code> DSL.</p>
 </li>
 <li>
 <p><a href="#running-tests-build-maven-config-params">Maven Surefire provider</a>: use the
@@ -9254,11 +9260,18 @@ command-line option.</p>
 </div>
 </li>
 <li>
+<p>The <code>configurationParametersResources()</code> method in <code>LauncherDiscoveryRequestBuilder</code>.
+<br>
+When running tests via the <a href="#running-tests-console-launcher">Console Launcher</a> you can
+specify custom configuration files using the <code>--config-resource</code> command-line option.</p>
+</li>
+<li>
 <p>JVM system properties.</p>
 </li>
 <li>
-<p>The JUnit Platform configuration file: a file named <code>junit-platform.properties</code> in the
-root of the class path that follows the syntax rules for a Java <code>Properties</code> file.</p>
+<p>The JUnit Platform default configuration file: a file named <code>junit-platform.properties</code>
+in the root of the class path that follows the syntax rules for Java <code>Properties</code>
+files.</p>
 </li>
 </ol>
 </div>
@@ -9271,9 +9284,9 @@ root of the class path that follows the syntax rules for a Java <code>Properties
 <td class="content">
 Configuration parameters are looked up in the exact order defined above.
 Consequently, configuration parameters supplied directly to the <code>Launcher</code> take
-precedence over those supplied via system properties and the configuration file.
-Similarly, configuration parameters supplied via system properties take precedence over
-those supplied via the configuration file.
+precedence over those supplied via custom configuration files, system properties, and the
+default configuration file. Similarly, configuration parameters supplied via system
+properties take precedence over those supplied via the default configuration file.
 </td>
 </tr>
 </table>
@@ -11996,6 +12009,16 @@ output by setting the configuration parameters via <code>--config</code>:</p>
   --config=junit.platform.reporting.output.dir=reports</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Configuration parameters can also be set in a custom properties file supplied as a classpath resource
+via the <code>--config-resource</code> option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>java <span class="nt">-jar</span> junit-platform-console-standalone-1.11.0-SNAPSHOT.jar &lt;OPTIONS&gt; <span class="se">\</span>
+<span class="go">  --config-resource=configuration.properties</span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -13778,6 +13801,16 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.reporting.open.xml</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>OpenTestReportGeneratingListener</code> <em>(class)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.9</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConfigurationParametersResource</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConfigurationParametersResources</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
