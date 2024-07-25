@@ -867,7 +867,11 @@ pre.rouge .gs {
 <li><a href="#extensions-test-instance-factories">5.5. Test Instance Factories</a></li>
 <li><a href="#extensions-test-instance-post-processing">5.6. Test Instance Post-processing</a></li>
 <li><a href="#extensions-test-instance-pre-destroy-callback">5.7. Test Instance Pre-destroy Callback</a></li>
-<li><a href="#extensions-parameter-resolution">5.8. Parameter Resolution</a></li>
+<li><a href="#extensions-parameter-resolution">5.8. Parameter Resolution</a>
+<ul class="sectlevel3">
+<li><a href="#extensions-parameter-resolution-conflicts">5.8.1. Parameter Conflicts</a></li>
+</ul>
+</li>
 <li><a href="#extensions-test-result-processing">5.9. Test Result Processing</a></li>
 <li><a href="#extensions-lifecycle-callbacks">5.10. Test Lifecycle Callbacks</a>
 <ul class="sectlevel3">
@@ -10543,6 +10547,226 @@ constructor invocations, using the <code><a href="../api/org.junit.jupiter.api/o
 </td>
 </tr>
 </table>
+</div>
+<div class="sect3">
+<h4 id="extensions-parameter-resolution-conflicts"><a class="anchor" href="#extensions-parameter-resolution-conflicts"></a>5.8.1. Parameter Conflicts</h4>
+<div class="paragraph">
+<p>If multiple implementations of <code>ParameterResolver</code> that support the same type are
+registered for a test, a <code>ParameterResolutionException</code> will be thrown, with a
+message to indicate that competing resolvers have been discovered. See the following
+example:</p>
+</div>
+<div class="listingblock">
+<div class="title">Conflicting parameter resolution due to multiple resolvers claiming support for integers</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ParameterResolverConflictDemo</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@ExtendWith</span><span class="o">({</span> <span class="nc">FirstIntegerResolver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">SecondIntegerResolver</span><span class="o">.</span><span class="na">class</span> <span class="o">})</span>
+    <span class="kt">void</span> <span class="nf">testInt</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Test will not run due to ParameterResolutionException</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">FirstIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="kt">int</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SecondIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="kt">int</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the conflicting <code>ParameterResolver</code> implementations are applied to different test
+methods as shown in the following example, no conflict occurs.</p>
+</div>
+<div class="listingblock">
+<div class="title">Fine-grained registration to avoid conflict</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ParameterResolverNoConflictDemo</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">FirstIntegerResolver</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">firstResolution</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">SecondIntegerResolver</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">secondResolution</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">FirstIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="kt">int</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SecondIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="kt">int</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the conflicting <code>ParameterResolver</code> implementations need to be applied to the same test
+method, you can implement a custom type or custom annotation as illustrated by
+<code><a href="https://github.com/junit-team/junit5/tree/HEAD/junit-jupiter-engine/src/test/java/org/junit/jupiter/engine/execution/injection/sample/CustomTypeParameterResolver.java">CustomTypeParameterResolver</a></code> and <code><a href="https://github.com/junit-team/junit5/tree/HEAD/junit-jupiter-engine/src/test/java/org/junit/jupiter/engine/execution/injection/sample/CustomAnnotationParameterResolver.java">CustomAnnotationParameterResolver</a></code>, respectively.</p>
+</div>
+<div class="listingblock">
+<div class="title">Custom type to resolve duplicate types</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ParameterResolverCustomTypeDemo</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="nd">@ExtendWith</span><span class="o">({</span> <span class="nc">FirstIntegerResolver</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">SecondIntegerResolver</span><span class="o">.</span><span class="na">class</span> <span class="o">})</span>
+    <span class="kt">void</span> <span class="nf">testInt</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">i</span><span class="o">,</span> <span class="nc">WrappedInteger</span> <span class="n">wrappedInteger</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">wrappedInteger</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">FirstIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SecondIntegerResolver</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="nc">WrappedInteger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">WrappedInteger</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">WrappedInteger</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">WrappedInteger</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A custom annotation makes the duplicate type distinguishable from its counterpart:</p>
+</div>
+<div class="listingblock">
+<div class="title">Custom annotation to resolve duplicate types</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ParameterResolverCustomAnnotationDemo</span> <span class="o">{</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">testInt</span><span class="o">(</span><span class="nd">@FirstInteger</span> <span class="nc">Integer</span> <span class="n">first</span><span class="o">,</span> <span class="nd">@SecondInteger</span> <span class="nc">Integer</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">first</span><span class="o">);</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">second</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Target</span><span class="o">(</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">PARAMETER</span><span class="o">)</span>
+    <span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+    <span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">FirstInteger</span><span class="o">.</span><span class="na">Extension</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">FirstInteger</span> <span class="o">{</span>
+
+        <span class="kd">class</span> <span class="nc">Extension</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">getParameter</span><span class="o">().</span><span class="na">getType</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                        <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">parameterContext</span><span class="o">.</span><span class="na">isAnnotated</span><span class="o">(</span><span class="nc">SecondInteger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Target</span><span class="o">(</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">PARAMETER</span><span class="o">)</span>
+    <span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+    <span class="nd">@ExtendWith</span><span class="o">(</span><span class="nc">SecondInteger</span><span class="o">.</span><span class="na">Extension</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">SecondInteger</span> <span class="o">{</span>
+
+        <span class="kd">class</span> <span class="nc">Extension</span> <span class="kd">implements</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">supportsParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">parameterContext</span><span class="o">.</span><span class="na">isAnnotated</span><span class="o">(</span><span class="nc">SecondInteger</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">resolveParameter</span><span class="o">(</span><span class="nc">ParameterContext</span> <span class="n">parameterContext</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">extensionContext</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>JUnit includes some built-in parameter resolvers that can cause conflicts if a resolver
+attempts to claim their supported types. For example, <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/TestInfo.html">TestInfo</a></code> provides metadata about
+tests. See <a href="#writing-tests-dependency-injection">Dependency Injection for Constructors and Methods</a> for details. Third-party frameworks such
+as Spring may also define parameter resolvers. Apply one of the techniques in this section
+to resolve any conflicts.</p>
+</div>
+<div class="paragraph">
+<p>Parameterized tests are another potential source of conflict. Ensure that tests annotated
+with <code>@ParameterizedTest</code> are not also annotated with <code>@Test</code> and see
+<a href="#writing-tests-parameterized-tests-consuming-arguments">Consuming Arguments</a> for more details.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
