@@ -923,6 +923,7 @@ pre.rouge .gs {
 </ul>
 </li>
 <li><a href="#junit-platform-suite-engine-example">6.2.2. @Suite Example</a></li>
+<li><a href="#beforesuite-and-aftersuite">6.2.3. @BeforeSuite and @AfterSuite</a></li>
 </ul>
 </li>
 <li><a href="#testkit">6.3. JUnit Platform Test Kit</a>
@@ -12323,6 +12324,33 @@ list of supported annotations and further details.
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="beforesuite-and-aftersuite"><a class="anchor" href="#beforesuite-and-aftersuite"></a>6.2.3. @BeforeSuite and @AfterSuite</h4>
+<div class="paragraph">
+<p><code>@BeforeSuite</code> and <code>@AfterSuite</code> annotations can be used on methods inside a
+<code>@Suite</code>-annotated class. They will be executed respectively before and after
+all tests of the test suite.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Suite</span>
+<span class="nd">@SelectPackages</span><span class="o">(</span><span class="s">"example"</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">BeforeAndAfterSuiteDemo</span> <span class="o">{</span>
+
+    <span class="nd">@BeforeSuite</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">beforeSuite</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// executes before the test suite</span>
+    <span class="o">}</span>
+
+    <span class="nd">@AfterSuite</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">afterSuite</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// executes after the test suite</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="testkit"><a class="anchor" href="#testkit"></a>6.3. JUnit Platform Test Kit</h3>
@@ -13999,6 +14027,16 @@ value of lower stability.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.reporting.open.xml</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>OpenTestReportGeneratingListener</code> <em>(class)</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.9</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>AfterSuite</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BeforeSuite</code> <em>(annotation)</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.11</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.junit.platform.suite.api</code></p></td>
