@@ -589,7 +589,8 @@ exception&#8217;s <em>root</em> cause matches all supplied conditions, for use w
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p><code>TestInstancePostProcessor</code> extensions can now be registered via the <code>@ExtendWith</code>
+annotation on non-static fields.</p>
 </li>
 </ul>
 </div>
@@ -599,7 +600,9 @@ exception&#8217;s <em>root</em> cause matches all supplied conditions, for use w
 <div class="ulist">
 <ul>
 <li>
-<p>❓</p>
+<p>The registration order of extensions was changed to allow non-static fields to be
+processed earlier. This change may affect extensions that rely on the order of
+registration.</p>
 </li>
 </ul>
 </div>

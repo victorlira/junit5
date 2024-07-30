@@ -9911,34 +9911,12 @@ important to note which extension APIs are implemented and for what reasons.</p>
 <p><code>BeforeAllCallback</code>: to support static field injection</p>
 </li>
 <li>
-<p><code>BeforeEachCallback</code>: to support non-static field injection</p>
+<p><code>TestInstancePostProcessor</code>: to support non-static field injection</p>
 </li>
 <li>
 <p><code>ParameterResolver</code>: to support constructor and method injection</p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Ideally, the <code>RandomNumberExtension</code> would implement <code>TestInstancePostProcessor</code> instead
-of <code>BeforeEachCallback</code> in order to support non-static field injection immediately after
-the test class has been instantiated.</p>
-</div>
-<div class="paragraph">
-<p>However, JUnit Jupiter currently does not allow a <code>TestInstancePostProcessor</code> to be
-registered via <code>@ExtendWith</code> on a non-static field (see
-<a href="https://github.com/junit-team/junit5/issues/3437">issue 3437</a>). In light of that, the <code>RandomNumberExtension</code>
-implements <code>BeforeEachCallback</code> as an alternative approach.</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -9948,14 +9926,14 @@ implements <code>BeforeEachCallback</code> as an alternative approach.</p>
 <span class="kn">import</span> <span class="nn">java.util.function.Predicate</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.BeforeAllCallback</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.BeforeEachCallback</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ExtensionContext</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ParameterContext</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.ParameterResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.extension.TestInstancePostProcessor</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.platform.commons.support.ModifierSupport</span><span class="o">;</span>
 
 <span class="kd">class</span> <span class="nc">RandomNumberExtension</span>
-        <span class="kd">implements</span> <span class="nc">BeforeAllCallback</span><span class="o">,</span> <span class="nc">BeforeEachCallback</span><span class="o">,</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
+        <span class="kd">implements</span> <span class="nc">BeforeAllCallback</span><span class="o">,</span> <span class="nc">TestInstancePostProcessor</span><span class="o">,</span> <span class="nc">ParameterResolver</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Random</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">());</span>
 
@@ -9974,9 +9952,8 @@ implements <code>BeforeEachCallback</code> as an alternative approach.</p>
      * {@code @Random} and can be assigned an integer value.
      */</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">beforeEach</span><span class="o">(</span><span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postProcessTestInstance</span><span class="o">(</span><span class="nc">Object</span> <span class="n">testInstance</span><span class="o">,</span> <span class="nc">ExtensionContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
         <span class="nc">Class</span><span class="o">&lt;?&gt;</span> <span class="n">testClass</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getRequiredTestClass</span><span class="o">();</span>
-        <span class="nc">Object</span> <span class="n">testInstance</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getRequiredTestInstance</span><span class="o">();</span>
         <span class="n">injectFields</span><span class="o">(</span><span class="n">testClass</span><span class="o">,</span> <span class="n">testInstance</span><span class="o">,</span> <span class="nl">ModifierSupport:</span><span class="o">:</span><span class="n">isNotStatic</span><span class="o">);</span>
     <span class="o">}</span>
 
@@ -10239,11 +10216,8 @@ will be registered after the test class has been instantiated and after each reg
 (potentially injecting the instance of the extension to be used into the annotated
 field). Thus, if such an <em>instance extension</em> implements class-level or instance-level
 extension APIs such as <code>BeforeAllCallback</code>, <code>AfterAllCallback</code>, or
-<code>TestInstancePostProcessor</code>, those APIs will not be honored. By default, an instance
-extension will be registered <em>after</em> extensions that are registered at the method level
-via <code>@ExtendWith</code>; however, if the test class is configured with
-<code>@TestInstance(Lifecycle.PER_CLASS)</code> semantics, an instance extension will be registered
-<em>before</em> extensions that are registered at the method level via <code>@ExtendWith</code>.</p>
+<code>TestInstancePostProcessor</code>, those APIs will not be honored. Instance extensions will be
+registered <em>before</em> extensions that are registered at the method level via <code>@ExtendWith</code>.</p>
 </div>
 <div class="paragraph">
 <p>In the following example, the <code>docs</code> field in the test class is initialized

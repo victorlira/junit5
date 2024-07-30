@@ -104,11 +104,7 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">MutableExtensionRegistry</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="ExtensionRegistry.html" title="interface in org.junit.jupiter.engine.extension">ExtensionRegistry</a>, <a href="ExtensionRegistrar.html" title="interface in org.junit.jupiter.engine.extension">ExtensionRegistrar</a></span></div>
-<div class="block">Default, mutable implementation of <a href="ExtensionRegistry.html" title="interface in org.junit.jupiter.engine.extension"><code>ExtensionRegistry</code></a>.
-
- <p>A registry has a reference to its parent registry, and all lookups are
- performed first in the current registry itself and then recursively in its
- ancestors.</div>
+<div class="block">Default, mutable implementation of <a href="ExtensionRegistry.html" title="interface in org.junit.jupiter.engine.extension"><code>ExtensionRegistry</code></a>.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.5</dd>
@@ -141,24 +137,40 @@ implements <a href="ExtensionRegistry.html" title="interface in org.junit.jupite
  extensions.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerExtension(java.lang.Class)" class="member-name-link">registerExtension</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;&nbsp;extensionType)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeExtensions(java.lang.Class,java.lang.Object)" class="member-name-link">initializeExtensions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;testClass,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;testInstance)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Initialize all registered extensions for the supplied <code>testClass</code>
+ using the supplied <code>testInstance</code>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerExtension(java.lang.Class)" class="member-name-link">registerExtension</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;&nbsp;extensionType)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Instantiate an extension of the given type using its default constructor
  and register it in the registry.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerExtension(org.junit.jupiter.api.extension.Extension,java.lang.Object)" class="member-name-link">registerExtension</a><wbr>(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&nbsp;extension,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerExtension(org.junit.jupiter.api.extension.Extension,java.lang.Object)" class="member-name-link">registerExtension</a><wbr>(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&nbsp;extension,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the supplied <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extension</code></a>, without checking if an extension
  of that type has already been registered.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerSyntheticExtension(org.junit.jupiter.api.extension.Extension,java.lang.Object)" class="member-name-link">registerSyntheticExtension</a><wbr>(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&nbsp;extension,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerSyntheticExtension(org.junit.jupiter.api.extension.Extension,java.lang.Object)" class="member-name-link">registerSyntheticExtension</a><wbr>(<a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&nbsp;extension,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the supplied <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension"><code>Extension</code></a> as a <em>synthetic</em> extension,
  without checking if an extension of that type has already been registered.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerUninitializedExtension(java.lang.Class,java.lang.reflect.Field,java.util.function.Function)" class="member-name-link">registerUninitializedExtension</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;testClass,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link">Field</a>&nbsp;source,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>,<wbr>? extends <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;&nbsp;initializer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Register an uninitialized extension for the supplied <code>testClass</code> to
+ be initialized using the supplied <code>initializer</code> when an instance of
+ the test class is created.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;E extends <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;<br><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html" title="class or interface in java.util.stream" class="external-link">Stream</a><wbr>&lt;E&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stream(java.lang.Class)" class="member-name-link">stream</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;E&gt;&nbsp;extensionType)</code></div>
@@ -277,11 +289,11 @@ implements <a href="ExtensionRegistry.html" title="interface in org.junit.jupite
  <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/ExtendWith.html" title="annotation interface in org.junit.jupiter.api.extension"><code>@ExtendWith</code></a>, the
  <code>source</code> and the <code>extension</code> should be the same object.
  However, if an extension is registered <em>programmatically</em> via
- <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/RegisterExtension.html" title="annotation interface in org.junit.jupiter.api.extension"><code>@RegisterExtension</code></a>,
- the <code>source</code> object should be the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link"><code>Field</code></a>
- that is annotated with <code>@RegisterExtension</code>. Similarly, if an
- extension is registered <em>programmatically</em> as a lambda expression
- or method reference, the <code>source</code> object should be the underlying
+ <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/RegisterExtension.html" title="annotation interface in org.junit.jupiter.api.extension"><code>@RegisterExtension</code></a>, the <code>source</code> object
+ should be the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link"><code>Field</code></a> that is annotated with
+ <code>@RegisterExtension</code>. Similarly, if an extension is registered
+ <em>programmatically</em> as a lambda expression or method reference, the
+ <code>source</code> object should be the underlying
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Method.html" title="class or interface in java.lang.reflect" class="external-link"><code>Method</code></a> that implements the extension API.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -312,6 +324,52 @@ implements <a href="ExtensionRegistry.html" title="interface in org.junit.jupite
 <li><a href="ExtensionRegistrar.html#registerExtension(org.junit.jupiter.api.extension.Extension,java.lang.Object)"><code>ExtensionRegistrar.registerExtension(Extension, Object)</code></a></li>
 </ul>
 </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="registerUninitializedExtension(java.lang.Class,java.lang.reflect.Field,java.util.function.Function)">
+<h3>registerUninitializedExtension</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerUninitializedExtension</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;testClass,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/reflect/Field.html" title="class or interface in java.lang.reflect" class="external-link">Field</a>&nbsp;source,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>,<wbr>? extends <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/Extension.html" title="interface in org.junit.jupiter.api.extension">Extension</a>&gt;&nbsp;initializer)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ExtensionRegistrar.html#registerUninitializedExtension(java.lang.Class,java.lang.reflect.Field,java.util.function.Function)">ExtensionRegistrar</a></code></span></div>
+<div class="block">Register an uninitialized extension for the supplied <code>testClass</code> to
+ be initialized using the supplied <code>initializer</code> when an instance of
+ the test class is created.
+
+ <p>Uninitialized extensions are typically registered for fields annotated
+ with <a href="../../../../../../org.junit.jupiter.api/org/junit/jupiter/api/extension/RegisterExtension.html" title="annotation interface in org.junit.jupiter.api.extension"><code>@RegisterExtension</code></a> that cannot be
+ initialized until an instance of the test class is created. Until they
+ are initialized, such extensions are not available for use.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ExtensionRegistrar.html#registerUninitializedExtension(java.lang.Class,java.lang.reflect.Field,java.util.function.Function)">registerUninitializedExtension</a></code>&nbsp;in interface&nbsp;<code><a href="ExtensionRegistrar.html" title="interface in org.junit.jupiter.engine.extension">ExtensionRegistrar</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>testClass</code> - the test class for which the extension is registered;
+ never <code>null</code></dd>
+<dd><code>source</code> - the source of the extension; never <code>null</code></dd>
+<dd><code>initializer</code> - the initializer function to be used to create the
+ extension; never <code>null</code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="initializeExtensions(java.lang.Class,java.lang.Object)">
+<h3>initializeExtensions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">initializeExtensions</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;?&gt;&nbsp;testClass,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;testInstance)</span></div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ExtensionRegistrar.html#initializeExtensions(java.lang.Class,java.lang.Object)">ExtensionRegistrar</a></code></span></div>
+<div class="block">Initialize all registered extensions for the supplied <code>testClass</code>
+ using the supplied <code>testInstance</code>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="ExtensionRegistrar.html#initializeExtensions(java.lang.Class,java.lang.Object)">initializeExtensions</a></code>&nbsp;in interface&nbsp;<code><a href="ExtensionRegistrar.html" title="interface in org.junit.jupiter.engine.extension">ExtensionRegistrar</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>testClass</code> - the test class for which the extensions are initialized;
+ never <code>null</code></dd>
+<dd><code>testInstance</code> - the test instance to be used to initialize the
+ extensions; never <code>null</code></dd>
 </dl>
 </section>
 </li>

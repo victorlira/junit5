@@ -112,7 +112,9 @@ extends <a href="Extension.html" title="interface in org.junit.jupiter.api.exten
  etc.
 
  <p>Extensions that implement <code>TestInstancePostProcessor</code> must be
- registered at the class level.
+ registered at the class level, <a href="ExtendWith.html" title="annotation interface in org.junit.jupiter.api.extension">declaratively</a> via a
+ field of the test class, or <a href="RegisterExtension.html" title="annotation interface in org.junit.jupiter.api.extension">programmatically</a>
+ via a <em>static</em> field of the test class.
 
  <h2 id="constructor-requirements-heading">Constructor Requirements</h2>
 
