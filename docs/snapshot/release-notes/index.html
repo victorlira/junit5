@@ -635,7 +635,11 @@ for details.</p>
 <li>
 <p>New generators in <code>DynamicTest</code> that take a <code>Stream</code>/<code>Iterator</code> of <code>Named&lt;Executable&gt;</code>
 along with a convenient <code>NamedExecutable</code> interface that can simplify writing dynamic
-tests, in particular in recent version of Java that support records.</p>
+tests, in particular in recent versions of Java that support records.</p>
+</li>
+<li>
+<p><code>@TempDir</code> now fails fast in case <code>TempDirFactory::createTempDirectory</code> returns
+<code>null</code>, a file, or a symbolic link to a file.</p>
 </li>
 </ul>
 </div>
