@@ -595,6 +595,11 @@ exception&#8217;s <em>root</em> cause matches all supplied conditions, for use w
 <p><code>TestInstancePostProcessor</code> extensions can now be registered via the <code>@ExtendWith</code>
 annotation on non-static fields.</p>
 </li>
+<li>
+<p>Methods and constructors invoked via <code>ExecutableInvoker</code> now use the same extensions as
+the context they are invoked from and the same <code>ExtensionContext</code> is passed to
+registered instances of <code>ParameterResolver</code>.</p>
+</li>
 </ul>
 </div>
 </div>
