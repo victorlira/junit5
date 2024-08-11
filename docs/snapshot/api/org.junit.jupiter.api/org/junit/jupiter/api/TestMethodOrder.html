@@ -135,7 +135,12 @@ loadScripts(document, 'script');</script>
      @Order(3)
      void validValues() {}
  }
- </pre></div>
+ </pre>
+
+ <h2 id="parallel-execution-heading">Parallel Execution</h2>
+ <p>Using a <a href="MethodOrderer.html" title="interface in org.junit.jupiter.api"><code>MethodOrderer</code></a> disables parallel execution unless the test
+ class or test method is annotated with
+ <a href="parallel/Execution.html" title="annotation interface in org.junit.jupiter.api.parallel"><code>@Execution(CONCURRENT)</code></a>.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.4</dd>

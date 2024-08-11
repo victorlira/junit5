@@ -114,7 +114,13 @@ loadScripts(document, 'script');</script>
  </dl>
 
  <p><a href="#DEFAULT_CLASSES_EXECUTION_MODE_PROPERTY_NAME">"junit.jupiter.execution.parallel.mode.classes.default"</a> overrides
- <a href="#DEFAULT_EXECUTION_MODE_PROPERTY_NAME">"junit.jupiter.execution.parallel.mode.default"</a> for top-level classes.</div>
+ <a href="#DEFAULT_EXECUTION_MODE_PROPERTY_NAME">"junit.jupiter.execution.parallel.mode.default"</a> for top-level classes.
+
+ <p>The default execution mode is not applied to classes that use the
+ <a href="../TestInstance.Lifecycle.html#PER_CLASS"><code>PER_CLASS</code></a> lifecycle or a
+ <a href="../MethodOrderer.html" title="interface in org.junit.jupiter.api"><code>MethodOrderer</code></a>. In both cases, test methods in such test classes are
+ only executed concurrently if the <code>@Execution(CONCURRENT)</code> annotation
+ is present on the test class or method.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.3</dd>

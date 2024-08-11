@@ -129,7 +129,12 @@ loadScripts(document, 'script');</script>
 
  <p><code>@TestInstance</code> may also be used as a meta-annotation in order to
  create a custom <em>composed annotation</em> that inherits the semantics
- of <code>@TestInstance</code>.</div>
+ of <code>@TestInstance</code>.
+
+ <h2 id="parallel-execution-heading">Parallel Execution</h2>
+ <p>Using the <a href="TestInstance.Lifecycle.html#PER_CLASS"><code>PER_CLASS</code></a> lifecycle mode disables
+ parallel execution unless the test class or test method is annotated with
+ <a href="parallel/Execution.html" title="annotation interface in org.junit.jupiter.api.parallel"><code>@Execution(CONCURRENT)</code></a>.</div>
 <dl class="notes">
 <dt>Since:</dt>
 <dd>5.0</dd>
@@ -137,6 +142,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <ul class="tag-list">
 <li><a href="Nested.html" title="annotation interface in org.junit.jupiter.api"><code>@Nested</code></a></li>
+<li><a href="parallel/Execution.html" title="annotation interface in org.junit.jupiter.api.parallel"><code>@Execution</code></a></li>
 </ul>
 </dd>
 </dl>

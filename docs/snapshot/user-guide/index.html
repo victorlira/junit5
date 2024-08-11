@@ -6696,11 +6696,11 @@ activate parallel execution for individual test classes, one by one.</p>
 <div class="paragraph">
 <p>The default execution mode is applied to all nodes of the test tree with a few notable
 exceptions, namely test classes that use the <code>Lifecycle.PER_CLASS</code> mode or a
-<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.html">MethodOrderer</a></code> (except for <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.Random.html">MethodOrderer.Random</a></code>). In the former case, test authors
-have to ensure that the test class is thread-safe; in the latter, concurrent execution
-might conflict with the configured execution order. Thus, in both cases, test methods in
-such test classes are only executed concurrently if the <code>@Execution(CONCURRENT)</code>
-annotation is present on the test class or method.</p>
+<code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/MethodOrderer.html">MethodOrderer</a></code>. In the former case, test authors have to ensure that the test class is
+thread-safe; in the latter, concurrent execution might conflict with the configured
+execution order. Thus, in both cases, test methods in such test classes are only executed
+concurrently if the <code>@Execution(CONCURRENT)</code> annotation is present on the test class or
+method.</p>
 </div>
 <div class="paragraph">
 <p>When parallel execution is enabled and a default <code><a href="../api/org.junit.jupiter.api/org/junit/jupiter/api/ClassOrderer.html">ClassOrderer</a></code> is registered (see
