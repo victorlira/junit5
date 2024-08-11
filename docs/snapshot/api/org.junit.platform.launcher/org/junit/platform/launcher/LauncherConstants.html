@@ -157,8 +157,9 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#DEACTIVATE_LISTENERS_PATTERN_PROPERTY_NAME" class="member-name-link">DEACTIVATE_LISTENERS_PATTERN_PROPERTY_NAME</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Property name used to provide patterns for deactivating listeners registered
- via the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism: "junit.platform.execution.listeners.deactivate"</div>
+<div class="block">Property name used to provide patterns for deactivating
+ <a href="TestExecutionListener.html" title="interface in org.junit.platform.launcher">listeners</a> registered via the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism: "junit.platform.execution.listeners.deactivate"</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DRY_RUN_PROPERTY_NAME" class="member-name-link">DRY_RUN_PROPERTY_NAME</a></code></div>
@@ -335,8 +336,9 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="DEACTIVATE_LISTENERS_PATTERN_PROPERTY_NAME">
 <h3>DEACTIVATE_LISTENERS_PATTERN_PROPERTY_NAME</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">DEACTIVATE_LISTENERS_PATTERN_PROPERTY_NAME</span></div>
-<div class="block">Property name used to provide patterns for deactivating listeners registered
- via the <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism: "junit.platform.execution.listeners.deactivate"
+<div class="block">Property name used to provide patterns for deactivating
+ <a href="TestExecutionListener.html" title="interface in org.junit.platform.launcher">listeners</a> registered via the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism: "junit.platform.execution.listeners.deactivate"
 
  <h4 id="pattern-matching-syntax-heading">Pattern Matching Syntax</h4>
 
@@ -362,7 +364,18 @@ loadScripts(document, 'script');</script>
  <li><code>org.example.MyListener, org.example.TheirListener</code>: deactivates
  listeners whose FQCN is exactly <code>org.example.MyListener</code> or
  <code>org.example.TheirListener</code>.
- </ul></div>
+ </ul>
+
+ <p>Only listeners registered via the <code>ServiceLoader</code> mechanism can
+ be deactivated. In other words, any listener registered explicitly via the
+ <a href="LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a> cannot be deactivated via this
+ configuration parameter.
+
+ <p>In addition, since execution listeners are registered before the test
+ run starts, this configuration parameter can only be supplied as a JVM
+ system property or via the JUnit Platform configuration file but cannot
+ be supplied in the <a href="LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a>} that is passed to
+ the <a href="Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -404,7 +417,12 @@ loadScripts(document, 'script');</script>
  <a href="LauncherInterceptor.html" title="interface in org.junit.platform.launcher"><code>LauncherInterceptor</code></a> instances to be registered via the
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link"><code>ServiceLoader</code></a> mechanism: "junit.platform.launcher.interceptors.enabled"
 
- <p>By default, interceptor registration is disabled.</div>
+ <p>By default, interceptor registration is disabled.
+
+ <p>Since interceptors are registered before the test run starts, this
+ configuration parameter can only be supplied as a JVM system property or
+ via the JUnit Platform configuration file but cannot be supplied in the
+ <a href="LauncherDiscoveryRequest.html" title="interface in org.junit.platform.launcher"><code>LauncherDiscoveryRequest</code></a>} that is passed to the <a href="Launcher.html" title="interface in org.junit.platform.launcher"><code>Launcher</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
