@@ -839,6 +839,11 @@ tests, in particular in recent versions of Java that support records.</p>
 <p><code>@TempDir</code> now fails fast in case <code>TempDirFactory::createTempDirectory</code> returns
 <code>null</code>, a file, or a symbolic link to a file.</p>
 </li>
+<li>
+<p><code>@TempDir</code> now fails fast in case the annotated target is of type <code>File</code> and
+<code>TempDirFactory::createTempDirectory</code> returns a <code>Path</code> that does not belong to the
+default file system.</p>
+</li>
 </ul>
 </div>
 </div>
